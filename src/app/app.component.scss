@@ -1,0 +1,47 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.menu {
+    background-color: var(--col-black);
+    height: var(--menu-height);
+    padding: 0 var(--distX);
+    font: 500 500 20px/32px Roboto, "Karla", sans-serif; 
+    // font: inherit;
+    // font-weight: 600;
+    z-index: 2;
+    position: fixed;
+    //border-bottom: 0.0125rem solid var(--col-teal); // if not home !!
+    // box-sizing:border-box;
+
+    .menu-link {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 0px 16px;
+        text-transform: uppercase;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+    }
+    
+    .mobile-menu-icon {
+        margin-left: -16px;
+    }
+    
+    .menu-link, .mobile-menu-icon {
+
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--col-indigo-secondary); // adapt later w theme
+        }
+
+    }
+
+}
+
+app-home {
+    border-bottom: 0.25rem solid var(--col-teal);
+}

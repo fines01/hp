@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --menu-height: 60px;
+
+    --col-red: rgb(250, 39, 89);
+    --col-teal: rgb(45, 252, 216);
+    --col-dark: rgb(26, 26, 26); // #1a1a1a
+
+    --col-dark2: rgb(27, 36, 47);
+    --col-grey1: #5b5963;
+    --col-black: rgb(40, 40, 40);
+
+    --col-indigo-secondary: rgb(175, 154, 190); // rename
+
+    --distX: 48px; // seitenabstände
+    --transition: all 125ms linear;
+}
+
+
+html, body { 
+    height: 100%; 
+    font-family: Karla, sans-serif; // download Karla
+}
+
+body { 
+    margin: 0; 
+    // font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-family: Karla, sans-serif; // download Karla
+    
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.align-center {
+  text-align: center;
+}
+
