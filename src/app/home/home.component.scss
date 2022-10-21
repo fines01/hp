@@ -26,8 +26,8 @@
     transition: var(--transition);
 
     &:hover {
-      color: var(--col-indigo-secondary);
-      border-color: var(--col-indigo-secondary);
+      color: var(--col-bg-light);
+      border-color: var(--col-bg-light);
     }
   }
 

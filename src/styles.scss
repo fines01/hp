@@ -7,25 +7,38 @@
     --col-dark: rgb(26, 26, 26); // #1a1a1a
 
     --col-dark2: rgb(27, 36, 47);
-    --col-grey1: #5b5963;
+    --col-grey1: rgb(91, 89, 99);
     --col-black: rgb(40, 40, 40);
 
     --col-indigo-secondary: rgb(175, 154, 190); // rename
-
+    
     --distX: 48px; // seitenabstände
     --transition: all 125ms linear;
+    
+    // minimal color scheme
+    --col-bg-light: rgb(229, 229, 229);
+    --col-blue-primary: rgb(18, 107, 251);
+    --col-blue-secondary: rgb(238, 244, 255);
+    --col-blue-action: rgb(123, 185, 250);
+    // --col-grey1: rgb(91, 89, 99);
+    // --col-black: rgb(40, 40, 40);
+
+    --col-white: rgb(245, 243, 243);
+
 }
 
 
 html, body { 
     height: 100%; 
     font-family: Karla, sans-serif; // download Karla
+    scroll-behavior: smooth;
 }
 
 body { 
     margin: 0; 
     // font-family: Roboto, "Helvetica Neue", sans-serif; 
     font-family: Karla, sans-serif; // download Karla
+    color: var(--col-black);
     
 }
 

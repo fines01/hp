@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hp';
+  showDivider = false;
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    if (window.scrollY >= window.innerHeight - 60) this.showDivider = true;
+    else this.showDivider = false;
+  }
 }

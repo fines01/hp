@@ -43,6 +43,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new CharacterRain(this.canvasWidth, this.canvasHeight, this.context);
   }
 
+  @HostListener('window:scroll', [])
+  onScroll() {
+    console.log(window.scrollY)
+    if (window.scrollY >= window.innerHeight * 0.5) this.cancelAnimation();
+    else this.startAnimation();
+  }
+
   cancelAnimation() {
         if (this.animation && this.animation.animationLoop) cancelAnimationFrame(this.animation.animationLoop);
     }

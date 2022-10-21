@@ -1,0 +1,28 @@
+
+#portfolio {
+    // padding: 32px var(--distX);
+    background-color: var(--col-bg-light);
+    background-color: var(--col-indigo-secondary);
+    background-color: var(--col-bg-light);
+    
+    div {
+        padding: 32px var(--distX);
+    }
+}
+
+.test {
+    height: 100px;
+    padding: 32px var(--distX);
+}
+
+.test1 {
+    background-color: var(--col-white);    
+}
+
+.test2 {
+    background-color: var(--col-bg-light);
+}
+
+.test3 {
+    background-color: white;
+}
