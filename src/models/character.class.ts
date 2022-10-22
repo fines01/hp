@@ -22,8 +22,8 @@ export class Character {
     frame!: any;
     mouse!: any;
 
-    constructor(x: number, y: number, acceleration: number, canvasWidth: number, canvasHeight: number, context: any) { //
-        this.fontSize = 12; // TODO set fontsize in rel to screen size
+    constructor(x: number, y: number, acceleration: number, canvasWidth: number, canvasHeight: number, context: any, fontSize: number) { //
+        this.fontSize = fontSize; // TODO set fontsize in rel to screen size
         this.acceleration = acceleration; // * 0.01;
         this.speed = 0;
         this.x = x; //? x : (Math.random() * ((innerWidth - this. fontSize * 2) - (this.fontSize * 2)) + this.fontSize * 2);
@@ -152,7 +152,10 @@ export class Character {
      * This is achieven dy applying the gradient before drawing each character.
      */
     createCanvasCharGradient() {
-        this.charGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 100, this.canvasWidth / 2, this.canvasHeight / 2, 400); // (x1,y1,radius1,x2,y2,radius2) // inner circle (x,y,radius 1 && outer circle (x,y,radius 22)) --> gradient will be drawn between these two circles
+        let length;
+        if (this.canvasHeight > this.canvasWidth) length = this.canvasWidth;
+        else length = this.canvasHeight;
+        this.charGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 150, this.canvasWidth / 2, this.canvasHeight / 2, length*0.8); // (x1,y1,radius1,x2,y2,radius2) // inner circle (x,y,radius 1 && outer circle (x,y,radius 22)) --> gradient will be drawn between these two circles
         this.charGradient.addColorStop(0, 'rgba(0,255,255, 0.05)'); // (offset[0,1], color) , offset 0 == start, offset 1 == end
         this.charGradient.addColorStop(0.89, 'rgba(51, 0, 87, 0.5)');
     }

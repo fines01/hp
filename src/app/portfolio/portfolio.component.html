@@ -1,11 +1,26 @@
 <section id="portfolio">
-   <div class="">
-    <p>portfolio works!</p>
-   </div>
 
-    <div class="test test1">Test</div>
-    <div class="test test2">Test</div>
-    <div class="test test3">Test</div>
-    <div class="test test4">Test</div>
+  <div class="filter-row">
+    <h2>Portfolio</h2>
+    <div class="filter-buttons">
+      <button (click)="filterProjects()" [class.selected]="filter === undefined">All</button>
+      <button (click)="filterProjects('JavaScript')" [class.selected]="filter === 'JavaScript'">JavaScript</button>
+      <button (click)="filterProjects('Angular')" [class.selected]="filter === 'Angular'">Angular</button>
+    </div>
+    <!-- <div class="filter-divider"></div> -->
+  </div>
+
+  <div *ngFor="let project of filteredProjects" class="portfolio-row">
+    <img src="{{ project.img }}" alt="">
+    <div class="">
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description }}</p>
+        <div class="buttons">
+            <!-- <button>JS Doc</button> -->
+            <a href="{{ project.GHlink }}" target="__blank" [class.btn-disabled]="project.name === 'Kochwelt'" class="btn">GitHub</a>
+            <a href="{{ project.link }}" target="__blank" [class.btn-disabled]="project.name === 'My website'" class="btn">Try out</a>
+        </div>
+    </div>
+  </div>
 
 </section>

@@ -15,6 +15,7 @@
   background-color: var(--col-black);
 
   .link {
+    text-decoration: none;
     display: inline-block;
     cursor: pointer;
     font-size: 1.8rem;
@@ -26,8 +27,8 @@
     transition: var(--transition);
 
     &:hover {
-      color: var(--col-bg-light);
-      border-color: var(--col-bg-light);
+      color: var(--col-indigo-secondary);
+      border-color: var(--col-indigo-secondary);      
     }
   }
 

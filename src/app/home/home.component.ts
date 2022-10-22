@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { CharacterRain } from 'src/models/character-rain.class';
-import { Character } from 'src/models/character.class';
+import { RainEffect } from 'src/models/rain-effect.class';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +12,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('frame') frame!: ElementRef<any>;
   
   context!: CanvasRenderingContext2D | null;
-  animation!: CharacterRain;
+  animation!: RainEffect;
   canvasWidth!: number;
   canvasHeight!: number;
   
@@ -40,12 +39,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // console.log(this.frame.nativeElement.clientWidth)
     this.setCanvasHeight();
     this.cancelAnimation();
-    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new CharacterRain(this.canvasWidth, this.canvasHeight, this.context);
+    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
   }
 
   @HostListener('window:scroll', [])
   onScroll() {
-    console.log(window.scrollY)
     if (window.scrollY >= window.innerHeight * 0.5) this.cancelAnimation();
     else this.startAnimation();
   }

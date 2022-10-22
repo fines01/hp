@@ -6,8 +6,16 @@
     --col-teal: rgb(45, 252, 216);
     --col-dark: rgb(26, 26, 26); // #1a1a1a
 
+    --col-red-05: rgba(250, 39, 89, 0.5);
+    --col-teal-05: rgba(45, 252, 216, 0.5);
+     --col-grey-05: rgba(91, 89, 99, 0.5);
+    --col-red-02: rgba(250, 39, 89, 0.2);
+    --col-teal-02: rgba(45, 252, 216, 0.2);
+    --col-grey-02: rgba(91, 89, 99, 0.2);
+
+
     --col-dark2: rgb(27, 36, 47);
-    --col-grey1: rgb(91, 89, 99);
+    --col-grey: rgb(91, 89, 99); // paragraph text, light bg
     --col-black: rgb(40, 40, 40);
 
     --col-indigo-secondary: rgb(175, 154, 190); // rename
@@ -20,13 +28,12 @@
     --col-blue-primary: rgb(18, 107, 251);
     --col-blue-secondary: rgb(238, 244, 255);
     --col-blue-action: rgb(123, 185, 250);
-    // --col-grey1: rgb(91, 89, 99);
+    // --col-grey: rgb(91, 89, 99);
     // --col-black: rgb(40, 40, 40);
 
     --col-white: rgb(245, 243, 243);
 
 }
-
 
 html, body { 
     height: 100%; 
@@ -35,11 +42,46 @@ html, body {
 }
 
 body { 
-    margin: 0; 
-    // font-family: Roboto, "Helvetica Neue", sans-serif; 
-    font-family: Karla, sans-serif; // download Karla
-    color: var(--col-black);
-    
+  margin: 0; 
+  // font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Karla, sans-serif; // download Karla
+  color: var(--col-black);
+  background-color: var(--col-white);
+}
+
+button {
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 800;
+  transition: var(--transition);
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: 800;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0;
 }
 
 .mb-32 {
@@ -56,5 +98,11 @@ body {
 
 .align-center {
   text-align: center;
+}
+
+.btn-disabled {
+  background-color: var(--col-grey-02) !important;
+  cursor: not-allowed;
+  border: none !important;
 }
 

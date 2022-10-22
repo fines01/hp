@@ -1,16 +1,13 @@
 import { Character } from "./character.class";
 
-/**
- * Creates a fluid character - rain effect
- */
-export class CharacterRain {
+export class RainEffect {
     
-    fontSize: number = 12;
-    padding: number = 1;
+    fontSize: number = 14;
     accelerationPerFrame!: number;
     lastAnimationFrame = 0;
     animationFrameTimer = 0;
-    fps = 20;
+    fps = 25;
+    padding: number = 1; // number > 0 
     animationFrameInterval = 1000 / this.fps; //amount of ms we wait until we trigger the next frame
     characterArray!: Character[];
     animationLoop!: number;
@@ -50,7 +47,7 @@ export class CharacterRain {
             let columnAcceleration = (Math.random() * 0.008) + 0.002; // 0.002 -  ? test
             let columnY = (Math.random() * ((this.canvasHeight - this.fontSize * 2) - (this.fontSize * 2)) + this.fontSize * 2) * 0.33;
             for (let j = 0; j < this.numberOfCharactersPerColumn; j++) {
-                this.characterArray.push(new Character(i * this.fontSize * this.padding * 2, columnY + j * this.fontSize * this.padding * 2, columnAcceleration, this.canvasWidth, this.canvasHeight, this.ctx));
+                this.characterArray.push(new Character(i * this.fontSize * this.padding * 2, columnY + j * this.fontSize * this.padding * 2, columnAcceleration, this.canvasWidth, this.canvasHeight, this.ctx, this.fontSize));
             }
         }
     }
@@ -60,8 +57,11 @@ export class CharacterRain {
      * after each animation-frame, creating a washed-out impression
      */
     createCanvasBgGradient() {
-        this.bgGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 100, this.canvasWidth / 2, this.canvasHeight / 2, 400);
-        this.bgGradient.addColorStop(0, 'rgba(51, 0, 87, 0.2)');
+        let length;
+        if (this.canvasHeight > this.canvasWidth) length = this.canvasWidth;
+        else length = this.canvasHeight;
+        this.bgGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 150, this.canvasWidth / 2, this.canvasHeight / 2, length*0.9);
+        this.bgGradient.addColorStop(0, 'rgba(51, 0, 87, 0.3)');
         this.bgGradient.addColorStop(0.89,'rgba(40,40,40,0.2');
     }
 
