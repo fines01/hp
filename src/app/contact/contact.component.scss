@@ -1,5 +1,101 @@
 #contact {
-  padding: 32px var(--distX);
+  padding: var(--distX);
   background-color: var(--col-black);
   color: white;
 }
+
+h2 {
+  color: var(--col-teal-2);
+  font-size: 32px;
+  font-weight: 900;
+}
+
+p {
+  margin-top: 8px;
+  margin-bottom: 32px;
+
+  span {
+    color: var(--col-teal-2);
+  }
+}
+
+label {
+  font-weight: 600;//500;
+  padding-bottom: 8px;
+}
+
+textarea {
+  height: 159px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+.error-msg {
+  color: var(--col-red);
+  font-weight: 500;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+}
+
+.hint-message {
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+}
+
+.faulty-entry {
+  outline: 1px solid var(--col-red);
+  border: transparent;
+}
+
+
+form {
+  div {
+    //margin-top: 16px;
+    position: relative;
+    padding-bottom: 24px;
+
+    &:last-child {
+      padding-bottom: 0;
+      // padding-top: 24px;
+      display: flex;
+      justify-content: flex-end;;
+    }
+  }
+
+  button {
+    border: 1px solid var(--col-teal-2);
+    color: var(--col-teal-2);
+    border-radius: 2px;
+    width: 160px;
+    height: 55px;
+
+    &:hover {
+      color: var(--col-black);
+      background-color: var(--col-teal);
+    }
+  }
+}
+
+// .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+//   color: red;
+// }
+
+// .mat-form-field.mat-focused .mat-form-field-label {
+//   color: red;
+// }
+
+// .mat-form-field.mat-accent .mat-input-element {
+//   caret-color: var(--col-teal-2);
+// }
+

@@ -1,0 +1,9 @@
+#about {
+    min-height: calc(100vh - (var(--menu-height) * 2 +  3 * 32px)); // menu-height + padding == footer-height
+    padding: 32px var(--distX);
+    padding-top: calc(var(--menu-height) + 32px);
+}
+
+p {
+    margin: 0;
+}

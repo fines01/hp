@@ -1,14 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
 :root {
     --menu-height: 60px;
 
     --col-red: rgb(250, 39, 89);
     --col-teal: rgb(45, 252, 216);
+    --col-teal-2: rgba(46, 252, 216, 1);
     --col-dark: rgb(26, 26, 26); // #1a1a1a
 
     --col-red-05: rgba(250, 39, 89, 0.5);
     --col-teal-05: rgba(45, 252, 216, 0.5);
-     --col-grey-05: rgba(91, 89, 99, 0.5);
+    --col-grey-05: rgba(91, 89, 99, 0.5);
+    --col-black-05: rgba(40, 40, 40, 0.5);
     --col-red-02: rgba(250, 39, 89, 0.2);
     --col-teal-02: rgba(45, 252, 216, 0.2);
     --col-grey-02: rgba(91, 89, 99, 0.2);
@@ -60,6 +63,28 @@ button {
   transition: var(--transition);
 }
 
+textarea,
+input {
+  box-sizing: border-box;
+  padding: 16px;
+  font-size: 16px;
+  font-family: inherit;
+  border-radius: 2px;
+  // background-color: var(--col-teal-02);
+  background: white;
+  background: rgba(26,26,26,1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin-top: 8px;
+  margin-bottom: 4px;
+  caret-color: var(--col-teal-2);
+  color: white;
+  
+
+  &:focus {
+    outline: 1px solid var(--col-teal-2);
+  }
+}
+
 .btn {
   cursor: pointer;
   font-weight: 800;
@@ -72,6 +97,7 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+  transition: var(--transition);
 }
 
 img {
@@ -100,9 +126,18 @@ h2 {
   text-align: center;
 }
 
+.c-pointer{
+  cursor: pointer;
+}
+
+.width-100 {
+  width: 100%;
+}
+
 .btn-disabled {
   background-color: var(--col-grey-02) !important;
   cursor: not-allowed;
   border: none !important;
 }
+
 

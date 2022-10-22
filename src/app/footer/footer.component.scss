@@ -3,5 +3,29 @@ footer {
     height: calc(var(--menu-height) );
     height: var(--menu-height);
     color: white;
-    background-color: black;;
+    background-color: black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-legal-links {
+    // width: 50%;
+    
+    a {
+        color: rgba(255,255,255,0.5);
+        font-size: 16px;
+        margin-right: 16px;
+        
+        &:hover {
+            color: rgba(255,255,255,0.8);
+        }
+    }
+}
+
+.footer-social-links {
+    a {
+        margin-left: 16px;
+    }
 }
