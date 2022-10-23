@@ -27,8 +27,8 @@
     transition: var(--transition);
 
     &:hover {
-      color: var(--col-indigo-secondary);
-      border-color: var(--col-indigo-secondary);      
+      color: rgba(255,255,255,0.8);
+      border-color: rgba(255,255,255,0.8);      
     }
   }
 

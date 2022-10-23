@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatInputModule} from '@angular/material/input';
 
@@ -37,6 +38,7 @@ import { MainComponent } from './main/main.component';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
+    MatProgressBarModule,
     // MatFormFieldModule,
     // MatInputModule,
   ],

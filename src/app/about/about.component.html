@@ -1,3 +1,27 @@
 <section id="about">
-    <p>about works!</p>
+    <div class="row"><h2>About</h2></div>
+    <div class="about-main">
+        <div class="introduction">
+            <img class="picture" src="assets/img/passfoto.jpg" alt="picture">
+            <h3>About me</h3>
+            <p>I'm an outdoor sports enthusiast (Kayaking forever) and <span class="col-highlight">front-end developer</span> who loves pushing boundaries.</p>
+        </div>
+        <div class="skills">
+            <div class="skill-bars">
+
+                <div *ngFor="let skill of skills" class="progress-bar">
+                    <div class="progress-bar-fill" [style.width.%]="skill.value">
+                        <span class="progress-bar-label">{{ skill.name }}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="about-secondary">
+        <div class="row">
+            <h3>Who I Am</h3>
+        </div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, iure deleniti. Eos minima veritatis odio impedit laborum? Dignissimos sed dolores hic omnis laboriosam, facilis, eum cumque error, dicta sit exercitationem beatae! Voluptates molestiae dolorum laborum corporis impedit libero nostrum quam eius pariatur, facere ipsam vero suscipit unde incidunt neque ad asperiores consequatur. At, ipsam fuga?</p>
+    </div>
 </section>
