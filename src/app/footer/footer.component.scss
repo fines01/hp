@@ -16,7 +16,7 @@ footer {
     a {
         color: rgba(255,255,255,0.5);
         font-size: 16px;
-        margin-right: 16px;
+        margin-right: 32px;
         
         &:hover {
             color: rgba(255,255,255,0.8);
@@ -26,6 +26,15 @@ footer {
 
 .footer-social-links {
     a {
-        margin-left: 16px;
+        margin-left: 32px;
+    }
+}
+
+.social-icon {
+    filter: invert(100%);
+    width: 36px;
+
+    &:not(disabled):hover {
+        transform: scale(1.1);
     }
 }

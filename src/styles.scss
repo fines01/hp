@@ -101,8 +101,9 @@ a {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  transition: var(--transition);
 }
 
 h2 {
@@ -138,6 +139,11 @@ h2 {
   background-color: var(--col-grey-02) !important;
   cursor: not-allowed;
   border: none !important;
+}
+
+a.disabled, .disabled-link {
+  pointer-events: none !important;
+  opacity: 0.5;
 }
 
 

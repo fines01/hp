@@ -44,7 +44,7 @@ export class PortfolioComponent implements OnInit {
     // Ende alte Projekte
     {
       name: 'Pokedex',
-      description: 'Making use of the famous and extensive PokéAPI, because who doesn\'t love Pokemon?', // Verweis auf mini-backend (simulation) & smallest_backend_ever GH
+      description: 'Fun application making use of the extensive PokéAPI, because who doesn\'t love Pokemon?', // Verweis auf mini-backend (simulation) & smallest_backend_ever GH
       img: 'assets/img/example2.jpg',
       GHlink: 'https://github.com/fines01/pokedex',
       link: 'https://ines-fritsch.developerakademie.net/pokedex/',

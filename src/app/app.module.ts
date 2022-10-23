@@ -9,8 +9,9 @@ import { HomeComponent } from './home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
+// import {MatFormFieldModule} from '@angular/material/form-field';
+// import {MatInputModule} from '@angular/material/input';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
@@ -35,8 +36,9 @@ import { MainComponent } from './main/main.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
+    MatTooltipModule,
+    // MatFormFieldModule,
+    // MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
