@@ -33,17 +33,14 @@ export class ContactComponent implements OnInit {
 
   onSubmit(formData: any){ // this.formData.value
     // TODO: Use EventEmitter with form value?
-    if (formData.valid) this.sendMessage(formData);
+    if (this.form.valid) this.sendMessage(formData);
   }
   
   sendMessage(formData: any) {
-    this.contact.postMessage(formData).subscribe( 
-      (response) => {
-      console.log(response);
-      this.handleSuccess(formData);
-      },
-      (error) => {
-        this.handleError(error, formData);
+    this.contact.postMessage(formData).subscribe(
+      {
+        next: (response) => this.handleSuccess(formData),
+        error: (error) => this.handleError(error, formData),
       });
   }
 
@@ -66,7 +63,8 @@ export class ContactComponent implements OnInit {
     // formData.reset();
   }
 
-  handleSuccess(formData: any) { // pass formData?
+  handleSuccess(formData: any) {
+    console.log(formData);
     //location.href = 'https://mailthis.to/confirm'; // in case i want to use the mailthis api
     this.showResponseDialog('success', formData);
     this.form.reset();
