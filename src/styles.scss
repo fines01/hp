@@ -148,4 +148,9 @@ a.disabled, .disabled-link {
   opacity: 0.5;
 }
 
+.active-link {
+  border-bottom: 2px solid rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.8) !important;
+}
+
 

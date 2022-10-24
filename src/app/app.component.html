@@ -1,12 +1,14 @@
 <!-- Toolbar (Desktop) -->
-<mat-toolbar class="menu" [class.menu-border]="showDivider">
+<mat-toolbar class="menu" [class.menu-border]="showDivider || currentRoute === '/about-me'">
   <!-- open mobile menu, only show in  mobile view-->
-  <button mat-icon-button class="mobile-menu" aria-label="Example icon-button with menu icon">
+  <!-- <button mat-icon-button class="mobile-menu" aria-label="Example icon-button with menu icon">
     <mat-icon class="mobile-menu-icon">menu</mat-icon>
-  </button>
-  <span class="c-pointer" [routerLink]="['/']">LOGO</span>
+  </button> -->
+  <span class="logo-wrapper" [routerLink]="['/']" matTooltip="Home">
+    <a href="#home"><img src="assets/img/logo-white.png" alt="logo" class="logo"></a>
+  </span>
   <span class="menu-spacer"></span>
-  <a class="menu-link" [routerLink]="['/about-me']">About</a>
+  <a class="menu-link" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
   <a class="menu-link" href="#portfolio">Portfolio</a>
   <a class="menu-link" href="#contact">Contact</a>
 </mat-toolbar>

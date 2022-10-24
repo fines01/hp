@@ -35,10 +35,10 @@ input {
 
 .error-msg {
   color: var(--col-red);
-  font-weight: 500;
+  color: rgba(255,255,255,0.8);
   margin-top: 8px;
   font-size: 12px;
-  font-weight: 700;
+  //font-weight: 700;
   position: absolute;
   bottom: 8px;
   left: 0;
@@ -54,7 +54,7 @@ input {
 }
 
 .faulty-entry {
-  outline: 1px solid var(--col-red);
+  outline: 1px solid var(--col-red-05);
   border: transparent;
 }
 
@@ -85,6 +85,16 @@ form {
       background-color: var(--col-teal);
     }
   }
+}
+
+button.disabled {
+  color: gray;
+  border: none;
+}
+
+.btn-disabled {
+  border: 1px solid var(--col-teal-02) !important;
+  color: var(--col-teal-05) !important;
 }
 
 // .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {

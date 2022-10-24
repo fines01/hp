@@ -3,15 +3,17 @@
   flex-direction: column;
   gap: 32px;
 
-  div {
-    // background-color: var(--col-indigo-secondary);
-    background-color: var(--col-bg-light);
-  }
-
+  //background-color: var(--col-bg-light); // darker 1
+  
   .portfolio-row,
   .filter-buttons {
     padding: var(--distX);
   }
+}
+
+.filter-row, .portfolio-row {
+  background-color: var(--col-bg-light);
+  //background-color: var(--col-grey-02); // darker 2
 }
 
 .filter-row {
@@ -106,8 +108,9 @@ h2 {
 
     p {
       text-align: center;
-      color: var(--col-grey);
       line-height: 1.3;
+      color: var(--col-grey);
+      //color: rgba(0,0,0,0.6); // darker 3
     }
 
     .buttons {

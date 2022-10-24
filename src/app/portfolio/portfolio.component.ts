@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -101,5 +101,6 @@ export class PortfolioComponent implements OnInit {
     else this.filteredProjects = this.projects;
     this.filter = filterTerm;
   }
+
 
 }

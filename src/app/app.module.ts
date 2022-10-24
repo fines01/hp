@@ -19,6 +19,12 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { ReactiveFormsModule } from '@angular/forms';  
+import { HttpClientModule } from '@angular/common/http';
+import { ContactService } from './contact.service';
+import { DialogContactResponseComponent } from './dialog-contact-response/dialog-contact-response.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +34,8 @@ import { MainComponent } from './main/main.component';
     ContactComponent,
     AboutComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    DialogContactResponseComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,10 +46,13 @@ import { MainComponent } from './main/main.component';
     MatButtonModule,
     MatTooltipModule,
     MatProgressBarModule,
-    // MatFormFieldModule,
-    // MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    ContactService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

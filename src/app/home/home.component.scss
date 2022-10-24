@@ -50,7 +50,9 @@
 }
 
 .header {
-  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  font-size: calc((2rem + 4.5vw)*.4) !important;
+  // font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.5;
   z-index: 1;

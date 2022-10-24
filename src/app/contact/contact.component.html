@@ -1,30 +1,31 @@
 <section id="contact">
   <h2>Contact me.</h2>
-  <p>Get in touch via the form below, or by emailing <span>Hello@fines.com</span></p>
+  <p>Get in touch via the form below, or by emailing <span>ines.fritsch@gmail.com</span></p>
 
-  <form action="">
+  <form action="" method="" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
 
     <div class="">
         <label for="name">Name</label><br>
-        <input placeholder="Enter your name" id="name">
-        <span class="error-msg"></span>
+        <input placeholder="Enter your name" id="name" [formControl]="name" [class.faulty-entry]="name.invalid && (name.dirty || name.touched)" class="form-control" required>
+        <span *ngIf="name.invalid && (name.dirty || name.touched)" class="error-msg">Please enter a name</span>
     </div>
 
     <div class="">
-        <label for="name">Email</label><br>
-        <input placeholder="Enter your Email address" id="email" class="faulty-entry">
-        <span class="error-msg">Error something something!</span>
+        <label for="email">Email</label><br>
+        <input placeholder="Enter your Email address" id="email" [formControl]="email" [class.faulty-entry]="email.invalid && (email.dirty || email.touched)" class="form-control">
+        <span *ngIf="email.invalid && (email.dirty || email.touched)" class="error-msg">Please enter a valid email address</span>
+        <span *ngIf="!email.invalid " class="hint-message">Your email will never be passed on to third parties</span>
     </div>
 
     <div class="">
-        <label for="name">Message</label><br>
-        <textarea placeholder="Enter your message" id="message"></textarea>
-        <span class="hint-message">300 Characters of 300 still left</span>
-        <span class="error-msg"></span>
+        <label for="message">Message</label><br>
+        <textarea placeholder="Enter your message" id="message" [formControl]="message" [class.faulty-entry]="message.invalid  && (message.dirty || message.touched)" class="form-control"></textarea>
+        <!-- <span class="hint-message">300 Characters of 300 still left</span> -->
+        <span *ngIf="message.invalid  && (message.dirty || message.touched)" class="error-msg">Please enter a message</span>
     </div>
 
     <div class="">
-        <button type="submit">Send</button>
+        <button [disabled]="!form.valid" [class.btn-disabled]="!form.valid" type="submit">Send</button>
     </div>
   </form>
 
