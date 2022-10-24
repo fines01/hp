@@ -1,6 +1,9 @@
-<div class="">
-        <p>message: {{ formData.message }}</p>
-        <p>from: {{ formData.name }}, {{ formData.email }}</p>
-        <p>{{ message }}</p>
-    </div>
+<div class="message-wrapper" [ngClass]="{'success-dialog': status === 'success', 'error-dialog': status === 'error'}">
+    <h3 class="title">{{ status }}</h3>
+    <!-- <p>from: {{ formData.name }}, {{ formData.email }}</p> -->
+    <p [innerHTML]="message"></p>
+</div>
+<div class="btn-wrapper">
+    <button mat-stroked-button (click)="closeDialog()">Close</button>
+</div>
 

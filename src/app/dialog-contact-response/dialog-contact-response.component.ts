@@ -22,11 +22,13 @@ export class DialogContactResponseComponent implements OnInit {
   setContent() {
     if (this.status === 'success') {
       this.contactSuccess = true;
-      this.message = 'Thank you for your message! I will reply as soon as possible!'
+      this.message = 
+      ` Thank you for your message: <strong>${this.formData.name}</strong>! <br> 
+      I will reply as soon as possible to: <br> <strong>${this.formData.email}</strong>.`;
     }
     else if (this.status === 'error') {
       this.contactSuccess = false;
-      this.message = 'Oops, something went wrong. Please try again later, or contact me directly: ines.fritsch@gmail.com'
+      this.message = 'Oops, something went wrong! Please try again later, <br> or contact me directly at: <a href="mailto:ines.fritsch@gmail.com">ines.fritsch@gmail.com</a>'
     }
   }
 

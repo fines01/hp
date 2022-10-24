@@ -14,7 +14,7 @@ p {
   margin-top: 8px;
   margin-bottom: 32px;
 
-  span {
+  .mailto-link {
     color: var(--col-teal-2);
   }
 }
@@ -69,7 +69,8 @@ form {
       padding-bottom: 0;
       // padding-top: 24px;
       display: flex;
-      justify-content: flex-end;;
+      justify-content: flex-end;
+      gap: 32px;
     }
   }
 
@@ -80,32 +81,31 @@ form {
     width: 160px;
     height: 55px;
 
-    &:hover {
+    &:hover:not(.cancel-btn) {
       color: var(--col-black);
       background-color: var(--col-teal);
     }
   }
 }
 
-button.disabled {
-  color: gray;
-  border: none;
+.cancel-btn {
+  color: var(--col-teal-05) !important;
+  
+  &:hover:not(.btn-disabled) {
+    border: 1px solid var(--col-teal-05) !important;
+    color: var(--col-black) !important;
+    background-color: var(--col-teal-05);
+  }
+
 }
 
 .btn-disabled {
-  border: 1px solid var(--col-teal-02) !important;
   color: var(--col-teal-05) !important;
+  pointer-events: none;
+  
+  &:not(.cancel-btn) {
+    border: 1px solid var(--col-teal-02) !important;
+  }
+
 }
-
-// .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-//   color: red;
-// }
-
-// .mat-form-field.mat-focused .mat-form-field-label {
-//   color: red;
-// }
-
-// .mat-form-field.mat-accent .mat-input-element {
-//   caret-color: var(--col-teal-2);
-// }
 

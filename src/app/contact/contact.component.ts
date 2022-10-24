@@ -77,4 +77,8 @@ export class ContactComponent implements OnInit {
     this.form.reset();
   }
 
+  onCancelInput(){
+    this.form.reset();
+  }
+
 }

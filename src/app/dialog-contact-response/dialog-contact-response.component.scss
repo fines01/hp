@@ -1,0 +1,33 @@
+.success-dialog {
+    
+    .title {
+        color: var(--col-teal-2);
+        color: var(--col-teal-2);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+.error-dialog {
+    .title {
+        color: var(--col-red);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+.btn-wrapper {
+    // width: 100%;
+    text-align: right;
+}
+
+p {
+    line-height: 1.5;
+}
+
+// .mailto {
+//     border-bottom: 1px solid rgba(255,255,255,0.8);
+//     &:hover {
+//         color: var(--col-teal-05);
+//     }
+// }
