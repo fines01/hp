@@ -14,7 +14,7 @@
         <label for="email">Email</label><br>
         <input placeholder="Enter your Email address" id="email" [formControl]="email" [class.faulty-entry]="email.invalid && (email.dirty || email.touched)" class="form-control">
         <span *ngIf="email.invalid && (email.dirty || email.touched)" class="error-msg">Please enter a valid email address</span>
-        <span *ngIf="!email.invalid " class="hint-message">Your email will never be passed on to third parties</span>
+        <span *ngIf="!email.invalid || email.untouched" class="hint-message">Your email will not be passed on to third parties</span>
     </div>
 
     <div class="">

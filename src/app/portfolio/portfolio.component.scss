@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 32px;
 
-  //background-color: var(--col-bg-light); // darker 1
+  background-color: var(--col-bg-light); // darker 1 --> into body
   
   .portfolio-row,
   .filter-buttons {
@@ -12,8 +12,8 @@
 }
 
 .filter-row, .portfolio-row {
-  background-color: var(--col-bg-light);
-  //background-color: var(--col-grey-02); // darker 2
+  background-color: var(--col-bg-light); // lighter 1
+  background-color: var(--col-grey-035); // darker 2
 }
 
 .filter-row {
@@ -109,8 +109,8 @@ h2 {
     p {
       text-align: center;
       line-height: 1.3;
-      color: var(--col-grey);
-      //color: rgba(0,0,0,0.6); // darker 3
+      color: var(--col-grey); // lighter
+      color: rgba(0,0,0,0.65); // darker 3
     }
 
     .buttons {
