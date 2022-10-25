@@ -1,4 +1,5 @@
 import { Character } from "./character.class";
+import { Mouse } from "./mouse.class";
 
 export class RainEffect {
     
@@ -17,6 +18,7 @@ export class RainEffect {
     numberOfCharactersPerColumn!: number;
     ctx!: CanvasRenderingContext2D;
     bgGradient!: any;   
+    mouse!: Mouse;
 
     constructor(canvasWidth: number, canvasHeight: number, context: CanvasRenderingContext2D) { // canvas?, canvas.width, canvas.height
         this.canvasWidth = canvasWidth;
@@ -24,6 +26,7 @@ export class RainEffect {
         this.ctx = context; // canvas
         this.numberOfColumns = canvasWidth / (this.fontSize * this.padding * 2);
         this.numberOfCharactersPerColumn = canvasHeight / (this.fontSize * this.padding * 2.5);
+        this.mouse = new Mouse(this.canvasWidth, this.canvasHeight);
         this.createCanvasBgGradient();
         this.#initialize();
     }
@@ -47,7 +50,7 @@ export class RainEffect {
             let columnAcceleration = (Math.random() * 0.008) + 0.002; // 0.002 -  ? test
             let columnY = (Math.random() * ((this.canvasHeight - this.fontSize * 2) - (this.fontSize * 2)) + this.fontSize * 2) * 0.33;
             for (let j = 0; j < this.numberOfCharactersPerColumn; j++) {
-                this.characterArray.push(new Character(i * this.fontSize * this.padding * 2, columnY + j * this.fontSize * this.padding * 2, columnAcceleration, this.canvasWidth, this.canvasHeight, this.ctx, this.fontSize));
+                this.characterArray.push(new Character(i * this.fontSize * this.padding * 2, columnY + j * this.fontSize * this.padding * 2, columnAcceleration, this.canvasWidth, this.canvasHeight, this.ctx, this.fontSize, this.mouse));
             }
         }
     }

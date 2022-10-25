@@ -1,5 +1,6 @@
 import { Character } from "./character.class";
 import { Dot } from "./dot.class";
+import { Mouse } from "./mouse.class";
 
 export class FloatEffect {
 
@@ -16,12 +17,14 @@ export class FloatEffect {
 
   ctx!: CanvasRenderingContext2D;
   bgGradient!: any;
+  mouse!: Mouse;;
 
   constructor(canvasWidth: number, canvasHeight: number, context: CanvasRenderingContext2D) {
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
     this.ctx = context; // canvas
-    this.createCanvasBgGradient();
+    this.mouse = new Mouse(this.canvasWidth, this.canvasHeight);
+    //this.createCanvasBgGradient();
     this.#initialize();
   }
 
@@ -34,7 +37,7 @@ export class FloatEffect {
     this.checkAnimationFrameTime(0);
   }
 
-  connect() {
+  connectDots() {
     let lineOpacity;
     for (let a = 0; a < this.particlesArray.length; a++) {
       for (let b = a; b < this.particlesArray.length; b++) {
@@ -61,7 +64,7 @@ export class FloatEffect {
     this.particlesArray = [];
     let numberOfParticles = (this.canvasHeight * this.canvasWidth) / 5000;//9000;
     for (let i = 0; i < numberOfParticles; i++) {
-        this.particlesArray.push(new Dot(this.canvasWidth, this.canvasHeight, this.ctx));
+        this.particlesArray.push(new Dot(this.canvasWidth, this.canvasHeight, this.ctx, this.mouse));
     }
   }
 
@@ -111,7 +114,7 @@ export class FloatEffect {
     for (let i = 0; i < this.particlesArray.length; i++) {
       this.particlesArray[i].moveDot();
     }
-    this.connect();
+    this.connectDots();
   }
 
 }

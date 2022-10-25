@@ -25,7 +25,7 @@ export class Character {
     //frame!: any;
     mouse!: any;
 
-    constructor(x: number, y: number, acceleration: number, canvasWidth: number, canvasHeight: number, context: any, fontSize: number) { //
+    constructor(x: number, y: number, acceleration: number, canvasWidth: number, canvasHeight: number, context: any, fontSize: number, mouse: Mouse) { //
         this.fontSize = fontSize; // TODO set fontsize in rel to screen size
         this.acceleration = acceleration; // * 0.01;
         this.speed = 0;
@@ -39,7 +39,7 @@ export class Character {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.ctx = context;
-        this.mouse = new Mouse(this.canvasWidth, this.canvasHeight);
+        this.mouse = mouse;
         // in class Mouse
         // this.frame = document.getElementById('frame');
         // this.setMouse();

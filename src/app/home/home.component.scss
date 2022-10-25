@@ -62,8 +62,8 @@
   left: 50%;
   top: calc(50% + 30px);
   transform: translate(-50%, -50%);
-  // text-align: center;
-  border-left: 4px solid var(--col-red);
+  text-align: center;
+  // border-left: 4px solid var(--col-red);
   padding-left: 16px;
 
   span {
