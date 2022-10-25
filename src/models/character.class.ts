@@ -1,3 +1,5 @@
+import { Mouse } from "./mouse.class";
+
 export class Character {
 
     // characters = "Fines01Front1End2Developer3With4Full5Stack6Basics/|JAVASCRIPT?ANGULAR?SQL?NoSQL?Git?RestAPI+789-*<>$";
@@ -19,7 +21,8 @@ export class Character {
     canvasHeight!: number;
     ctx;
     charGradient!: any;
-    frame!: any;
+    // in class Mouse:
+    //frame!: any;
     mouse!: any;
 
     constructor(x: number, y: number, acceleration: number, canvasWidth: number, canvasHeight: number, context: any, fontSize: number) { //
@@ -36,35 +39,11 @@ export class Character {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.ctx = context;
-        this.frame = document.getElementById('frame');
-        this.setMouse();
+        this.mouse = new Mouse(this.canvasWidth, this.canvasHeight);
+        // in class Mouse
+        // this.frame = document.getElementById('frame');
+        // this.setMouse();
         this.createCanvasCharGradient();
-    }
-
-    /**
-     * Sets mouse properties and binds events relevant to mouse - character interactions
-     */
-    setMouse() {
-        this.mouse = {
-            x: null,
-            y: null,
-            radius: (this.canvasHeight / 80) * (this.canvasWidth / 80),
-        }
-        this.frame.addEventListener('mousemove', (event: any)=> this.setMouseCoordinates(event));
-        this.frame.addEventListener('mouseout', ()=> this.clearMouseCoordinates());
-        this.frame.addEventListener('touchstart', (event: any)=> this.setMouseCoordinates(event));
-        this.frame.addEventListener('touchend', ()=> this.clearMouseCoordinates());
-        this.frame.addEventListener('click', ()=> this.clearMouseCoordinates())
-    }
-
-    clearMouseCoordinates(){
-        this.mouse.x = null;
-        this.mouse.y = null;
-    }
-
-    setMouseCoordinates(event: any){
-        this.mouse.x = event.x;
-        this.mouse.y = event.y;
     }
 
     /**
@@ -156,8 +135,9 @@ export class Character {
         if (this.canvasHeight > this.canvasWidth) length = this.canvasWidth;
         else length = this.canvasHeight;
         this.charGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 150, this.canvasWidth / 2, this.canvasHeight / 2, length*0.8); // (x1,y1,radius1,x2,y2,radius2) // inner circle (x,y,radius 1 && outer circle (x,y,radius 22)) --> gradient will be drawn between these two circles
-        this.charGradient.addColorStop(0, 'rgba(0,255,255, 0.05)'); // (offset[0,1], color) , offset 0 == start, offset 1 == end
-        this.charGradient.addColorStop(0.89, 'rgba(51, 0, 87, 0.5)');
+        this.charGradient.addColorStop(0, 'rgba(0,255,255, 0.2)'); // (offset[0,1], color) , offset 0 == start, offset 1 == end
+        this.charGradient.addColorStop(0.8, 'rgba(255,255,255, 0.08)');
+        this.charGradient.addColorStop(0.89, 'rgba(255,0,255, 0.09)');
     }
 
 }

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { FloatEffect } from 'src/models/float-effect';
 import { RainEffect } from 'src/models/rain-effect.class';
 
 @Component({
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('frame') frame!: ElementRef<any>;
   
   context!: CanvasRenderingContext2D | null;
-  animation!: RainEffect;
+  animation!: RainEffect | FloatEffect;
   canvasWidth!: number;
   canvasHeight!: number;
   
@@ -39,7 +40,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // console.log(this.frame.nativeElement.clientWidth)
     this.setCanvasHeight();
     this.cancelAnimation();
-    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
+    // if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
+    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
   }
 
   @HostListener('window:scroll', [])

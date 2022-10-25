@@ -6,8 +6,8 @@ export class RainEffect {
     accelerationPerFrame!: number;
     lastAnimationFrame = 0;
     animationFrameTimer = 0;
-    fps = 25;
-    padding: number = 1; // number > 0 
+    fps = 35;
+    padding: number = 1.25; // number > 0 
     animationFrameInterval = 1000 / this.fps; //amount of ms we wait until we trigger the next frame
     characterArray!: Character[];
     animationLoop!: number;
@@ -61,7 +61,7 @@ export class RainEffect {
         if (this.canvasHeight > this.canvasWidth) length = this.canvasWidth;
         else length = this.canvasHeight;
         this.bgGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 150, this.canvasWidth / 2, this.canvasHeight / 2, length*0.9);
-        this.bgGradient.addColorStop(0, 'rgba(51, 0, 87, 0.3)');
+        this.bgGradient.addColorStop(0, 'rgba(51, 0, 87, 0.4)');
         this.bgGradient.addColorStop(0.89,'rgba(40,40,40,0.2');
     }
 
@@ -93,10 +93,13 @@ export class RainEffect {
      */
     animate() {
         this.ctx.fillStyle = this.bgGradient; //radGradient1;
+        //this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
         this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
         for (let i = 0; i < this.characterArray.length; i++) {
             this.characterArray[i].update();
         }
+
+        //this.connect();
     }
 
 }
