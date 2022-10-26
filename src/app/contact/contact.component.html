@@ -21,7 +21,7 @@
         <label for="message">Message</label><br>
         <textarea placeholder="Enter your message" id="message" [formControl]="message" [class.faulty-entry]="message.invalid  && (message.dirty || message.touched)" class="form-control"></textarea>
         <!-- <span class="hint-message">300 Characters of 300 still left</span> -->
-        <span *ngIf="message.invalid  && (message.dirty || message.touched)" class="error-msg">Please enter a message</span>
+        <span *ngIf="message.invalid  && (message.dirty || message.touched)" class="error-msg message-error">Please enter a message</span>
     </div>
 
     <div class="">

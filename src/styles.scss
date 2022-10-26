@@ -1,7 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import './src/breakpoints.scss';
 
 :root {
     --menu-height: 60px;
+    --canvas-btm-height: 117px;
 
     --col-red: rgb(250, 39, 89);
     --col-teal: rgb(45, 252, 216);
@@ -11,6 +12,7 @@
     --col-red-05: rgba(250, 39, 89, 0.5);
     --col-teal-05: rgba(45, 252, 216, 0.5);
     --col-grey-05: rgba(91, 89, 99, 0.5);
+    --col-black-09: rgba(40, 40, 40, 0.9);
     --col-black-05: rgba(40, 40, 40, 0.5);
     --col-red-02: rgba(250, 39, 89, 0.2);
     --col-teal-02: rgba(45, 252, 216, 0.2);
@@ -42,8 +44,9 @@
 
 html, body { 
     height: 100%; 
-    font-family: Karla, sans-serif; // download Karla
     scroll-behavior: smooth;
+    font-family: Karla, sans-serif; // download Karla
+    font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1600 - 320))); // 1rem between 16px and 28px (viewports between 320px - 1600px)
 }
 
 body { 
@@ -63,6 +66,16 @@ button {
   background-color: transparent;
   font-weight: 800;
   transition: var(--transition);
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 16px;
+
+  @media screen and (max-width: $breakpoint-xs){
+    margin: 14px 0;
+    font-size: 14px;
+  }
 }
 
 textarea,
@@ -100,6 +113,7 @@ a {
   text-decoration: none;
   color: inherit;
   transition: var(--transition);
+  box-sizing: border-box;
 }
 
 img {
@@ -109,7 +123,7 @@ img {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -151,6 +165,102 @@ a.disabled, .disabled-link {
 .active-link {
   border-bottom: 2px solid rgba(255,255,255,0.8);
   color: rgba(255,255,255,0.8) !important;
+}
+
+// menu 
+
+.mobile-menu {
+  position: fixed;
+  top: var(--menu-height);
+  left: 0;
+  right: 0;
+  height: 100px;
+  //width: 100vw;
+  padding: 16px var(--distX);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  background-color: var(--col-black-09);
+  transition: var(--transition);
+
+  @media screen and (min-width: calc($breakpoint-sm + 1px)) {
+    // display: none;
+    top: -100%;
+  }
+
+  .menu-link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    // padding: 0px 16px;
+    margin-bottom:16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    //text-align: right;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .active-link {
+    border: none;
+    color: rgba(255,255,255,0.8);
+  }
+}
+
+.slide-down {
+  animation: slideDown 5s linear; // change animation-duratoion later
+  ;
+}
+
+@keyframes slideDown {
+  50% {
+    transform: translateX(+50%);
+  }
+  100% {
+    transform: translateX(+100%);
+  }
+}
+
+// 
+
+
+@media screen and (min-width: calc($breakpoint-sm + 1px)) {
+
+}
+
+@media screen and (min-width:calc($breakpoint-md + 1px)) {
+  :root {
+    --distX: 84px;
+  }
+}
+
+@media screen and (min-width: calc($breakpoint-lg + 1px)) {
+  :root {
+    --distX: 112px;
+  }
+}
+
+@media screen and (min-width: calc($breakpoint-xl + 1px)) {
+  :root {
+    --distX: 144px;
+  }
+
+  p{
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: calc($breakpoint-xxl + 1px)) {
+  :root {
+    --distX: 180px; // test
+  }
 }
 
 

@@ -1,13 +1,20 @@
+@import './src/breakpoints.scss';
+
 footer {
     padding: 16px var(--distX);
-    height: calc(var(--menu-height) );
     height: var(--menu-height);
     color: white;
     background-color: black;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        flex-direction: column-reverse;
+        gap: 16px;
+        height: calc(var(--menu-height) * 2);
+        justify-content: center
+    }
 }
 
 .footer-legal-links {
@@ -17,16 +24,36 @@ footer {
         color: rgba(255,255,255,0.5);
         font-size: 16px;
         margin-right: 32px;
+
+        &:last-child {
+            margin-right: 0;
+        }
         
         &:hover {
             color: rgba(255,255,255,0.8);
         }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width:100%;
+        text-align: center;
     }
 }
 
 .footer-social-links {
     a {
         margin-left: 32px;
+
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+        // text-align: center;
+        display: flex;
+        justify-content: space-between;
     }
 }
 

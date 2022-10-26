@@ -1,4 +1,3 @@
-import { Character } from "./character.class";
 import { Dot } from "./dot.class";
 import { Mouse } from "./mouse.class";
 
@@ -7,7 +6,7 @@ export class FloatEffect {
   accelerationPerFrame!: number;
   lastAnimationFrame = 0;
   animationFrameTimer = 0;
-  fps = 60;
+  fps = 50;
   
   animationFrameInterval = 1000 / this.fps; //amount of ms we wait until we trigger the next frame
   particlesArray!: Dot[]; // dots or letters
@@ -22,7 +21,7 @@ export class FloatEffect {
   constructor(canvasWidth: number, canvasHeight: number, context: CanvasRenderingContext2D) {
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
-    this.ctx = context; // canvas
+    this.ctx = context;
     this.mouse = new Mouse(this.canvasWidth, this.canvasHeight);
     //this.createCanvasBgGradient();
     this.#initialize();
@@ -33,7 +32,7 @@ export class FloatEffect {
    */
   #initialize() {
     if (this.animationLoop) cancelAnimationFrame(this.animationLoop);
-    this.generateParticles();
+    this.generateDotParticles();
     this.checkAnimationFrameTime(0);
   }
 
@@ -60,7 +59,7 @@ export class FloatEffect {
     }
   }
 
-  generateParticles() {
+  generateDotParticles() {
     this.particlesArray = [];
     let numberOfParticles = (this.canvasHeight * this.canvasWidth) / 5000;//9000;
     for (let i = 0; i < numberOfParticles; i++) {
@@ -109,8 +108,8 @@ export class FloatEffect {
    */
   animate() {
     //this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
-    this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
     //this.ctx.fillStyle = this.bgGradient;
+    this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
     for (let i = 0; i < this.particlesArray.length; i++) {
       this.particlesArray[i].moveDot();
     }

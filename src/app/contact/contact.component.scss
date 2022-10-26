@@ -1,12 +1,14 @@
+@import './src/breakpoints.scss';
+
 #contact {
-  padding: var(--distX);
+  padding: 3rem var(--distX);
   background-color: var(--col-black);
   color: white;
 }
 
 h2 {
   color: var(--col-teal-2);
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 900;
 }
 
@@ -40,8 +42,17 @@ input {
   font-size: 12px;
   //font-weight: 700;
   position: absolute;
-  bottom: 8px;
+  bottom: 16px;
   left: 0;
+
+  @media screen and (max-width: 371px) {
+    //position: relative;
+    bottom: 16px;
+  }
+}
+
+.message-error {
+  bottom: 21px;//8
 }
 
 .hint-message {
@@ -49,8 +60,18 @@ input {
   margin-top: 8px;
   font-size: 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 16px;
   left: 0;
+
+  @media screen and (max-width: 371px){
+    //position: relative;
+    //bottom: 16px;
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: $breakpoint-xs) {
+    bottom: 8px;
+  }
 }
 
 .faulty-entry {
@@ -58,12 +79,11 @@ input {
   border: transparent;
 }
 
-
 form {
   div {
     //margin-top: 16px;
     position: relative;
-    padding-bottom: 24px;
+    padding-bottom: 32px;
 
     &:last-child {
       padding-bottom: 0;
@@ -71,6 +91,10 @@ form {
       display: flex;
       justify-content: flex-end;
       gap: 32px;
+
+      @media screen and (max-width: $breakpoint-smmd) {
+        justify-content: space-between;
+      }
     }
   }
 

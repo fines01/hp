@@ -1,3 +1,5 @@
+@import './src/breakpoints.scss';
+
 .menu-spacer {
   flex: 1 1 auto;
 }
@@ -11,7 +13,7 @@
     // font-weight: 600;
     z-index: 2;
     position: fixed;
-    border-bottom: 1px solid black;
+    //border-bottom: 1px solid black;
     //border-bottom: 0.0125rem solid var(--col-teal); // if not home !!
     // box-sizing:border-box;
 
@@ -40,14 +42,27 @@
         margin: 0 16px;
         text-transform: uppercase;
 
-        &:last-child {
-            padding-right: 0;
+        &:last-of-type {
+            margin-right: 0; // GN!! 
         }
+    }
 
+    .mobile-menu {
+        position: fixed;
+        top: var(--menu-height);
+        left: 0; right: 0;
+        height: 100px;
+        //width: 100vw;
+        padding-left: var(--distX);
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        background-color: var(--col-black);
     }
     
-    .mobile-menu-icon {
-        margin-left: -16px;
+    .mobile-menu-btn {
+        position: relative;
+        left: 8px;
     }
     
     .menu-link, .mobile-menu-icon {
@@ -55,7 +70,7 @@
         transition: var(--transition);
 
         &:hover {
-            color: rgba(255,255,255,0.8); // adapt later w theme
+            color: rgba(255,255,255,0.8);
         }
 
     }
@@ -80,4 +95,21 @@
   width: 100%;
   height: 4px;
   background-color: var(--col-teal);
+}
+
+@media screen and (min-width: calc($breakpoint-sm + 1px)){
+    .mobile-menu-btn {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .link-desktop {
+        display: none;
+    }
 }

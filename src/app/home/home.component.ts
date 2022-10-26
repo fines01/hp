@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.init()
   }
 
-  setCanvasHeight(){
+  setCanvasSize(){
     this.canvasWidth = this.frame.nativeElement.clientWidth;
     this.canvasHeight = this.frame.nativeElement.clientHeight;
     this.canvas.nativeElement.width = this.canvasWidth;
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   init(){
     // console.log(this.frame.nativeElement.clientWidth)
     this.cancelAnimation();
-    this.setCanvasHeight();
+    this.setCanvasSize();
     if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
     // if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
   }
@@ -51,8 +51,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   cancelAnimation() {
-        if (this.animation && this.animation.animationLoop) cancelAnimationFrame(this.animation.animationLoop);
-    }
+    if (this.animation && this.animation.animationLoop) cancelAnimationFrame(this.animation.animationLoop);
+  }
 
     startAnimation() {
         if (this.animation) this.animation.checkAnimationFrameTime(Date.now());

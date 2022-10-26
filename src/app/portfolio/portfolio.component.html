@@ -4,8 +4,10 @@
     <h2>Portfolio</h2>
     <div class="filter-buttons">
       <button (click)="filterProjects()" [class.selected]="filter === undefined">All</button>
+      <!-- <span class="mobile-row"> -->
       <button (click)="filterProjects('JavaScript')" [class.selected]="filter === 'JavaScript'">JavaScript</button>
       <button (click)="filterProjects('Angular')" [class.selected]="filter === 'Angular'">Angular</button>
+      <!-- </span> -->
     </div>
     <!-- <div class="filter-divider"></div> -->
   </div>

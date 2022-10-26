@@ -12,6 +12,7 @@ export class AppComponent implements OnInit, OnDestroy {
   currentRoute!: string;
   routerSubscription!: Subscription;
   showDivider = false;
+  showMobileMenu = false;
 
   constructor(private router: Router) {}
 
@@ -27,7 +28,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', [])
   onScroll(target?: any) {
-    if (window.scrollY >= window.innerHeight - 60) this.showDivider = true;
+    if (window.scrollY >= window.innerHeight - 60 - 117 + 4) this.showDivider = true; // 117: css var 'canvas-btm-height', 4: divider-height
     else this.showDivider = false;
+  }
+
+  toggleMenu() {
+    this.showMobileMenu = !this.showMobileMenu;
+    // add animation
+  }
+
+  closeMenu() {
+    this.showMobileMenu= false;
   }
 }
