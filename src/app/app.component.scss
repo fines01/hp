@@ -21,7 +21,14 @@
         height:100%;
         display: flex;
         align-items: center;
+        justify-content: center;
         cursor: pointer;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;;
+        }
     }
 
     .logo {
@@ -62,7 +69,7 @@
     
     .mobile-menu-btn {
         position: relative;
-        left: 8px;
+        left: 4px;
     }
     
     .menu-link, .mobile-menu-icon {
@@ -75,6 +82,11 @@
 
     }
 
+}
+
+.mat-icon {
+    font-size: 36px;
+    width: 32px;
 }
 
 .menu-border {

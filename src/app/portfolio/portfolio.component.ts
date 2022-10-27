@@ -77,7 +77,7 @@ export class PortfolioComponent implements OnInit {
     {
       name: 'Simple CRM',
       description: 'A simple but smart project management tool.',
-      img: 'assets/project-images/crm1.png',
+      img: 'assets/project-images/crm1.png', //'assets/img/test.png', 
       GHlink: 'https://github.com/fines01/simple-crm',
       link: 'https://ines-fritsch.developerakademie.net/simple-crm/home/sign-in',
       tags: ['Angular','TypeScript','SCSS','HTML', 'Firebase', 'NoSQL'],

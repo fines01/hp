@@ -1,4 +1,5 @@
 @import './src/breakpoints.scss';
+// @import './src/fonts.scss'; // GET http://localhost:4200/assets/fonts/... net::ERR_ABORTED 404 (Not Found) in Console
 
 :root {
     --menu-height: 60px;
@@ -40,6 +41,12 @@
 
     --col-white: rgb(245, 243, 243);
 
+}
+
+/* karla-regular - latin */
+@font-face { // same err as above
+  font-family: 'Karla';
+  src: url('/assets/fonts/karla-v23-latin-regular.ttf') format('truetype');
 }
 
 html, body { 
@@ -123,9 +130,15 @@ img {
 }
 
 h2 {
-  font-size: 2rem;
+  // font-size: 2rem;
   margin: 0;
 }
+
+h3 {
+  // font-size: 1.5rem;
+}
+
+// h4 {}
 
 .mb-32 {
   margin-bottom: 32px;
@@ -231,8 +244,10 @@ a.disabled, .disabled-link {
 // 
 
 
-@media screen and (min-width: calc($breakpoint-sm + 1px)) {
-
+@media screen and (max-width: $breakpoint-xs) {
+  :root {
+    --distX: 32px;
+  }
 }
 
 @media screen and (min-width:calc($breakpoint-md + 1px)) {
