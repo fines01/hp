@@ -134,11 +134,6 @@ h2 {
   margin: 0;
 }
 
-h3 {
-  // font-size: 1.5rem;
-}
-
-// h4 {}
 
 .mb-32 {
   margin-bottom: 32px;
@@ -240,8 +235,6 @@ a.disabled, .disabled-link {
     transform: translateX(+100%);
   }
 }
-
-// 
 
 
 @media screen and (max-width: $breakpoint-xs) {

@@ -12,7 +12,7 @@
     <mat-icon class="mobile-menu-icon">menu</mat-icon>
   </button>
 </mat-toolbar>
-<div *ngIf="showMobileMenu" class="mobile-menu">
+<div [@slideDown]="showMobileMenu ? 'open' : 'closed'" class="mobile-menu">
   <a (click)="closeMenu()" class="menu-link" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
   <a (click)="closeMenu()" class="menu-link" href="#portfolio">Portfolio</a>
   <a (click)="closeMenu()" class="menu-link" href="#contact">Contact</a>

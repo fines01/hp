@@ -1,4 +1,4 @@
-<section id="portfolio" #portfolio>
+<section id="portfolio" #portfolio (scroll)="onScroll($event)">
 
   <div class="filter-row">
     <h2>Portfolio</h2>
@@ -13,7 +13,14 @@
   </div>
 
   <div *ngFor="let project of filteredProjects" class="portfolio-row">
-    <img src="{{ project.img }}" alt="">
+    <div class="project-img-wrapper">
+      <img src="{{ project.img }}" alt="project image" class="">
+      <div class="img-overlay">
+        <div class="">
+          <span *ngFor="let tag of project.tags" class="project-tag">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
     <div class="">
         <h2>{{ project.name }}</h2>
         <p>{{ project.description }}</p>

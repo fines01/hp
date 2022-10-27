@@ -2,10 +2,13 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
 import { FloatEffect } from 'src/models/float-effect';
 import { RainEffect } from 'src/models/rain-effect.class';
 
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
@@ -54,8 +57,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (this.animation && this.animation.animationLoop) cancelAnimationFrame(this.animation.animationLoop);
   }
 
-    startAnimation() {
-        if (this.animation) this.animation.checkAnimationFrameTime(Date.now());
-    }
+  startAnimation() {
+    if (this.animation) this.animation.checkAnimationFrameTime(Date.now());
+  }
+
+  
 
 }
