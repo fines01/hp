@@ -30,13 +30,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', [])
   onScroll(target?: any) {
-    if (window.scrollY >= window.innerHeight - 60 - 117 + 4) this.showDivider = true; // 117: css var 'canvas-btm-height', 4: divider-height
+    if (window.scrollY >= window.innerHeight - 60 - 117 + 4 && !this.showMobileMenu) this.showDivider = true; // 117: css var 'canvas-btm-height', 4: divider-height
     else this.showDivider = false;
   }
 
   toggleMenu() {
     this.showMobileMenu = !this.showMobileMenu;
-    // add animation
+    this.onScroll();
   }
 
   closeMenu() {

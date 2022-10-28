@@ -1,17 +1,23 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { SlideInAnimation } from '../animations';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { SlideInAnimation, slideUpAnimation } from '../animations';
 import { projects } from 'src/assets/data/projects';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  animations: [ SlideInAnimation ],
+  animations: [ SlideInAnimation, slideUpAnimation ],
 })
-export class PortfolioComponent implements OnInit, OnDestroy {
+export class PortfolioComponent implements OnInit {
 
   filteredProjects: any[] = projects;
   filter!: string | undefined;
+
+  headerAnimationIn: boolean = false;
+  btnAnimationIn: boolean = false;
+  projectRowAnimationIn: boolean = false;
+
+  // @ViewChild('portfolio') sectionRef!: ElementRef;
 
   constructor() { }
 
@@ -19,8 +25,13 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     this.filteredProjects = projects;
   }
 
-  ngOnDestroy(): void {
-      console.log('bye port:)');
+  test(value?: any){
+    console.log('Intersecting pf: ', value);
+  }
+
+  setIntersection(isIntersecting: boolean, element: string) {
+    if (element == 'header') this.headerAnimationIn = isIntersecting; // now also check for scroll-direction? (scroll-up: stay in)
+    if (element == 'buttons') this.btnAnimationIn = isIntersecting;
   }
 
   filterProjects(filterTerm?: string) {
@@ -30,9 +41,5 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     else this.filteredProjects = projects;
     this.filter = filterTerm;
   }
-
-  onScroll(event: any){
-  }
-
 
 }

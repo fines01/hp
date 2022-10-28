@@ -1,8 +1,8 @@
-<section id="portfolio" #portfolio (scroll)="onScroll($event)">
+<section id="portfolio" #portfolio>
 
   <div class="filter-row">
-    <h2>Portfolio</h2>
-    <div class="filter-buttons">
+    <h2 appObserveIntersection (isIntersecting)="setIntersection($event, 'header')" [@slideIn]="headerAnimationIn ? 'in' : 'out'">Portfolio</h2>
+    <div class="filter-buttons" appObserveIntersection [threshold]="0.8" (isIntersecting)="setIntersection($event, 'buttons')" [@slideUp]="btnAnimationIn ? 'in' : 'out'">
       <button (click)="filterProjects()" [class.selected]="filter === undefined">All</button>
       <!-- <span class="mobile-row"> -->
       <button (click)="filterProjects('JavaScript')" [class.selected]="filter === 'JavaScript'">JavaScript</button>
@@ -12,8 +12,8 @@
     <!-- <div class="filter-divider"></div> -->
   </div>
 
-  <div *ngFor="let project of filteredProjects" class="portfolio-row">
-    <div class="project-img-wrapper">
+  <div *ngFor="let project of filteredProjects, let i = index" class="portfolio-row" appObserveIntersection #el="intersection" (isIntersecting)="project.intersection">
+    <div class="project-img-wrapper" [@slideUp]="el._intersecting ? 'in' : 'out'">
       <img src="{{ project.img }}" alt="project image" class="">
       <div class="img-overlay">
         <div class="">
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="">
+    <div class="" [@slideUp]="el._intersecting ? 'in' : 'out'">
         <h2>{{ project.name }}</h2>
         <p>{{ project.description }}</p>
         <div class="buttons">
