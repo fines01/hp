@@ -1,5 +1,6 @@
 <!-- Toolbar (Desktop) -->
-<mat-toolbar class="menu" [class.menu-border]="showDivider || currentRoute === '/about-me'">
+<!-- <mat-toolbar class="menu" [class.menu-border]="showDivider || currentRoute === '/about-me'"> -->
+<mat-toolbar class="menu" [ngClass]="{'menu-border': showDivider || currentRoute === '/about-me', 'border-fade-out': !showDivider}">
   <span class="logo-wrapper" [routerLink]="['/']" matTooltip="Home">
     <a href="#home"><img src="assets/img/logo-white.png" alt="logo" class="logo"></a>
   </span>

@@ -7,19 +7,21 @@ import { debounceTime, Observable, Subscription } from 'rxjs';
 })
 export class ObserveIntersectionDirective implements AfterViewInit, OnDestroy {
 
+  // change default intersectionObserver options via input parameter if necessary:
   @Input() root: HTMLElement | null = null;
   @Input() rootMargin = '200px 0px 0px 0px';
   @Input() threshold = 1;
-  @Input() debounceTime = 225; // tells us when the user has stopped scrolling
-  @Input() isContinuous = false; // flag that we use to decide whether we want to continue observing an element for visibility changes
+
+  // @Input() debounceTime = 225; // tells us when the user has stopped scrolling
+  // @Input() isContinuous = false; // flag that we use to decide whether we want to continue observing an element for visibility changes
 
   @Output() isIntersecting = new EventEmitter<boolean>() //  emits an event that tells us if the element is intersecting
-  @Output() scrollDirection = new EventEmitter<string | null>();
+  //@Output() scrollDirection = new EventEmitter<string | null>();
 
-  options!: IntersectionObserverInit;
   intersectionObserver!: IntersectionObserver;
+  options!: IntersectionObserverInit;
   _intersecting = false;  
-  _scrollDirection: string | null = null; // null, +1 for down, -1 for up, or 'up', 'down'
+  //_scrollDirection: string | null = null; // null, +1 for down, -1 for up, or 'up', 'down'
   // subscription!: Subscription;
 
   constructor(private element: ElementRef) { }
@@ -59,7 +61,10 @@ export class ObserveIntersectionDirective implements AfterViewInit, OnDestroy {
         // this.intersectionObserver.unobserve(<Element>(this.element.nativeElement));
         // this.intersectionObserver.disconnect();
       }
-      else this.isIntersecting.emit(false);
+      else {
+        this.isIntersecting.emit(false);
+        this._intersecting = false;
+      }
     });
   }
 

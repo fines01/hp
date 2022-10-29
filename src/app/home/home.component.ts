@@ -16,14 +16,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('frame') frame!: ElementRef<any>;
   
   context!: CanvasRenderingContext2D | null;
-  animation!: RainEffect | FloatEffect;
+  animation!: RainEffect | FloatEffect | null;
   canvasWidth!: number;
   canvasHeight!: number;
   
   constructor() { }
   
   ngOnInit(): void {
-  
+    window.scrollTo(0, 0);
   }
 
   ngAfterViewInit(): void {
@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // console.log(this.frame.nativeElement.clientWidth)
     this.cancelAnimation();
     this.setCanvasSize();
-    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
-    // if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
+    // if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
+    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
   }
 
   @HostListener('window:scroll', [])
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   cancelAnimation() {
-    if (this.animation && this.animation.animationLoop) cancelAnimationFrame(this.animation.animationLoop);
+    if (this.animation) cancelAnimationFrame(this.animation.animationLoop);
   }
 
   startAnimation() {

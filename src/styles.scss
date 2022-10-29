@@ -8,11 +8,16 @@
     --col-red: rgb(250, 39, 89);
     --col-teal: rgb(45, 252, 216);
     --col-teal-2: rgba(46, 252, 216, 1);
+
+    --col-teal-a: rgb(5, 194, 201);
+    --col-teal-b: rgb(1, 161, 167);
+    
     --col-dark: rgb(26, 26, 26); // #1a1a1a
 
     --col-red-05: rgba(250, 39, 89, 0.5);
     --col-teal-05: rgba(45, 252, 216, 0.5);
     --col-grey-05: rgba(91, 89, 99, 0.5);
+    --col-red-07: rgba(250, 39, 89, 0.7);
     --col-black-09: rgba(40, 40, 40, 0.9);
     --col-black-05: rgba(40, 40, 40, 0.5);
     --col-red-02: rgba(250, 39, 89, 0.2);
@@ -62,6 +67,7 @@ body {
   font-family: Karla, sans-serif; // download Karla
   color: var(--col-black);
   background-color: var(--col-white);
+  background-color: var(--col-bg-light);
 }
 
 button {
@@ -99,8 +105,7 @@ input {
   margin-top: 8px;
   margin-bottom: 4px;
   caret-color: var(--col-teal-2);
-  color: white;
-  
+  color: white;  
 
   &:focus {
     outline: 1px solid var(--col-teal-2);

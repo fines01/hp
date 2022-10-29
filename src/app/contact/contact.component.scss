@@ -1,7 +1,7 @@
 @import './src/breakpoints.scss';
 
 #contact {
-  padding: 3rem var(--distX);
+  padding: 60px var(--distX);
   background-color: var(--col-black);
   color: white;
 }
@@ -65,18 +65,17 @@ input {
 
   @media screen and (max-width: 371px){
     //position: relative;
-    //bottom: 16px;
+    bottom: 20px;
     font-size: 11px;
   }
 
   @media screen and (max-width: $breakpoint-xs) {
-    bottom: 8px;
+    //bottom: 8px;
   }
 }
 
 .faulty-entry {
-  outline: 1px solid var(--col-red-05);
-  border: transparent;
+  border: 1px solid var(--col-red-07);
 }
 
 form {

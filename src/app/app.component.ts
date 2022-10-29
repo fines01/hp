@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { slideDownAnimation, SlideInAnimation } from './animations';
+import { slideDownAnimation, slideInAnimation} from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [ SlideInAnimation, slideDownAnimation ],
+  animations: [ slideInAnimation, slideDownAnimation ],
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'my-website';

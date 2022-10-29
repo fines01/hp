@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { slideInAnimation, slideUpAnimation } from '../animations';
 import { ContactService } from '../contact.service';
 import { DialogContactResponseComponent } from '../dialog-contact-response/dialog-contact-response.component';
 
@@ -8,7 +9,8 @@ import { DialogContactResponseComponent } from '../dialog-contact-response/dialo
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [slideInAnimation, slideUpAnimation, ]
 })
 export class ContactComponent implements OnInit {
 

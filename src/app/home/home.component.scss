@@ -74,13 +74,14 @@
   box-sizing: border-box;
 
   span {
-    // color: var(--col-teal);
+    color: var(--col-teal-a);
     color: var(--col-red);
     font-weight: 700;
   }
 
   .color-highlight {
     color: var(--col-teal);
+    color: var(--col-teal-a);
   }
 
   @media screen and (max-width: $breakpoint-sm) {

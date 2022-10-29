@@ -4,11 +4,9 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-
   background-color: var(--col-bg-light); // darker 1 --> into body
   
-  .portfolio-row,
-  .filter-buttons {
+  .portfolio-row {
     padding: 3rem var(--distX);
   }
 }
@@ -16,6 +14,7 @@
 .filter-row, .portfolio-row {
   background-color: var(--col-bg-light); // lighter 1
   background-color: var(--col-grey-035); // darker 2
+  // background-color: var(--col-white);
 }
 
 .filter-row {
@@ -23,7 +22,9 @@
   flex-direction: column;
   align-items: center;
 //   margin-bottom: -32px;
-  padding: 16px var(--distX);
+  // padding: 16px var(--distX);
+  padding: 60px var(--distX) 0 var(--distX);
+   padding: 60px var(--distX);
   position: relative;
 
   .filter-divider {
@@ -45,13 +46,14 @@ h2 {
   text-transform: uppercase;
   border-bottom: 4px solid var(--col-black);
   margin-bottom: 0;
-  margin-top: 16px;
+  // margin-top: 16px;
 }
 
 .filter-buttons {
 
   display: block;
   width: 100%;
+  padding-top: 48px;
         
   button {
     cursor: pointer;

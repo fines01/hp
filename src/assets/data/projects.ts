@@ -1,4 +1,6 @@
- export const projects = [
+import { Project } from "src/app/interfaces/project";
+
+ export const projects : Project[] = [
     {
       name: 'My website',
       description: 'My portofolio website. This site is built with Angular and written in HTML, SCSS and TypeScript.',
