@@ -1,17 +1,5 @@
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-  group,
-  query,
-  stagger,
-  keyframes,
-} from '@angular/animations';
-import {
-  reduce
-} from 'rxjs';
+import {trigger, state, style, transition, animate, group, query, stagger, keyframes, } from '@angular/animations';
+// import { reduce } from 'rxjs';
 
 export const slideDownAnimation = [ // menu slide-down
   trigger('slideDown', [
@@ -129,14 +117,19 @@ export const barAnimation = [
   ])
 ]
 
-// export const slideInBorderAnimation = [
-//   trigger('showDivider', [
-//     state('out', style({
-//       border:'none',
-//     })),
-//     state('in', style({
-//       borderBottom: 'border-bottom: 3px solid #2dfcd8',
-//     })),
-//     transition('out <=> in', [animate('425ms ease-out')]),
-//   ])
-// ]
+export const slideUpToplinkAnimation = [
+  trigger('slideUpLink', [
+    state('in', style({
+      opacity: 0.65, //'{{ baseOpacity }}
+      transform: '{{ baseTransform }}'
+      // transform: 'translate(-50%, -100%) scale(1)', // '{{ baseTransformPosition }}'
+    }),{params:{baseTransform: ''}}),
+    state('out', style({
+      opacity: 0,
+      transform: 'translate(-50%, 16px) scale(0)',
+    })),
+    transition('in <=> out', [
+      animate('450ms ease-out'),
+    ]),
+  ])
+]

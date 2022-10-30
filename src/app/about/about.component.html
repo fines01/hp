@@ -20,9 +20,15 @@
     </div>
     <div class="about-secondary">
         <div class="row" appObserveIntersection #aboutHeader="intersection" [@slideIn]="aboutHeader._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
-            <h3>Who I Am</h3>
+            <!-- <h3>Who I Am</h3> -->
+            <div class="quotation-start-img"><img src="assets/img/icons/quotationmarks.png" alt="quotation marks"></div>
         </div>
         <p appObserveIntersection #aboutDesc="intersection" [@slideInReverse]="aboutDesc._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, iure deleniti. Eos minima veritatis odio impedit laborum? Dignissimos sed dolores hic omnis laboriosam, facilis, eum cumque error, dicta sit exercitationem beatae! Voluptates molestiae dolorum laborum corporis impedit libero nostrum quam eius pariatur, facere ipsam vero suscipit unde incidunt neque ad asperiores consequatur. At, ipsam fuga?</p>
+        <div class="quotation-end"  appObserveIntersection #quotationEnd="intersection" [@slideIn]="quotationEnd._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
     </div>
 </section>
 

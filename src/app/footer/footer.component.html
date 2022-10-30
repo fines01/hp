@@ -10,4 +10,13 @@
         <a disabled class="disabled-link" href="https://www.linkedin.com/in/ines-f-10719121a/" target="__blank"><img src="assets/img/icons/linkedin-box-fill.png" alt="LinkedIn icon" class="social-icon"></a>
         <a disabled class="disabled-link" href="https://www.xing.com/profile/Ines_Fritsch5/cv" target="__blank"><img src="assets/img/icons/xing-fill.png" alt="Xing icon" class="social-icon"></a>
     </div>
+
+    <div class="top-link" appObserveIntersection #link="intersection" 
+        [threshold]="0.5" 
+        [rootMargin]="'200px 0px 0px 0px'"
+        [@slideUpLink]="{value: link._intersecting ? 'in' : 'out', params: {baseTransform: linkBaseTransformPosition}}" 
+        (click)="onScrollToTop()">
+        <!-- show only in main-section? -->
+        <img src="assets/img/icons/arrow-up-white.png" class="" alt="arrow up icon">
+    </div>
 </footer>

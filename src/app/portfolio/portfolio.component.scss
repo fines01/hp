@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  background-color: var(--col-bg-light); // darker 1 --> into body
+  //background-color: var(--col-bg-light); // darker 1 --> into body
   
   .portfolio-row {
     padding: 3rem var(--distX);
@@ -12,8 +12,8 @@
 }
 
 .filter-row, .portfolio-row {
-  background-color: var(--col-bg-light); // lighter 1
   background-color: var(--col-grey-035); // darker 2
+  background-color: var(--col-bg-light); // lighter 1
   // background-color: var(--col-white);
 }
 
@@ -60,6 +60,7 @@ h2 {
     width: 33%; // 1% left todistribute as margin 
     height: 50px;
     border: 1px solid var(--col-teal);
+    border: 1px solid var(--col-cyan-40);
     box-sizing: border-box;
 
     &:nth-child(2) {
@@ -69,12 +70,15 @@ h2 {
 
     &:hover:not(.selected) {
       background-color: var(--col-teal-02);
+      background-color: var(--col-teal);
+      border-color: var(--col-teal);
       color: var(--col-gray);
     }
   }
 
   .selected {
     background-color: var(--col-teal);
+    background-color: var(--col-cyan-40);
   }
 
   @media screen and (max-width: 402px) {
@@ -146,6 +150,12 @@ h2 {
     
     img {
       object-fit: contain;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border-top: 12px solid rgba(0,0,0);
+      border-bottom: 12px solid rgba(0,0,0);
+      border-left: 6px solid rgba(0,0,0,0.9);
+      border-right: 6px solid rgba(0,0,0,0.9);
     }
   }
   
@@ -232,6 +242,7 @@ h2 {
 
       a:nth-child(2n) {
         background-color: var(--col-teal-05);
+        background-color: var(--col-cyan-40);
       }
 
       a { 
@@ -241,9 +252,11 @@ h2 {
         width: 40%;
         //padding: 8px 16px;
         border: 1px solid var(--col-teal);
+        border: 1px solid var(--col-cyan-40);
         
         &:hover {
           background-color: var(--col-teal);
+          border-color: var(--col-teal);
         }
 
         @media screen and (max-width: $breakpoint-lg) { //992px

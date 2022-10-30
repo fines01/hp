@@ -1,16 +1,28 @@
 @import './src/breakpoints.scss';
-// @import './src/fonts.scss'; // GET http://localhost:4200/assets/fonts/... net::ERR_ABORTED 404 (Not Found) in Console
+//@import './src/fonts.scss'; // GET http://localhost:4200/assets/fonts/... net::ERR_ABORTED 404 (Not Found) in Console
 
 :root {
     --menu-height: 60px;
     --canvas-btm-height: 117px;
 
     --col-red: rgb(250, 39, 89);
-    --col-teal: rgb(45, 252, 216);
-    --col-teal-2: rgba(46, 252, 216, 1);
+    --col-red-40: #c70532;
+    --col-teal: rgb(45, 252, 216); //2dfcd8 //58% -primary
+    --col-teal-90: #cdfef6;//secondary (97)
+    --col-teal-95: #e6fffa; // secondary (97)
+    --col-teal-70: #68fde4;// action 73%
 
-    --col-teal-a: rgb(5, 194, 201);
-    --col-teal-b: rgb(1, 161, 167);
+    // --col-teal-40: #03c9a8; //40%;
+    // --col-teal-35: #03b093; // 35% // --> hover
+    // --col-teal-30: #02977e;
+
+    --col-cyan-40: #00cccc;
+    //--col-cyan-35: #00b3b3;
+    --col-cyan-30: #009999;
+    // --col-cyan-25: #008080;
+
+    // --col-teal-a: rgb(5, 194, 201); //05c2c9 (40%)
+    // --col-teal-b: rgb(1, 161, 167); //01a1a7 (33%)
     
     --col-dark: rgb(26, 26, 26); // #1a1a1a
 
@@ -18,7 +30,7 @@
     --col-teal-05: rgba(45, 252, 216, 0.5);
     --col-grey-05: rgba(91, 89, 99, 0.5);
     --col-red-07: rgba(250, 39, 89, 0.7);
-    --col-black-09: rgba(40, 40, 40, 0.9);
+    --col-black-06: rgba(40, 40, 40, 0.6);
     --col-black-05: rgba(40, 40, 40, 0.5);
     --col-red-02: rgba(250, 39, 89, 0.2);
     --col-teal-02: rgba(45, 252, 216, 0.2);
@@ -37,10 +49,11 @@
     --transition: all 125ms linear;
     
     // minimal color scheme
-    --col-bg-light: rgb(229, 229, 229);
-    --col-blue-primary: rgb(18, 107, 251);
-    --col-blue-secondary: rgb(238, 244, 255);
-    --col-blue-action: rgb(123, 185, 250);
+    --col-bg-light: rgb(229, 229, 229); // 90% grau
+    --col-blue-primary: rgb(18, 107, 251); //53%
+    --col-blue-hover: #0349B9; // 37%
+    --col-blue-secondary: rgb(238, 244, 255); //97%
+    --col-blue-action: rgb(123, 185, 250); //73%
     // --col-grey: rgb(91, 89, 99);
     // --col-black: rgb(40, 40, 40);
 
@@ -55,19 +68,20 @@
 }
 
 html, body { 
-    height: 100%; 
+    height: 100%;
+    width: 100%;
     scroll-behavior: smooth;
-    font-family: Karla, sans-serif; // download Karla
     font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1600 - 320))); // 1rem between 16px and 28px (viewports between 320px - 1600px)
 }
 
 body { 
   margin: 0; 
   // font-family: Roboto, "Helvetica Neue", sans-serif; 
-  font-family: Karla, sans-serif; // download Karla
+  font-family: Karla, sans-serif; // dl Karla, Gilroy-Medium & Gilroy-Bold
   color: var(--col-black);
-  background-color: var(--col-white);
   background-color: var(--col-bg-light);
+  background-color: var(--col-white);
+  overflow-x: hidden;
 }
 
 button {
@@ -104,11 +118,11 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.4);
   margin-top: 8px;
   margin-bottom: 4px;
-  caret-color: var(--col-teal-2);
+  caret-color: var(--col-teal);
   color: white;  
 
   &:focus {
-    outline: 1px solid var(--col-teal-2);
+    outline: 1px solid var(--col-teal);
   }
 }
 
@@ -168,6 +182,7 @@ h2 {
   background-color: var(--col-grey-02) !important;
   cursor: not-allowed;
   border: none !important;
+  opacity: 0.6;
 }
 
 a.disabled, .disabled-link {
@@ -232,6 +247,28 @@ a.disabled, .disabled-link {
   ;
 }
 
+/* *** Scrollbar *** */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(230, 230, 230);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--col-black-06);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--col-black-05);
+}
+
 @keyframes slideDown {
   50% {
     transform: translateX(+50%);
@@ -240,7 +277,6 @@ a.disabled, .disabled-link {
     transform: translateX(+100%);
   }
 }
-
 
 @media screen and (max-width: $breakpoint-xs) {
   :root {

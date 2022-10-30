@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // console.log(this.frame.nativeElement.clientWidth)
     this.cancelAnimation();
     this.setCanvasSize();
-    // if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
-    if(this.canvasWidth && this.canvasHeight && this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
+    if(this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
+    //if(this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
   }
 
   @HostListener('window:scroll', [])

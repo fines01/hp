@@ -7,7 +7,7 @@
 }
 
 h2 {
-  color: var(--col-teal-2);
+  color: var(--col-teal);
   font-size: 2rem;
   font-weight: 900;
 }
@@ -17,7 +17,7 @@ p {
   margin-bottom: 32px;
 
   .mailto-link {
-    color: var(--col-teal-2);
+    color: var(--col-teal);
   }
 }
 
@@ -98,8 +98,8 @@ form {
   }
 
   button {
-    border: 1px solid var(--col-teal-2);
-    color: var(--col-teal-2);
+    border: 1px solid var(--col-teal);
+    color: var(--col-teal);
     border-radius: 2px;
     width: 160px;
     height: 55px;

@@ -65,3 +65,44 @@ footer {
         transform: scale(1.1);
     }
 }
+
+
+.top-link {
+    $link-opacity: 0.65;
+    $link-transformY: -100%;
+
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:8px;
+    background-color: var(--col-red);
+    border-radius: 50%;
+    opacity: $link-opacity;
+    z-index:2;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, $link-transformY);
+    transition: var(--transition);
+
+    &:hover {
+        // transform: translate(-50%, $link-transformY) scale(1.1);
+        // opacity: 1; // style: opacity & transform set in animation - does not work here
+        padding: 9px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm){
+        $link-transformY: -190%;
+        height:24px;
+        width: 24px;
+        transform: translate(-50%, $link-transformY);
+
+        &:hover {
+            //transform: translate(-50%, $link-transformY) scale(1.1);
+            padding: 8.5px;
+           
+        }
+    }
+}

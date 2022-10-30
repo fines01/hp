@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './contact.service';
 import { DialogContactResponseComponent } from './dialog-contact-response/dialog-contact-response.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { ObserveIntersectionDirective } from './observe-intersection.directive';
+import { ObserveIntersectionDirective } from './directives/observe-intersection.directive';
 
 
 @NgModule({
