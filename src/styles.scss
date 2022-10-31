@@ -208,7 +208,7 @@ a.disabled, .disabled-link {
   display: flex;
   flex-direction: column;
   z-index: 2;
-  background-color: var(--col-black-09);
+  background-color: var(--col-black);
   transition: var(--transition);
 
   @media screen and (min-width: calc($breakpoint-sm + 1px)) {

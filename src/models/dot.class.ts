@@ -3,8 +3,8 @@ import { Mouse } from "./mouse.class";
 
 export class Dot {
 
-    particleOpacity: number = 0.5;
-    radius: number = 2;
+    particleOpacity: number = 0.12;
+    radius: number = (Math.random() * 8) + 2;
     //colors = [`rgb(45, 252, 216,${this.particleOpacity})`, `rgb(250, 39, 89,${this.particleOpacity}), rgba(0,255,255,${this.particleOpacity}), rgb(212, 175, 55,${this.particleOpacity})`];
     color= `rgba(255,255,255,${this.particleOpacity})`;
     //rgbValue = '255,255,255';
@@ -25,10 +25,10 @@ export class Dot {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.ctx = context;
-        this.x = (Math.random() * ((innerWidth - this.radius * 2) - (this.radius * 2)) + this.radius * 2);
-        this.y = (Math.random() * ((innerHeight - this.radius * 2) - (this.radius * 2)) + this.radius * 2);
+        this.x = (Math.random() * ((this.canvasWidth - this.radius * 2) - (this.radius * 2)) + this.radius * 2);
+        this.y = (Math.random() * ((this.canvasHeight - this.radius * 2) - (this.radius * 2)) + this.radius * 2);
         this.directionX = (Math.random() * 0.125) - 0.0625;
-        this.directionY = (Math.random() * 0.5) - 0.25;
+        this.directionY = (Math.random() * 1) - 0.5;
         //this.colorIndex = Math.floor(Math.random() * this.colors.length);
         // this.radius = (Math.random() * 4) + 1; // random between 1 and 4;
         // this.particleOpacity = (Math.random() * 0.6) + 0.4;
@@ -85,6 +85,7 @@ export class Dot {
             // check from which side the particle comes (and if it is far enough from the edge)
             // push dot particle 
             this.pushed = true;
+            //console.log('ouch', this.mouse.x, this.mouse.y);
             setTimeout(()=>{
                 this.pushed = false;
             },1100);
@@ -97,7 +98,7 @@ export class Dot {
     }
 
     pushDot(coordinate: string, direction: number) {
-         if (coordinate == 'y') {
+        if (coordinate == 'y') {
             this.y += direction * this.pushRadius;
             setTimeout(()=>{
                 this.y -= (direction * this.pushRadius + this.directionY);

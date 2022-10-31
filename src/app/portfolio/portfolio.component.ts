@@ -26,18 +26,14 @@ export class PortfolioComponent implements OnInit {
     this.filteredProjects = projects;
   }
 
-  test(value?: any){
-    console.log('Intersecting pf: ', value);
-  }
+  // setIntersection(isIntersecting: boolean, element: string) {
+  //   if (element == 'header') this.headerAnimationIn = isIntersecting; // now also check for scroll-direction? (scroll-up: stay in)
+  //   if (element == 'buttons') this.btnAnimationIn = isIntersecting;
+  // }
 
-  setIntersection(isIntersecting: boolean, element: string) {
-    if (element == 'header') this.headerAnimationIn = isIntersecting; // now also check for scroll-direction? (scroll-up: stay in)
-    if (element == 'buttons') this.btnAnimationIn = isIntersecting;
-  }
-
-  setRowIntersection(isIntersecting: boolean, elementIndex: number){
-    this.projectRowAnimationInArr[elementIndex] = isIntersecting;
-  }
+  // setRowIntersection(isIntersecting: boolean, elementIndex: number){
+  //   this.projectRowAnimationInArr[elementIndex] = isIntersecting;
+  // }
 
   filterProjects(filterTerm?: string) {
     if (filterTerm) this.filteredProjects = projects.filter((project)=>{

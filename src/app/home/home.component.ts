@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   cancelAnimation() {
+    //console.log(this.animation?.animationLoop)
     if (this.animation) cancelAnimationFrame(this.animation.animationLoop);
   }
 

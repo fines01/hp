@@ -1,7 +1,7 @@
 export class Mouse {
 
-    x!: number | null;
-    y!: number | null;
+    x!: number | undefined;
+    y!: number | undefined;
     radius!: number;
     frame!: any;
     canvasWidth!: number;
@@ -11,8 +11,8 @@ export class Mouse {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.frame = document.getElementById('frame'); // in class Mouse
-        this.x = null;
-        this.y = null;
+        this.x = undefined;
+        this.y = undefined;
         this.radius = (this.canvasHeight / 80) * (this.canvasWidth / 80);
         this.bindEvents();
     }
@@ -30,8 +30,8 @@ export class Mouse {
     }
 
     clearMouseCoordinates(){
-        this.x = null;
-        this.y = null;
+        this.x = undefined;
+        this.y = undefined;
     }
 
     setMouseCoordinates(event: any){

@@ -1,8 +1,9 @@
 <section id="portfolio" #portfolio>
 
   <div class="filter-row">
-    <h2 appObserveIntersection (isIntersecting)="setIntersection($event, 'header')" [@slideIn]="headerAnimationIn ? 'in' : 'out'">Portfolio</h2>
-    <div class="filter-buttons" appObserveIntersection [threshold]="0.8" (isIntersecting)="setIntersection($event, 'buttons')" [@slideUp]="btnAnimationIn ? 'in' : 'out'">
+    <h2 appObserveIntersection #pfHeaderEl="intersection" [@slideIn]="pfHeaderEl._intersecting ? 'in' : 'out'">Portfolio</h2>
+    <div class="" appObserveIntersection #filterBtnsEl="intersection" [threshold]="1" [rootMargin]="'200px 0px -100px 0px'"></div>
+    <div class="filter-buttons" [@slideUp]="filterBtnsEl._intersecting ? 'in' : 'out'">
       <button (click)="filterProjects()" [class.selected]="filter === undefined">All</button>
       <!-- <span class="mobile-row"> -->
       <button (click)="filterProjects('JavaScript')" [class.selected]="filter === 'JavaScript'">JavaScript</button>
@@ -14,7 +15,9 @@
 
   <div *ngFor="let project of filteredProjects, let i = index" class="portfolio-row" appObserveIntersection #el="intersection" [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">
     <!-- using flex row-reverse also reverse on every second row, angular animation dirction! -->
-    <div class="project-img-wrapper" [@slideIn]="i%2 == 0 && el._intersecting ? 'in' : 'out'" [@slideInReverse]="i%2 != 0 && el._intersecting ? 'in' : 'out'">
+    <div class="project-img-wrapper" 
+    appObserveIntersection #imgEl="intersection" [@slideIn]="i%2 == 0 && imgEl._intersecting ? 'in' : 'out'" [@slideInReverse]="i%2 != 0 && imgEl._intersecting ? 'in' : 'out'" 
+    [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">
       <img src="{{ project.img }}" alt="project image" class="">
       <div class="img-overlay">
         <div class="">
@@ -22,7 +25,9 @@
         </div>
       </div>
     </div>
-    <div class=""  [@slideIn]="i%2 != 0 && el._intersecting ? 'in' : 'out'" [@slideInReverse]="i%2 == 0 && el._intersecting ? 'in' : 'out'">
+    <div class="" 
+    appObserveIntersection #descriptionEl="intersection" [@slideIn]="i%2 != 0 && descriptionEl._intersecting ? 'in' : 'out'" [@slideInReverse]="i%2 == 0 && descriptionEl._intersecting ? 'in' : 'out'"
+    [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">
         <h2>{{ project.name }}</h2>
         <p>{{ project.description }}</p>
         <div class="buttons">

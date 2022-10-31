@@ -6,9 +6,9 @@ export class FloatEffect {
   accelerationPerFrame!: number;
   lastAnimationFrame = 0;
   animationFrameTimer = 0;
-  fps = 50;
+  fps = 60;
   
-  animationFrameInterval = 1000 / this.fps; //amount of ms we wait until we trigger the next frame
+  animationFrameInterval = 1000 / this.fps; //amount of ms i wait until i trigger the next frame
   particlesArray!: Dot[]; // dots or letters
   animationLoop!: number;
   canvasWidth!: number;
@@ -33,7 +33,7 @@ export class FloatEffect {
   #initialize() {
     if (this.animationLoop) cancelAnimationFrame(this.animationLoop);
     this.generateDotParticles();
-    this.checkAnimationFrameTime(0);
+    this.checkAnimationFrameTime(Date.now());
   }
 
   connectDots() {
@@ -45,11 +45,11 @@ export class FloatEffect {
           ((this.particlesArray[a].y - this.particlesArray[b].y) * (this.particlesArray[a].y - this.particlesArray[b].y));
 
         if (distance < (this.canvasWidth / 7) * (this.canvasHeight / 7) ) { // && (!this.particlesArray[a].pushed && !this.particlesArray[b].pushed) // (smaller number: longer lines, but more connecting particles: performance)
-          lineOpacity = 0.8 - (distance / 40000); //20 000: tryal and error
+          lineOpacity = 0.5 - (distance / 20000); //20 000: tryal and error
           this.ctx.lineWidth = 1;
           if (this.particlesArray[a].pushed && this.particlesArray[b].pushed) lineOpacity = 0;
           // else 
-          this.ctx.strokeStyle = `rgba(115,115,115,${lineOpacity})`; //'rgba(140,85,31,1';
+          this.ctx.strokeStyle = `rgba(0,215,215,${lineOpacity})`;//`rgba(215,215,215,${lineOpacity})`; //'rgba(140,85,31,1';
           this.ctx.beginPath();
           this.ctx.moveTo(this.particlesArray[a].x, this.particlesArray[a].y);
           this.ctx.lineTo(this.particlesArray[b].x, this.particlesArray[b].y);

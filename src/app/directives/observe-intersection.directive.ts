@@ -74,18 +74,6 @@ export class ObserveIntersectionDirective implements AfterViewInit, OnDestroy {
 
   private checkScrollDirection(entry: IntersectionObserverEntry) {
     // console.log(entry.boundingClientRect);
-    // if (entry.boundingClientRect.top < 0) {
-    //       if (entry.isIntersecting) {
-    //         // entered viewport at the top edge, hence scroll direction is up
-    //         this._scrollDirection = 'up';
-    //         this.scrollDirection.emit('up');
-    //         console.log(this._scrollDirection);
-    //       } else {
-    //         // left viewport at the top edge, hence scroll direction is down
-    //         this.scrollDirection.emit('down');;
-    //       }
-    // } 
-
   }
   
 }
