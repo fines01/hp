@@ -3,7 +3,7 @@ import { Project } from "src/app/interfaces/project";
  export const projects : Project[] = [
   {
       name: 'Delivery Service',
-      description: 'Restaurant food delivery site written in JavaScript, HTML and CSS.',
+      description: 'Food delivery system written in JavaScript, HTML and CSS.',
       img: 'assets/img/project-images/mjamando.png',
       GHlink: 'https://github.com/fines01/mjamando',
       link: 'https://ines-fritsch.developerakademie.net/mjamando/', 
@@ -36,7 +36,7 @@ import { Project } from "src/app/interfaces/project";
     },
     {
       name: 'Tic Tac Toe',
-      description: 'The classic game, implemented as a handsome web game. A single player option allows you to play against the "computer".', // eye-pleasing
+      description: 'The classic game, implemented as a web game with a single player option that allows you to play against the "computer".', // eye-pleasing
       img: 'assets/img/project-images/tictactoe.png',
       GHlink: 'https://github.com/fines01/tictactoe',
       link: 'https://ines-fritsch.developerakademie.net/tictactoe/',
@@ -61,7 +61,7 @@ import { Project } from "src/app/interfaces/project";
     },
     {
       name: 'El Pollo Loco',
-      description: 'This is a fun little JavaScript based jump-and-run game. The focus lies in object-oriented programming with pure vanilla JavaScript, using ES6 classes ???...',
+      description: 'This is a fun little JavaScript based jump-and-run game. The build focuses on object-oriented programming with pure vanilla JavaScript.',
       img: 'assets/img/project-images/pollo1.png',
       GHlink: 'https://github.com/fines01/el-pollo-loco',
       link: 'https://ines-fritsch.developerakademie.net/el-pollo-loco/', //aktuelle version hochladen!

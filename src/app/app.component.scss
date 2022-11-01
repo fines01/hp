@@ -13,9 +13,8 @@
     // font-weight: 600;
     z-index: 3;
     position: fixed;
-    //border-bottom: 1px solid black;
-    //border-bottom: 0.0125rem solid var(--col-teal); // if not home !!
     box-sizing:border-box;
+    box-shadow: 0 0 22px -13px var(--col-teal);
 
     .logo-wrapper {
         height:100%;

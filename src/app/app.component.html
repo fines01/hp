@@ -1,12 +1,12 @@
 <!-- Toolbar (Desktop) -->
 <!-- <mat-toolbar class="menu" [class.menu-border]="showDivider || currentRoute === '/about-me'"> -->
 <mat-toolbar class="menu" [ngClass]="{'menu-border': showDivider || currentRoute === '/about-me', 'border-fade-out': !showDivider}">
-  <span class="logo-wrapper" [routerLink]="['/']" matTooltip="Home">
-    <a href="#home"><img src="assets/img/logo-white.png" alt="logo" class="logo"></a>
+  <span class="logo-wrapper" [routerLink]="['/']" fragment="home" matTooltip="Home">
+    <a ><img src="assets/img/logo-white.png" alt="logo" class="logo"></a>
   </span>
   <span class="menu-spacer"></span>
   <a class="menu-link link-desktop" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a class="menu-link link-desktop" href="#portfolio" [class.active-link]="false">Portfolio</a>
+  <a class="menu-link link-desktop" href="#portfolio">Portfolio</a>
   <a class="menu-link link-desktop" href="#contact">Contact</a>
   <!-- open mobile menu, only show in  mobile view-->
   <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon">
@@ -14,9 +14,9 @@
   </button>
 </mat-toolbar>
 <div [@slideDown]="showMobileMenu ? 'open' : 'closed'" class="mobile-menu">
-  <a (click)="closeMenu()" class="menu-link" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a (click)="closeMenu()" class="menu-link" href="#portfolio">Portfolio</a>
-  <a (click)="closeMenu()" class="menu-link" href="#contact">Contact</a>
+  <a class="menu-link" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
+  <a class="menu-link" href="#portfolio">Portfolio</a>
+  <a class="menu-link" href="#contact">Contact</a>
 </div>
 <!-- END Toolbar -->
 
