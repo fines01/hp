@@ -60,7 +60,7 @@ export class Dot {
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false); // draw as circles with this.size as radius - length!
         if (!this.pushed) this.ctx.fillStyle = this.getColor();
-        if (this.pushed) this.ctx.fillStyle = `rgba(0,255,255,1)`;
+        if (this.pushed) this.ctx.fillStyle = `rgba(0,255,255,0.75)`;
         this.ctx.fillStyle = this.gradient;
         this.ctx.fill();
     }

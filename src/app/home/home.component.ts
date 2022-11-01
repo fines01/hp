@@ -40,11 +40,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize')
   init(){
-    // console.log(this.frame.nativeElement.clientWidth)
     this.cancelAnimation();
     this.setCanvasSize();
     if(this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context);
-    //if(this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
+    // if(this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context);
   }
 
   @HostListener('window:scroll', [])
@@ -54,12 +53,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   cancelAnimation() {
-    //console.log(this.animation?.animationLoop)
-    if (this.animation) cancelAnimationFrame(this.animation.animationLoop);
+    if (this.animation && this.animation.animationLoop) {
+      cancelAnimationFrame(this.animation.animationLoop);
+      this.animation.paused = true;
+    }
   }
 
   startAnimation() {
-    if (this.animation) this.animation.checkAnimationFrameTime(Date.now());
+    //if (this.animation && this.animation.animationLoop) this.animation.checkAnimationFrameTime(0);
+    if (this.animation && this.animation.animationLoop) {
+      this.animation.checkAnimationFrameTime(0);
+      this.animation.paused = false;
+    } 
   }
 
   

@@ -11,6 +11,7 @@ export class FloatEffect {
   animationFrameInterval = 1000 / this.fps; //amount of ms i wait until i trigger the next frame
   particlesArray!: Dot[]; // dots or letters
   animationLoop!: number;
+  paused = false;
   canvasWidth!: number;
   canvasHeight!: number;
 
@@ -33,7 +34,7 @@ export class FloatEffect {
   #initialize() {
     if (this.animationLoop) cancelAnimationFrame(this.animationLoop);
     this.generateDotParticles();
-    this.checkAnimationFrameTime(Date.now());
+    this.checkAnimationFrameTime(0);
   }
 
   connectDots() {
@@ -96,7 +97,7 @@ export class FloatEffect {
       this.animationFrameTimer += deltaTime;
     }
     let self = this;
-    this.animationLoop = requestAnimationFrame(() => {
+    if (!this.paused) this.animationLoop = requestAnimationFrame(() => {
       let timeStamp = Date.now();
       self.checkAnimationFrameTime(timeStamp);
     });

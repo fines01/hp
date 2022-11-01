@@ -12,6 +12,7 @@ export class RainEffect {
     animationFrameInterval = 1000 / this.fps; //amount of ms we wait until we trigger the next frame
     characterArray!: Character[];
     animationLoop!: number;
+    paused = false;
     canvasWidth!: number;
     canvasHeight!: number;
     numberOfColumns!: number;

@@ -6,7 +6,7 @@
   </span>
   <span class="menu-spacer"></span>
   <a class="menu-link link-desktop" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a class="menu-link link-desktop" href="#portfolio">Portfolio</a>
+  <a class="menu-link link-desktop" href="#portfolio" [class.active-link]="false">Portfolio</a>
   <a class="menu-link link-desktop" href="#contact">Contact</a>
   <!-- open mobile menu, only show in  mobile view-->
   <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon">

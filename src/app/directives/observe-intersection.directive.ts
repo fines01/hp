@@ -56,10 +56,7 @@ export class ObserveIntersectionDirective implements AfterViewInit, OnDestroy {
       if (this.checkIntersection(entry)) {
         //this.checkScrollDirection(entry);
         this.isIntersecting.emit(true);
-        // this.scrollDirection.emit(this._scrollDirection);
         this._intersecting = true;
-        // this.intersectionObserver.unobserve(<Element>(this.element.nativeElement));
-        // this.intersectionObserver.disconnect();
       }
       else {
         this.isIntersecting.emit(false);

@@ -18,7 +18,7 @@ export class PortfolioComponent implements OnInit {
   btnAnimationIn: boolean = false;
   projectRowAnimationInArr: boolean[] = [];
 
-  // @ViewChild('portfolio') sectionRef!: ElementRef;
+  //@ViewChild('portfolio') sectionRef!: ElementRef;
 
   constructor() { }
 

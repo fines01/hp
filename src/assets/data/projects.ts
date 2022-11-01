@@ -1,6 +1,14 @@
 import { Project } from "src/app/interfaces/project";
 
  export const projects : Project[] = [
+  {
+      name: 'Delivery Service',
+      description: 'Restaurant food delivery site written in JavaScript, HTML and CSS.',
+      img: 'assets/img/project-images/mjamando.png',
+      GHlink: 'https://github.com/fines01/mjamando',
+      link: 'https://ines-fritsch.developerakademie.net/mjamando/', 
+      tags: ['JavaScript','CSS','HTML'],
+    },
     {
       name: 'My website',
       description: 'My portofolio website. This site is built with Angular and written in HTML, SCSS and TypeScript.',
