@@ -12,7 +12,7 @@
 }
 
 .filter-row, .portfolio-row {
-  background-color: var(--col-grey-035); // darker 2
+  // background-color: var(--col-grey-035); // darker 2
   background-color: var(--col-bg-light); // lighter 1
   // background-color: var(--col-white);
 }
@@ -21,30 +21,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px var(--distX) 60px var(--distX);
+  // padding: 32px var(--distX) 60px var(--distX);
   padding: 60px var(--distX);
   position: relative;
 
-  .filter-divider {
-    height: 4px;
-    width: 150px;
-    background-color: var(--col-black) !important;
-    background-color: red;
-    position: relative;
-    top: 8px;
-  }
 }
 
 h2 {
-  font-weight: 100;
+  font-weight: 500;
   font-size: 1.3rem;
   display: inline-block;
   // text-align: center;
   padding-bottom: 16px;
-  text-transform: uppercase;
-  border-bottom: 4px solid var(--col-black);
   margin-bottom: 0;
   // margin-top: 16px;
+  text-transform: uppercase;
+  border-bottom: 4px solid var(--col-black);
 }
 
 .filter-buttons {
@@ -57,7 +49,6 @@ h2 {
     cursor: pointer;
     width: 33%; // 1% left todistribute as margin 
     height: 50px;
-    border: 1px solid var(--col-teal);
     border: 1px solid var(--col-cyan-40);
     box-sizing: border-box;
 
@@ -67,7 +58,7 @@ h2 {
     }
 
     &:hover:not(.selected) {
-      background-color: var(--col-teal-02);
+      // background-color: var(--col-teal-02);
       background-color: var(--col-teal);
       border-color: var(--col-teal);
       color: var(--col-gray);
@@ -75,7 +66,7 @@ h2 {
   }
 
   .selected {
-    background-color: var(--col-teal);
+    // background-color: var(--col-teal);
     background-color: var(--col-cyan-40);
   }
 
@@ -152,8 +143,8 @@ h2 {
       border-radius: 4px;
       border-top: 12px solid rgba(0,0,0);
       border-bottom: 12px solid rgba(0,0,0);
-      border-left: 6px solid rgba(0,0,0,0.9);
-      border-right: 6px solid rgba(0,0,0,0.9);
+      border-left: 3px solid rgba(0,0,0,0.9);
+      border-right: 3px solid rgba(0,0,0,0.9);
     }
   }
   
@@ -216,7 +207,7 @@ h2 {
     p {
       text-align: center;
       line-height: 1.3;
-      color: var(--col-grey); // lighter
+      // color: var(--col-grey); // lighter
       color: rgba(0,0,0,0.65); // darker 3
 
       @media screen and (max-width: $breakpoint-md) {
@@ -239,7 +230,7 @@ h2 {
       align-items: flex-end;
 
       a:nth-child(2n) {
-        background-color: var(--col-teal-05);
+        // background-color: var(--col-teal-05);
         background-color: var(--col-cyan-40);
       }
 
@@ -249,7 +240,7 @@ h2 {
         border-radius: 4px;
         width: 40%;
         //padding: 8px 16px;
-        border: 1px solid var(--col-teal);
+        // border: 1px solid var(--col-teal);
         border: 1px solid var(--col-cyan-40);
         
         &:hover {

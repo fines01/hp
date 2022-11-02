@@ -31,7 +31,7 @@
     }
 
     .logo {
-        width: 44px;
+        width: 46px;
 
         &:hover {
             opacity: 0.8;
@@ -67,8 +67,12 @@
     }
     
     .mobile-menu-btn {
-        position: relative;
-        left: 4px;
+        height: 100%;
+        padding: 0;
+    }
+
+    .mobile-menu-icon {
+       width: 28px; 
     }
     
     .menu-link, .mobile-menu-icon {
@@ -76,7 +80,8 @@
         transition: var(--transition);
 
         &:hover {
-            color: rgba(255,255,255,0.8);
+            // color: rgba(255,255,255,0.8);
+            opacity: 0.8;
         }
 
     }

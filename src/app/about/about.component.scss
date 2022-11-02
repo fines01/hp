@@ -13,7 +13,7 @@
 }
 
 h2 {
-    font-weight: 100;
+    font-weight: 500;
     //font-size: 2rem;
     display: inline-block;
     padding-bottom: 16px;
@@ -25,14 +25,12 @@ h2 {
 
  h3 {
    text-transform: uppercase;
-//    font-size: 1.5rem;
+    // font-size: 1.5rem;
    // margin: 32px 0 16px 0;
    padding-bottom: 16px;
    margin-bottom: 16px;
    margin-top: 16px;
-   border-bottom: 2px solid var(--col-black);
-   border-color: var(--col-red);
-   border-color: var(--col-cyan-30);
+   border-bottom: 2px solid var(--col-cyan-30);
 }
 
 p {
@@ -56,10 +54,23 @@ p {
 }
 
 .divider {
-    width: 40%;
-    height: 2px;
-    background-color: var(--col-red-40);
-    margin: 32px 0 28px 0;
+    // width: 40%;
+    // background-color: var(--col-red);
+    //margin: 16px 0 28px 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.divider-quotation-start {
+  .line {
+    width: 32px !important;
+    background-color: var(--col-cyan-30) !important;
+  }
+
+//   .dot:first-of-type {
+//     background-color: var(--col-red);
+//   }
 }
 
 .row {
@@ -118,13 +129,13 @@ p {
        }
      }
 
-     @media screen and (max-width: $breakpoint-xs) {
+    @media screen and (max-width: $breakpoint-xs) {
         gap: 1rem;
        .picture {
          width: 100px;
          height: 100px;
        }
-     }
+    }
 }
 
 .introduction {
@@ -163,8 +174,8 @@ p {
 }
 
 .col-highlight {
-    color: var(--col-red);
-    color: var(--col-cyan-40);
+    // color: var(--col-red);
+    // color: var(--col-cyan-40);
     color: var(--col-cyan-30);
     font-weight: 700;
 }
@@ -236,7 +247,7 @@ p {
     }
 
     p {
-        margin: 3rem 0;
+        margin: 32px 0;
     }
 }
 
@@ -257,7 +268,7 @@ p {
     }
 }
 
-.quotation-end{
+.quotation-line{
     display: flex;
     justify-content: center;
     gap: 4px;
@@ -275,6 +286,8 @@ p {
         border-radius: 50%;
         background-color: var(--col-cyan-30);
     }
+
 }
+
 
 

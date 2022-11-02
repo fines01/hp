@@ -14,10 +14,6 @@ export class PortfolioComponent implements OnInit {
   filteredProjects: Project[] = projects;
   filter!: string | undefined;
 
-  headerAnimationIn: boolean = false;
-  btnAnimationIn: boolean = false;
-  projectRowAnimationInArr: boolean[] = [];
-
   //@ViewChild('portfolio') sectionRef!: ElementRef;
 
   constructor() { }
@@ -25,15 +21,6 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.filteredProjects = projects;
   }
-
-  // setIntersection(isIntersecting: boolean, element: string) {
-  //   if (element == 'header') this.headerAnimationIn = isIntersecting; // now also check for scroll-direction? (scroll-up: stay in)
-  //   if (element == 'buttons') this.btnAnimationIn = isIntersecting;
-  // }
-
-  // setRowIntersection(isIntersecting: boolean, elementIndex: number){
-  //   this.projectRowAnimationInArr[elementIndex] = isIntersecting;
-  // }
 
   filterProjects(filterTerm?: string) {
     if (filterTerm) this.filteredProjects = projects.filter((project)=>{

@@ -56,7 +56,7 @@ export const slideUpAnimation = [
       transform: 'translateY(16px) scale(0)',
     })),
     transition('in <=> out', [
-      animate('450ms ease-out'),
+      animate('550ms ease-out'),
     ]),
   ])
 ]
@@ -66,15 +66,15 @@ export const slideInBarAnimation = [
     // Transition from any state to any state
     transition('out <=> in', [
       // Initially the all children (= labels) are not visible
-      query('.progress-bar', style({ opacity: 0, transform: 'translateX(-15px)' }), {
+      query('.progress-bar', style({ opacity: 0, transform: 'translateX(-16px)' }), {
         optional: true,
       }),
       // Each child will appear sequentially with the delay of 500ms
       query(
         '.progress-bar',
-        stagger('125ms', [
+        stagger('100ms', [
           animate(
-            '125ms ease-in',
+            '550ms ease-out',
             style({ opacity: 1, transform: 'translateX(0)' })
           ),
         ]),
@@ -84,38 +84,38 @@ export const slideInBarAnimation = [
   ]),
 ]
 
-export const barAnimation = [
-  trigger('staggerItems', [
-    transition('*<=>*', [ // each time the binding value changes
-      query(':leave', [
-        style({
-          opacity: 1,
-          transform: 'translateX(0)'
-        }),
-        stagger(125, [
-          animate('125ms', style({
-            opacity: 0,
-            transform: 'translateX(-15px)'
-          })),
-        ])
-      ], {optional: true}),
-      query(':enter', [
-        style({
-          opacity: 0,
-          transform: 'translateX(-15px)'
-        }),
-        stagger('125ms', [
-          animate('125ms', style({
-            opacity: 1,
-            transform: 'translateX(0)'
-          }))
-        ]),
-      ], {
-        optional: true
-      })
-    ])
-  ])
-]
+// export const barAnimation = [
+//   trigger('staggerItems', [
+//     transition('*<=>*', [ // each time the binding value changes
+//       query(':leave', [
+//         style({
+//           opacity: 1,
+//           transform: 'translateX(0)'
+//         }),
+//         stagger(125, [
+//           animate('125ms', style({
+//             opacity: 0,
+//             transform: 'translateX(-15px)'
+//           })),
+//         ])
+//       ], {optional: true}),
+//       query(':enter', [
+//         style({
+//           opacity: 0,
+//           transform: 'translateX(-15px)'
+//         }),
+//         stagger('125ms', [
+//           animate('125ms', style({
+//             opacity: 1,
+//             transform: 'translateX(0)'
+//           }))
+//         ]),
+//       ], {
+//         optional: true
+//       })
+//     ])
+//   ])
+// ]
 
 export const slideUpToplinkAnimation = [
   trigger('slideUpLink', [

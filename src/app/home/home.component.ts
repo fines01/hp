@@ -60,7 +60,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   startAnimation() {
-    //if (this.animation && this.animation.animationLoop) this.animation.checkAnimationFrameTime(0);
     if (this.animation && this.animation.animationLoop) {
       this.animation.checkAnimationFrameTime(0);
       this.animation.paused = false;

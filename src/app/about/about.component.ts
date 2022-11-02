@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { skills } from 'src/assets/data/skills';
-import { barAnimation, slideInAnimation, slideInBarAnimation, slideInReverseAnimation } from '../animations';
+import { slideInAnimation, slideInBarAnimation, slideInReverseAnimation } from '../animations';
 import { Skill } from '../interfaces/skill';
+import { about } from 'src/assets/data/about';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  animations: [ slideInAnimation, slideInReverseAnimation, barAnimation,slideInBarAnimation],
+  animations: [ slideInAnimation, slideInReverseAnimation,slideInBarAnimation],
 })
 export class AboutComponent implements OnInit {
 
   skills!: Skill[];
-
-  //journey!: any[];
+  about!: any;
 
   constructor() { }
 
   ngOnInit(): void {
     this.skills = skills;
+    this.about = about;
     window.scrollTo(0, 0);
   }
 

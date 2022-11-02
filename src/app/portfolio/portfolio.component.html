@@ -10,7 +10,6 @@
       <button (click)="filterProjects('Angular')" [class.selected]="filter === 'Angular'">Angular</button>
       <!-- </span> -->
     </div>
-    <!-- <div class="filter-divider"></div> -->
   </div>
 
   <div *ngFor="let project of filteredProjects, let i = index" class="portfolio-row" appObserveIntersection #el="intersection" [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">

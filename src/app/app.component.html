@@ -9,9 +9,12 @@
   <a class="menu-link link-desktop" href="#portfolio">Portfolio</a>
   <a class="menu-link link-desktop" href="#contact">Contact</a>
   <!-- open mobile menu, only show in  mobile view-->
-  <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon">
-    <mat-icon class="mobile-menu-icon">menu</mat-icon>
-  </button>
+  <!-- <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon"> -->
+    <!-- <mat-icon class="mobile-menu-icon">menu</mat-icon> -->
+    <button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon">
+      <img src="assets/img/icons/menu-white.png" class="mobile-menu-icon">
+    </button>
+  <!-- </button> -->
 </mat-toolbar>
 <div [@slideDown]="showMobileMenu ? 'open' : 'closed'" class="mobile-menu">
   <a class="menu-link" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>

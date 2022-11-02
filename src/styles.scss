@@ -1,5 +1,5 @@
 @import './src/breakpoints.scss';
-//@import './src/fonts.scss'; // GET http://localhost:4200/assets/fonts/... net::ERR_ABORTED 404 (Not Found) in Console
+@import './src/fonts.scss'; // GET http://localhost:4200/assets/fonts/... net::ERR_ABORTED 404 (Not Found) in Console
 
 :root {
     --menu-height: 60px;
@@ -62,10 +62,10 @@
 }
 
 /* karla-regular - latin */
-@font-face { // same err as above
-  font-family: 'Karla';
-  src: url('/assets/fonts/karla-v23-latin-regular.ttf') format('truetype');
-}
+// @font-face { // same err as above
+//   font-family: 'Karla';
+//   src: url('/assets/fonts/karla-v23-latin/karla-v23-latin-regular.ttf'); // format('truetype');
+// }
 
 html, body { 
     height: 100%;
@@ -79,7 +79,7 @@ body {
   // font-family: Roboto, "Helvetica Neue", sans-serif; 
   font-family: Karla, sans-serif; // dl Karla, Gilroy-Medium & Gilroy-Bold
   color: var(--col-black);
-  background-color: var(--col-bg-light);
+  // background-color: var(--col-bg-light);
   background-color: var(--col-white);
   overflow-x: hidden;
 }
@@ -91,7 +91,7 @@ button {
   border: none;
   outline: none;
   background-color: transparent;
-  font-weight: 800;
+  font-weight: 500;
   transition: var(--transition);
   box-sizing: border-box;
 }
@@ -128,11 +128,12 @@ input {
 
 .btn {
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 600;
   transition: var(--transition);
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
 }
 
 a {
