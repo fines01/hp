@@ -2,7 +2,7 @@
 
 #contact {
   padding: 60px var(--distX);
-  background-color: var(--col-black);
+  // background-color: var(--col-black);
   color: white;
 }
 
@@ -112,6 +112,10 @@ form {
       color: var(--col-black);
       background-color: var(--col-teal);
     }
+
+    &:has(.btn-disabled){
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -128,7 +132,7 @@ form {
 
 .btn-disabled {
   color: var(--col-teal-05) !important;
-  pointer-events: none;
+  // pointer-events: none;
   
   &:not(.cancel-btn) {
     border: 1px solid var(--col-teal-02) !important;

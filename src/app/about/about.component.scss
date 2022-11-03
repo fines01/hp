@@ -6,7 +6,7 @@
     // padding-top: calc(var(--menu-height) + 32px);
     // background: var(--col-bg-light);
     // background: var(--col-grey-035);
-    background-color: var(--col-white);
+    //background-color: var(--col-white);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -18,7 +18,7 @@ h2 {
     display: inline-block;
     padding-bottom: 16px;
     text-transform: uppercase;
-    border-bottom: 4px solid var(--col-black);
+    border-bottom: 4px solid white;
     margin-bottom: 0;
     margin-top: 0px;
 }
@@ -65,7 +65,8 @@ p {
 .divider-quotation-start {
   .line {
     width: 32px !important;
-    background-color: var(--col-cyan-30) !important;
+    background-color: var(--col-teal) !important;
+    background-color: var(--col-red) !important;
   }
 
 //   .dot:first-of-type {
@@ -81,8 +82,8 @@ p {
 .about-main, .about-secondary {
     // background-color: var(--col-black);
     background-color: var(--col-white);
-    background-color: var(--col-grey-035);
     background-color: var(--col-bg-light);
+    background-color: var(--col-grey-035);
     // color: white;
     padding: 3rem;
 
@@ -175,8 +176,8 @@ p {
 
 .col-highlight {
     // color: var(--col-red);
-    // color: var(--col-cyan-40);
-    color: var(--col-cyan-30);
+    // color: var(--col-cyan-30);
+    color: var(--col-teal);
     font-weight: 700;
 }
 
@@ -210,6 +211,7 @@ p {
         height: 28px;
         //width: 40%;
         background: var(--col-cyan-40) !important;
+        background: var(--col-teal) !important;
         border-radius: 6px 0 0 6px;
         display: flex;
         justify-content: flex-start;
@@ -221,7 +223,7 @@ p {
     }
 
     .progress-bar-label {
-        color: var(--col-black);
+        color: var(--col-blue-10);
         font-size: 14px;
         font-weight: 700;
         margin-left: 8px;
@@ -254,6 +256,7 @@ p {
 .quotation-start-img{
     // height: 32px;
     background-color: var(--col-white);
+    background-color: var(--col-blue-10);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -278,6 +281,7 @@ p {
         width: 24px;
         border-radius: 6px;
         background-color: var(--col-cyan-30);
+        background-color: var(--col-teal);
     }
 
     .dot{
@@ -285,6 +289,7 @@ p {
         width: 6px;
         border-radius: 50%;
         background-color: var(--col-cyan-30);
+        background-color: var(--col-teal);
     }
 
 }

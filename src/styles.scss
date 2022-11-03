@@ -16,10 +16,25 @@
     // --col-teal-35: #03b093; // 35% // --> hover
     // --col-teal-30: #02977e;
 
+    --col-cyan-80: #99ffff;
+    --col-cyan: #00ffff;
     --col-cyan-40: #00cccc;
     //--col-cyan-35: #00b3b3;
     --col-cyan-30: #009999;
     // --col-cyan-25: #008080;
+
+    --col-blue-10: rgb(9, 22, 42);
+    --col-blue-15: #1f222e;// #0d213f;
+    // 
+    --col-blue-bg: #1f222e;
+    --col-blue-cards: #292d3d;
+
+    // --col-blue-11: rgb(10, 25, 47);
+  
+    --col-blue-80: #aec4ea;
+    --col-blue-85: #c3d3ef;
+
+    --col-darkblue-05: rgba(9,22,42,0.7); // CHANGE: blue-10-05
 
     // --col-teal-a: rgb(5, 194, 201); //05c2c9 (40%)
     // --col-teal-b: rgb(1, 161, 167); //01a1a7 (33%)
@@ -78,9 +93,10 @@ body {
   margin: 0; 
   // font-family: Roboto, "Helvetica Neue", sans-serif; 
   font-family: Karla, sans-serif; // dl Karla, Gilroy-Medium & Gilroy-Bold
-  color: var(--col-black);
+  //color: var(--col-black);
   // background-color: var(--col-bg-light);
-  background-color: var(--col-white);
+  color: white;
+  background-color: var(--col-blue-10);
   overflow-x: hidden;
 }
 
@@ -88,6 +104,7 @@ button {
   cursor: pointer;
   font-size: inherit;
   font-family: inherit;
+  color: inherit;
   border: none;
   outline: none;
   background-color: transparent;
@@ -112,14 +129,15 @@ input {
   font-size: 16px;
   font-family: inherit;
   border-radius: 2px;
-  // background-color: var(--col-teal-02);
-  background: white;
-  background: rgba(26,26,26,1);
+  background-color: rgba(26,26,26,1);
+  background-color: var(--col-blue-15);
+  background-color: var(--col-grey-035);
   border: 1px solid rgba(255, 255, 255, 0.4);
   margin-top: 8px;
   margin-bottom: 4px;
   caret-color: var(--col-teal);
-  color: white;  
+  color: white;
+  resize: none;
 
   &:focus {
     outline: 1px solid var(--col-teal);
@@ -181,12 +199,28 @@ h2 {
 
 .btn-disabled {
   background-color: var(--col-grey-02) !important;
-  cursor: not-allowed;
+  user-select: none;
   border: none !important;
   opacity: 0.6;
+  //pointer-events: none;
+  cursor: not-allowed;
+  // position: relative; // gn
 }
 
+a:has(.btn-disabled){
+  pointer-events: none;
+}
+
+// .btn-disabled::after {
+//   content:'';
+//   position: absolute;
+//   left:0; right:0;
+//   top:0; bottom:0;
+//   cursor: not-allowed !important; // gn!
+// }
+
 a.disabled, .disabled-link {
+  // cursor: not-allowed;
   pointer-events: none !important;
   opacity: 0.5;
 }
@@ -209,7 +243,7 @@ a.disabled, .disabled-link {
   display: flex;
   flex-direction: column;
   z-index: 2;
-  background-color: var(--col-black);
+  background-color: var(--col-blue-10);
   transition: var(--transition);
 
   @media screen and (min-width: calc($breakpoint-sm + 1px)) {
