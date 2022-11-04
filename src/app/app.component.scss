@@ -14,7 +14,7 @@
     z-index: 3;
     position: fixed;
     box-sizing:border-box;
-    box-shadow: 0 0 25px -9px var(--col-teal);
+    // box-shadow: 0 0 25px -9px var(--col-teal);
 
     .logo-wrapper {
         height:100%;
@@ -53,18 +53,18 @@
         }
     }
 
-    .mobile-menu {
-        position: fixed;
-        top: var(--menu-height);
-        left: 0; right: 0;
-        height: 100px;
-        //width: 100vw;
-        padding-left: var(--distX);
-        display: flex;
-        flex-direction: column;
-        z-index: 2;
-        background-color: var(--col-black);
-    }
+    // .mobile-menu {
+    //     position: fixed;
+    //     top: var(--menu-height);
+    //     left: 0; right: 0;
+    //     height: 100px;
+    //     //width: 100vw;
+    //     padding-left: var(--distX);
+    //     display: flex;
+    //     flex-direction: column;
+    //     z-index: 2;
+    //     background-color: var(--col-black);
+    // }
     
     .mobile-menu-btn {
         height: 100%;
@@ -88,16 +88,80 @@
 
 }
 
+/*** hamburger menu svg for mobile menu ***/ 
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 150%;
+  height: 100%;
+
+  &:hover{
+    opacity: 0.8;
+  }
+
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #ffffff;
+    stroke-width: 4.5;
+    stroke-linecap: round;
+}
+
+.ham .top {
+  stroke-dasharray: 40 172;
+}
+
+.ham .middle {
+  stroke-dasharray: 40 111;
+}
+
+.ham .bottom {
+  stroke-dasharray: 40 172;
+}
+
+.ham.active .top {
+  stroke-dashoffset: -132px;
+}
+
+.ham.active .middle {
+  stroke-dashoffset: -71px;
+}
+
+.ham.active .bottom {
+  stroke-dashoffset: -132px;
+}
+
+/*** ***/
+
 .mat-icon {
     font-size: 36px;
     width: 32px;
 }
 
 .menu-border {
-    border-bottom: 3px solid var(--col-teal);
+    border-bottom: 1px solid var(--col-teal);
     transition: var(--transition);
     animation: slideInBorder 400ms ease-out;
     // or box-shadow
+}
+
+.menu-shadow {
+    box-shadow: 0 0 25px -9px var(--col-teal);
 }
 
 .border-fade-out {
@@ -121,17 +185,22 @@
 
 @keyframes slideInBorder {
     0% {
-        border-bottom: 1px solid var(--col-teal-02);
+        border:none;
+    }
+    50% {
+       border-bottom: 0.5px solid var(--col-teal-05);
     }
     100% {
-        border-bottom: 3px solid var(--col-teal);
-        transform: translateX(0);
+        border-bottom: 1px solid var(--col-teal);
     }
 }
 
 @keyframes slideOutBorder {
     0% {
-        border-bottom: 3px solid var(--col-teal);
+        border-bottom: 1px solid var(--col-teal);
+    }
+    50%{
+        border-bottom: 1px solid var(--col-teal-05);
     }
     100% {
         border: none;

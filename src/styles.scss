@@ -245,6 +245,7 @@ a.disabled, .disabled-link {
   z-index: 2;
   background-color: var(--col-blue-10);
   transition: var(--transition);
+  box-shadow: 0 0 25px -9px var(--col-teal);
 
   @media screen and (min-width: calc($breakpoint-sm + 1px)) {
     // display: none;
@@ -291,17 +292,18 @@ a.disabled, .disabled-link {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(230, 230, 230);
+  background: darkslategrey;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--col-black-06);
+  background: var(--col-teal);
+  border-radius: 4px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--col-black-05);
+  background: var(--col-teal-05);
 }
 
 @keyframes slideDown {
