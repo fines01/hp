@@ -14,7 +14,6 @@
     z-index: 3;
     position: fixed;
     box-sizing:border-box;
-    // box-shadow: 0 0 25px -9px var(--col-teal);
 
     .logo-wrapper {
         height:100%;
@@ -52,19 +51,6 @@
             margin-right: 0; // GN!! 
         }
     }
-
-    // .mobile-menu {
-    //     position: fixed;
-    //     top: var(--menu-height);
-    //     left: 0; right: 0;
-    //     height: 100px;
-    //     //width: 100vw;
-    //     padding-left: var(--distX);
-    //     display: flex;
-    //     flex-direction: column;
-    //     z-index: 2;
-    //     background-color: var(--col-black);
-    // }
     
     .mobile-menu-btn {
         height: 100%;
@@ -161,16 +147,12 @@
 }
 
 .menu-shadow {
-    box-shadow: 0 0 25px -9px var(--col-teal);
+    box-shadow: var(--menu-led);
 }
 
 .border-fade-out {
     animation: slideOutBorder 400ms ease-out;
 }
-
-// app-home {
-//     border-bottom: 0.25rem solid var(--col-teal);
-// }
 
 .divider {
   position: sticky;

@@ -33,8 +33,8 @@
   align-items: center;
   box-sizing: border-box;
   background-color: var(--col-darkblue-05);
-  // background-color: rgba(0,0,0,0.5);
-  box-shadow: 0 0 9px -7px var(--col-teal);
+  // box-shadow: 0 0px 35px 5px var(--col-blue-10),  0 0 9px -7px var(--col-teal);
+  box-shadow: 0 -3px 2px -3px var(--col-blue-10);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -52,6 +52,14 @@
     color: white;
     box-sizing: border-box;
     transition: var(--transition);
+
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+      font-size: 1.1rem;
+    }
 
     &:hover {
       color: rgba(255,255,255,0.8);
