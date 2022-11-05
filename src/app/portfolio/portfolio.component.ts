@@ -14,6 +14,8 @@ export class PortfolioComponent implements OnInit {
   filteredProjects: Project[] = projects;
   filter!: string | undefined;
 
+  showImgOverlay: boolean = false;
+
   //@ViewChild('portfolio') sectionRef!: ElementRef;
 
   constructor() { }
@@ -28,6 +30,15 @@ export class PortfolioComponent implements OnInit {
     });
     else this.filteredProjects = projects;
     this.filter = filterTerm;
+  }
+
+  showOverlay(index: number){
+    console.log(index);
+    this.showImgOverlay = true;
+  }
+
+  hideOverlay() {
+    this.showImgOverlay = false;
   }
 
 }

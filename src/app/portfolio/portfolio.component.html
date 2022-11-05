@@ -14,7 +14,7 @@
 
   <div *ngFor="let project of filteredProjects, let i = index" class="portfolio-row" appObserveIntersection #el="intersection" [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">
     <!-- using flex row-reverse also reverse on every second row, angular animation dirction! -->
-    <div class="project-img-wrapper" 
+    <div class="project-img-wrapper"
     appObserveIntersection #imgEl="intersection" [@slideIn]="i%2 == 0 && imgEl._intersecting ? 'in' : 'out'" [@slideInReverse]="i%2 != 0 && imgEl._intersecting ? 'in' : 'out'" 
     [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">
       <img src="{{ project.img }}" alt="project image" class="">
