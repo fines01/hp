@@ -27,14 +27,25 @@
 
     <div class="skills" appObserveIntersection #skillDiv="intersection"
       [@slideInReverse]="skillDiv._intersecting ? 'in' : 'out'" [threshold]="0.6">
-      <div class="skill-bars" appObserveIntersection #el="intersection" [@slideInBar]="el._intersecting ? 'in' : 'out'"
+
+      <!-- OPTION A.: Skill - Cards -->
+      <div class="cards-container" appObserveIntersection #el="intersection" [@turnCard]="el._intersecting ? 'in' : 'out'"
+        [threshold]="0.6" >
+        <div *ngFor="let skill of skills"  class="skill-card">
+          <div class="skill-icon"><img src="{{ skill.img }}" alt=""></div>
+          {{ skill.name }}
+        </div>
+      </div>
+
+      <!-- OPTION B.: Skill - Bars -->
+      <!-- <div class="skill-bars" appObserveIntersection #el="intersection" [@slideInBar]="el._intersecting ? 'in' : 'out'"
         [threshold]="0.6">
         <div *ngFor="let skill of skills" class="progress-bar">
           <div class="progress-bar-fill" [style.width.%]="skill.value">
             <span class="progress-bar-label">{{ skill.name }}</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="about-secondary">

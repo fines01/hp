@@ -1,4 +1,5 @@
 import {trigger, state, style, transition, animate, group, query, stagger, keyframes, } from '@angular/animations';
+import { RouteReuseStrategy } from '@angular/router';
 // import { reduce } from 'rxjs';
 
 export const slideDownAnimation = [ // menu slide-down
@@ -62,14 +63,13 @@ export const slideUpAnimation = [
 ]
 
 export const slideInBarAnimation = [
- trigger('slideInBar', [
-    // Transition from any state to any state
+  trigger('slideInBar', [
     transition('out <=> in', [
       // Initially the all children (= labels) are not visible
       query('.progress-bar', style({ opacity: 0, transform: 'translateX(-16px)' }), {
         optional: true,
       }),
-      // Each child will appear sequentially with the delay of 500ms
+      // Each child will appear sequentially with the delay of 650ms
       query(
         '.progress-bar',
         stagger('100ms', [
@@ -84,38 +84,16 @@ export const slideInBarAnimation = [
   ]),
 ]
 
-// export const barAnimation = [
-//   trigger('staggerItems', [
-//     transition('*<=>*', [ // each time the binding value changes
-//       query(':leave', [
-//         style({
-//           opacity: 1,
-//           transform: 'translateX(0)'
-//         }),
-//         stagger(125, [
-//           animate('125ms', style({
-//             opacity: 0,
-//             transform: 'translateX(-15px)'
-//           })),
-//         ])
-//       ], {optional: true}),
-//       query(':enter', [
-//         style({
-//           opacity: 0,
-//           transform: 'translateX(-15px)'
-//         }),
-//         stagger('125ms', [
-//           animate('125ms', style({
-//             opacity: 1,
-//             transform: 'translateX(0)'
-//           }))
-//         ]),
-//       ], {
-//         optional: true
-//       })
-//     ])
-//   ])
-// ]
+export const turnCardsAnimation = [
+  trigger('turnCard', [
+    transition('out <=> in', [
+      // initial state of all children
+      query('.skill-card',style( {opacity: 0.5, transform: 'rotateY(90deg)'}),{optional:true}),
+      // animate all children with the delay of x  ms
+      query('.skill-card',stagger('100ms', [animate('350ms ease-in', style({opacity:1, transform:'rotateY(0)'}))]),{optional:true}),
+    ]),
+  ]),
+]
 
 export const slideUpToplinkAnimation = [
   trigger('slideUpLink', [
