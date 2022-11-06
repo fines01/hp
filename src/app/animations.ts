@@ -90,7 +90,7 @@ export const turnCardsAnimation = [
       // initial state of all children
       query('.skill-card',style( {opacity: 0.5, transform: 'rotateY(90deg)'}),{optional:true}),
       // animate all children with the delay of x  ms
-      query('.skill-card',stagger('100ms', [animate('350ms ease-in', style({opacity:1, transform:'rotateY(0)'}))]),{optional:true}),
+      query('.skill-card',stagger('100ms', [animate('450ms ease-in', style({opacity:1, transform:'rotateY(0)'}))]),{optional:true}),
     ]),
   ]),
 ]

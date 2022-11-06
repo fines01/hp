@@ -13,20 +13,27 @@
       <!-- [@slideInReverse]="skillDiv._intersecting ? 'in' : 'out'" [threshold]="0.6"> -->
       <!-- OPTION A.: Skill - Cards -->
       <div class="cards-container" appObserveIntersection #el="intersection"
-        [@turnCard]="skillDiv._intersecting && el._intersecting ? 'in' : 'out'" [threshold]="1">
+        [threshold]="0.2" [rootMargin]="'200px 0px 0px 0px'" [@turnCard]="el._intersecting ? 'in' : 'out'" >
         <div *ngFor="let skill of skills" class="skill-card">
           <div class="skill-icon"><img src="{{ skill.img }}" alt=""></div>
           {{ skill.name }}
         </div>
       </div>
-      
+
     </div>
 
+  </div>
 
-    <h3 appObserveIntersection #aboutHl="intersection" [@slideIn]="aboutHl._intersecting ? 'in' : 'out'" [threshold]="0.9">Who I Am</h3>
-    
+  <h3 appObserveIntersection #aboutHl="intersection" [@slideIn]="aboutHl._intersecting ? 'in' : 'out'"
+    [threshold]="0.9">Who I Am</h3>
+
+  <div class="about-me">
+
     <div class="introduction">
-      <img class="picture" appObserveIntersection #picture="intersection" [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.6" src="assets/img/passfoto.jpg" alt="picture">
+      <div class="img-wrapper">
+        <img class="picture" appObserveIntersection #picture="intersection"
+        [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/passfoto.jpg" alt="picture">
+      </div>
       <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
         [threshold]="0.6">
         I'm a <span class="col-highlight">front-end developer</span> and hobby kickboxer
@@ -34,35 +41,37 @@
       </p>
     </div>
 
+    <div class="about-details">
+      <div class="row" appObserveIntersection #aboutHeader="intersection"
+        [@slideIn]="aboutHeader._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
+        <!-- <h3>Who I Am</h3> -->
+        <div class="quotation-start-img"><img src="assets/img/icons/quotationmarks-teal.png" alt="quotation marks">
+        </div>
+      </div>
+      <p appObserveIntersection #aboutParagraph1="intersection"
+        [@slideInReverse]="aboutParagraph1._intersecting ? 'in' : 'out'" [threshold]="0.5"
+        [rootMargin]="'200px 0px 0px 0px'">
+        {{ about.p1 }}
+      </p>
+      <p appObserveIntersection #aboutParagraph2="intersection"
+        [@slideIn]="aboutParagraph2._intersecting ? 'in' : 'out'" [threshold]="0.5"
+        [rootMargin]="'200px 0px 0px 0px'">
+        {{ about.p2 }}
+
+      </p>
+      <p appObserveIntersection #aboutParagraph3="intersection"
+        [@slideInReverse]="aboutParagraph3._intersecting ? 'in' : 'out'" [threshold]="0.5"
+        [rootMargin]="'200px 0px 0px 0px'">
+        {{ about.p3 }}
+      </p>
+      <div class="quotation-line" appObserveIntersection #quotationEnd="intersection"
+        [@slideIn]="quotationEnd._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
+        <div class="line"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="about-secondary">
-    <div class="row" appObserveIntersection #aboutHeader="intersection"
-      [@slideIn]="aboutHeader._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
-      <!-- <h3>Who I Am</h3> -->
-      <div class="quotation-start-img"><img src="assets/img/icons/quotationmarks-teal.png" alt="quotation marks"></div>
-    </div>
-    <p appObserveIntersection #aboutParagraph1="intersection"
-      [@slideInReverse]="aboutParagraph1._intersecting ? 'in' : 'out'" [threshold]="0.5"
-      [rootMargin]="'200px 0px 0px 0px'">
-      {{ about.p1 }}
-    </p>
-    <p appObserveIntersection #aboutParagraph2="intersection"
-      [@slideInReverse]="aboutParagraph2._intersecting ? 'in' : 'out'" [threshold]="0.5"
-      [rootMargin]="'200px 0px 0px 0px'">
-      {{ about.p2 }}
-
-    </p>
-    <p appObserveIntersection #aboutParagraph3="intersection"
-      [@slideInReverse]="aboutParagraph3._intersecting ? 'in' : 'out'" [threshold]="0.5"
-      [rootMargin]="'200px 0px 0px 0px'">
-      {{ about.p3 }}
-    </p>
-    <div class="quotation-line" appObserveIntersection #quotationEnd="intersection"
-      [@slideIn]="quotationEnd._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
-      <div class="line"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-  </div>
 </section>

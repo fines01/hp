@@ -79,11 +79,7 @@ p {
 }
 
 .about-main,
-.about-secondary {
-  // background-color: var(--col-grey-035);
-  // padding: 3rem;
-  // margin: 3rem 0;
-  //border:1px solid lime;
+.about-details {
 
   @media screen and (max-width: $breakpoint-sm) {
     padding: 2rem;
@@ -94,17 +90,31 @@ p {
   }
 }
 
-.about-secondary {
+.about-details {
   background-color: var(--col-grey-035);
   padding: 3rem;
 }
 
 .about-main {
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 32px;
+  gap: 2rem;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: $breakpoint-xs) {
+    gap: 1rem;
+  }
+}
+
+.about-me {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 
   .picture {
@@ -113,45 +123,54 @@ p {
     object-fit: contain;
     border-radius: 50%;
     background-color: #ADB5C7;
-  }
 
-  // @media screen and (max-width: $breakpoint-lg) { // for option B.: skill-bars
-  @media screen and (max-width: 1035px) {
-    // flex-direction: column;
-  }
-
-  @media screen and (max-width: $breakpoint-smmd) {
-    .picture {
+    @media screen and (max-width: $breakpoint-smmd) {
       width: 200px;
       height: 200px;
     }
-  }
 
-  @media screen and (max-width: $breakpoint-sm) {
-    gap: 2rem;
-
-    .picture {
+    @media screen and (max-width: $breakpoint-sm) {
       width: 150px;
       height: 150px;
     }
-  }
 
-  @media screen and (max-width: $breakpoint-xs) {
-    gap: 1rem;
-
-    .picture {
+    @media screen and (max-width: $breakpoint-xs) {
       width: 100px;
       height: 100px;
     }
   }
 }
 
-.introduction::after {
+.img-wrapper {
+  position: relative;
+  cursor: pointer;
+  //transition: all 450ms ease;
+
+  &:hover::after {
+    background-color: transparent;
+  }
+}
+
+.img-wrapper::after {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 0, 255, 0.3);
+  background-color: var(--col-red-02);
+  z-index: 1;
+  transition: all 225ms ease;
+}
+
+
+.about-me::after {
   content: '';
   position: absolute;
-  // width: 100%;
-  // height: 100%;
   border: 5px solid var(--col-teal-02);
+  border: 5px solid var(--col-teal);
   padding: 16px;
   top: -32px;
   bottom: 32px;
@@ -161,7 +180,8 @@ p {
 }
 
 .introduction {
-  background-color: var(--col-grey-035);
+  //   background-color: var(--col-grey-035);
+  border: 5px solid var(--col-grey-035);
   padding: 3rem;
   // width: 50%;
   // width: 100%;
@@ -189,10 +209,6 @@ p {
       //margin: 1rem 0;
     }
 
-    .divider {
-      // width: 20%;
-      //display: none;
-    }
   }
 
   @media screen and (max-width: $breakpoint-md) {
@@ -209,8 +225,6 @@ p {
 }
 
 .col-highlight {
-  // color: var(--col-red);
-  // color: var(--col-cyan-30);
   color: var(--col-teal);
   font-weight: 700;
 }
@@ -218,12 +232,6 @@ p {
 .skills {
   // width: 50%;
   width: 100%;
-
-  // @media screen and (max-width: $breakpoint-lg) { // for option B.: skill-bars
-  @media screen and (max-width: 1035px) {
-    // breakpoint-xl (1200px) for option A.: skill-cards
-    //   width: 100%;
-  }
 
 }
 
@@ -233,6 +241,7 @@ p {
   // width: 100%;
   // height: 100%;
   border: 5px solid var(--col-red-05);
+  border: 5px solid var(--col-red);
   padding: 16px;
   top: -32px;
   bottom: 32px;
@@ -248,7 +257,7 @@ p {
   justify-content: center;
   position: relative;
 
-  background-color: var(--col-teal-02);// rgb(16, 68, 77);
+  background-color: var(--col-teal-02); // rgb(16, 68, 77);
   background-color: var(--col-grey-035);
   padding: 32px 4px;
   //   border: 2px solid var(--col-teal-05);
@@ -272,10 +281,10 @@ p {
   border: 1px solid transparent;
 
   &:hover {
-    border: 1px solid var(--col-red);
-
     .skill-icon {
-      transform: scale(1.1);
+      img {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -300,25 +309,17 @@ p {
     }
   }
 
-  @media screen and (max-width: $breakpoint-lg){
-      width: 150px;
-      height: 90px;
+  @media screen and (max-width: $breakpoint-lg) {
+    width: 150px;
+    height: 90px;
   }
 
   @media screen and (max-width: $breakpoint-sm) {
     font-size: 14px;
     width: 120px;
     //height:
-    border: 1px solid lime;
   }
 
-  // @media screen and (max-width: 426px){
-  //     font-size: 13px;
-  //     width: 100px;
-  // }
-  // @media screen and (max-width: 387px){
-  //     width: 90px;
-  // }
 }
 
 .skill-bars {
@@ -326,7 +327,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // justify-content: center;
   gap: 16px;
 }
 
@@ -334,14 +334,12 @@ p {
   position: relative;
   width: 100%;
   background: var(--col-teal-02);
-  //margin: 16px 0;
   border-radius: 6px;
   box-shadow: 0 0 2px 0px var(--col-teal-05);
 
   .progress-bar-fill {
     z-index: 1;
     height: 28px;
-    //width: 40%;
     background: var(--col-cyan-40) !important;
     background: var(--col-teal) !important;
     border-radius: 6px 0 0 6px;
@@ -349,7 +347,6 @@ p {
     justify-content: flex-start;
     align-items: center;
     line-break: strict;
-    //border: 1px solid var(--col-teal);
     box-sizing: border-box;
 
   }
@@ -367,7 +364,7 @@ p {
   }
 }
 
-.about-secondary {
+.about-details {
   width: 100;
 
   h3 {
@@ -386,7 +383,6 @@ p {
 }
 
 .quotation-start-img {
-  // height: 32px;
   background-color: var(--col-grey-035);
   background-color: var(--col-blue-10);
   border-radius: 50%;
@@ -397,7 +393,6 @@ p {
   width: 64px;
 
   img {
-    // width: 32px;
     width: 32px;
     margin: 16px;
   }
