@@ -1,53 +1,41 @@
 <section id="about">
+
   <div class="row">
     <h2>About</h2>
   </div>
+
+  <h3 appObserveIntersection #skillsHl="intersection" [@slideIn]="skillsHl._intersecting ? 'in' : 'out'"
+    [threshold]="0.9">Skills</h3>
+
   <div class="about-main">
 
-    <!-- TODO smaller thresholds in mobile views? -->
-    
-    <div class="introduction" appObserveIntersection #intro="intersection"
-      [@slideIn]="intro._intersecting ? 'in' : 'out'" [threshold]="0.6">
-      <img class="picture" src="assets/img/passfoto.jpg" alt="picture">
-      <!-- <h3>About me</h3> -->
-      <div class="divider">
-        <div class="quotation-line divider-quotation-start">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="line"></div>
-        </div>
-      </div>
-
-      <p class="intro-short">
-        I'm a <span class="col-highlight">front-end developer</span> and hobby kickboxer
-        with experience in developing applications with JavaScript and Angular and a passion for pushing my boundaries.
-      </p>
-
-    </div>
-
-    <div class="skills" appObserveIntersection #skillDiv="intersection"
-      [@slideInReverse]="skillDiv._intersecting ? 'in' : 'out'" [threshold]="0.6">
-
+    <div class="skills" appObserveIntersection #skillDiv="intersection">
+      <!-- [@slideInReverse]="skillDiv._intersecting ? 'in' : 'out'" [threshold]="0.6"> -->
       <!-- OPTION A.: Skill - Cards -->
-      <div class="cards-container" appObserveIntersection #el="intersection" [@turnCard]="el._intersecting ? 'in' : 'out'"
-        [threshold]="0.6" >
-        <div *ngFor="let skill of skills"  class="skill-card">
+      <div class="cards-container" appObserveIntersection #el="intersection"
+        [@turnCard]="skillDiv._intersecting && el._intersecting ? 'in' : 'out'" [threshold]="1">
+        <div *ngFor="let skill of skills" class="skill-card">
           <div class="skill-icon"><img src="{{ skill.img }}" alt=""></div>
           {{ skill.name }}
         </div>
       </div>
-
-      <!-- OPTION B.: Skill - Bars -->
-      <!-- <div class="skill-bars" appObserveIntersection #el="intersection" [@slideInBar]="el._intersecting ? 'in' : 'out'"
-        [threshold]="0.6">
-        <div *ngFor="let skill of skills" class="progress-bar">
-          <div class="progress-bar-fill" [style.width.%]="skill.value">
-            <span class="progress-bar-label">{{ skill.name }}</span>
-          </div>
-        </div>
-      </div> -->
+      
     </div>
+
+
+    <h3 appObserveIntersection #aboutHl="intersection" [@slideIn]="aboutHl._intersecting ? 'in' : 'out'" [threshold]="0.9">Who I Am</h3>
+    
+    <div class="introduction">
+      <img class="picture" appObserveIntersection #picture="intersection" [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.6" src="assets/img/passfoto.jpg" alt="picture">
+      <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
+        [threshold]="0.6">
+        I'm a <span class="col-highlight">front-end developer</span> and hobby kickboxer
+        with experience in developing applications with JavaScript and Angular.
+      </p>
+    </div>
+
   </div>
+
   <div class="about-secondary">
     <div class="row" appObserveIntersection #aboutHeader="intersection"
       [@slideIn]="aboutHeader._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
