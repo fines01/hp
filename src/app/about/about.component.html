@@ -4,9 +4,9 @@
     <h2>About</h2>
   </div>
 
+  
   <h3 appObserveIntersection #skillsHl="intersection" [@slideIn]="skillsHl._intersecting ? 'in' : 'out'"
     [threshold]="0.9">Skills</h3>
-
   <div class="about-main">
 
     <div class="skills" appObserveIntersection #skillDiv="intersection">
@@ -19,7 +19,6 @@
           {{ skill.name }}
         </div>
       </div>
-
     </div>
 
   </div>

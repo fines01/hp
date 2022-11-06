@@ -23,11 +23,7 @@ h2 {
 h3 {
   text-transform: uppercase;
   text-align: center;
-  // font-size: 1.5rem;
-  // margin: 32px 0 16px 0;
-  //    padding-bottom: 16px;
-  //    margin-bottom: 16px;
-  margin-bottom: 0px;
+  margin-bottom: 8px;
   margin-top: 16px;
   //    border-bottom: 1px solid var(--col-teal-05);
 }
@@ -99,8 +95,9 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 32px;
   gap: 2rem;
+  padding: 0;
+  position: relative;
 
   @media screen and (max-width: $breakpoint-sm) {
     gap: 2rem;
@@ -143,6 +140,7 @@ p {
 
 .img-wrapper {
   position: relative;
+  border-radius: 50%;
   cursor: pointer;
   //transition: all 450ms ease;
 
@@ -320,48 +318,6 @@ p {
     //height:
   }
 
-}
-
-.skill-bars {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.progress-bar {
-  position: relative;
-  width: 100%;
-  background: var(--col-teal-02);
-  border-radius: 6px;
-  box-shadow: 0 0 2px 0px var(--col-teal-05);
-
-  .progress-bar-fill {
-    z-index: 1;
-    height: 28px;
-    background: var(--col-cyan-40) !important;
-    background: var(--col-teal) !important;
-    border-radius: 6px 0 0 6px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    line-break: strict;
-    box-sizing: border-box;
-
-  }
-
-  .progress-bar-label {
-    color: var(--col-blue-10);
-    font-size: 14px;
-    font-weight: 700;
-    margin-left: 8px;
-
-    @media screen and (max-width: $breakpoint-sm) {
-      font-size: 12px;
-      // font-weight: 500;
-    }
-  }
 }
 
 .about-details {
