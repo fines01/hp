@@ -7,35 +7,35 @@
     --canvas-btm-height: 117px;
 
     --col-red: rgb(250, 39, 89);
-    --col-red-40: #c70532;
+    --col-red-40: rgb(199, 5, 50);
     --col-teal: rgb(45, 252, 216); //2dfcd8 //58% -primary
-    --col-teal-90: #cdfef6;//secondary (97)
-    --col-teal-95: #e6fffa; // secondary (97)
-    --col-teal-70: #68fde4;// action 73%
+    // --col-teal-90: #cdfef6;//secondary (97)
+    // --col-teal-95: #e6fffa; // secondary (97)
+    // --col-teal-70: #68fde4;// action 73%
 
     // --col-teal-40: #03c9a8; //40%;
     // --col-teal-35: #03b093; // 35% // --> hover
     // --col-teal-30: #02977e;
 
-    --col-cyan-80: #99ffff;
-    --col-cyan: #00ffff;
-    --col-cyan-40: #00cccc;
-    //--col-cyan-35: #00b3b3;
-    --col-cyan-30: #009999;
+    // --col-cyan-80: #99ffff;
+    // --col-cyan: #00ffff;
+    // --col-cyan-40: #00cccc;
+    // //--col-cyan-35: #00b3b3;
+    // --col-cyan-30: #009999;
     // --col-cyan-25: #008080;
 
     --col-blue-10: rgb(9, 22, 42);
-    --col-blue-15: #1f222e;// #0d213f;
+    //--col-blue-15: #1f222e;// #0d213f;
     // 
-    --col-blue-bg: #1f222e;
-    --col-blue-cards: #292d3d;
+    // --col-blue-bg: #1f222e;
+    // --col-blue-cards: #292d3d;
 
-    // --col-blue-11: rgb(10, 25, 47);
+    // // --col-blue-11: rgb(10, 25, 47);
   
-    --col-blue-80: #aec4ea;
-    --col-blue-85: #c3d3ef;
+    // --col-blue-80: #aec4ea;
+    // --col-blue-85: #c3d3ef;
 
-    --col-darkblue-05: rgba(0,0,9,0.5); // CHANGE: blue-10-05
+    --col-darkblue-05: rgba(0,0,18,0.5); // 0,0,9
     --col-blue-10-07: rgb(9, 22, 42, 0.7);
     --col-blue-10-05: rgb(9, 22, 42, 0.5);
 
@@ -47,9 +47,9 @@
     --col-red-05: rgba(250, 39, 89, 0.5);
     --col-teal-05: rgba(45, 252, 216, 0.5);
     --col-grey-05: rgba(91, 89, 99, 0.5);
-    --col-red-07: rgba(250, 39, 89, 0.7);
-    --col-black-06: rgba(40, 40, 40, 0.6);
-    --col-black-05: rgba(40, 40, 40, 0.5);
+    --col-red-07: rgba(250, 39, 89, 0.7); // faulty-entry 
+    // --col-black-06: rgba(40, 40, 40, 0.6);
+    // --col-black-05: rgba(40, 40, 40, 0.5);
     --col-red-02: rgba(250, 39, 89, 0.2);
     --col-teal-02: rgb(16, 68, 77);// rgba(45, 252, 216, 0.2);
     --col-grey-02: rgba(91, 89, 99, 0.2);
@@ -57,25 +57,25 @@
     --col-grey-035: rgb(38, 45, 62); // rgba(91, 89, 99, 0.35);
 
 
-    --col-dark2: rgb(27, 36, 47);
-    --col-grey: rgb(91, 89, 99); // paragraph text, light bg
-    --col-black: rgb(40, 40, 40);
+    //--col-dark2: rgb(27, 36, 47);
+    //--col-grey: rgb(91, 89, 99); // paragraph text, light bg
+    //--col-black: rgb(40, 40, 40);
 
-    --col-indigo-secondary: rgb(175, 154, 190); // rename
+    //--col-indigo-secondary: rgb(175, 154, 190); // rename
     
     --distX: 48px; // seitenabstände
     --transition: all 125ms linear;
     
     // minimal color scheme
-    --col-bg-light: rgb(229, 229, 229); // 90% grau
-    --col-blue-primary: rgb(18, 107, 251); //53%
-    --col-blue-hover: #0349B9; // 37%
-    --col-blue-secondary: rgb(238, 244, 255); //97%
-    --col-blue-action: rgb(123, 185, 250); //73%
+    // --col-bg-light: rgb(229, 229, 229); // 90% grau
+    // --col-blue-primary: rgb(18, 107, 251); //53%
+    // --col-blue-hover: #0349B9; // 37%
+    // --col-blue-secondary: rgb(238, 244, 255); //97%
+    // --col-blue-action: rgb(123, 185, 250); //73%
     // --col-grey: rgb(91, 89, 99);
     // --col-black: rgb(40, 40, 40);
 
-    --col-white: rgb(245, 243, 243);
+    //--col-white: rgb(245, 243, 243);
 
 }
 
@@ -205,7 +205,7 @@ h2 {
   user-select: none;
   border: none !important;
   opacity: 0.6;
-  //pointer-events: none;
+  pointer-events: none;
   cursor: not-allowed;
   // position: relative; // gn
 }
@@ -213,14 +213,6 @@ h2 {
 a:has(.btn-disabled){
   pointer-events: none;
 }
-
-// .btn-disabled::after {
-//   content:'';
-//   position: absolute;
-//   left:0; right:0;
-//   top:0; bottom:0;
-//   cursor: not-allowed !important; // gn!
-// }
 
 a.disabled, .disabled-link {
   // cursor: not-allowed;
