@@ -3,7 +3,7 @@ import { Mouse } from "./mouse.class";
 
 export class RainEffect {
     
-    fontSize: number = 14;
+    fontSize: number = 15;
     accelerationPerFrame!: number;
     lastAnimationFrame = 0;
     animationFrameTimer = 0;
@@ -85,7 +85,7 @@ export class RainEffect {
             this.animationFrameTimer += deltaTime;
         }
         let self = this;
-        this.animationLoop = requestAnimationFrame(() => {
+        if (!this.paused) this.animationLoop = requestAnimationFrame(() => {
             let timeStamp = Date.now();
             self.checkAnimationFrameTime(timeStamp);
         });
@@ -97,8 +97,8 @@ export class RainEffect {
      */
     animate() {
         this.ctx.fillStyle = this.bgGradient; //radGradient1;
-        //this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
-        this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
+        this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight) // option A.: clear canvas
+        // this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight); // option B.: paint over canvas with a transparent gradient
         for (let i = 0; i < this.characterArray.length; i++) {
             this.characterArray[i].update();
         }

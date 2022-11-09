@@ -3,8 +3,8 @@ import { Mouse } from "./mouse.class";
 export class Character {
 
     // characters = "Fines01Front1End2Developer3With4Full5Stack6Basics/|JAVASCRIPT?ANGULAR?SQL?NoSQL?Git?RestAPI+789-*<>$";
-    characters = '/><+-*$?!!=|&%#{}[]01010101Σ/><><><><><ines ❄'; // λπΣ√τ ツ
-    characterOpacity = 0.1;
+    characters = '/><+-*$?!=|&%#{}[]01010101Σ/><><><><><seni❄'; // λπΣ√τ ツ
+    characterOpacity = 0.5;
     colors = [`rgb(0,255,299,${this.characterOpacity})`, `rgb(227, 27, 109,${this.characterOpacity})`, `rgb(255, 255, 255,${this.characterOpacity})`];
     //letters = this.characters.split(''); // array with all characters
     pushed = false;
@@ -33,7 +33,7 @@ export class Character {
         this.y = y;
         this.directionY = (Math.random() * 0.25) + 0.125;
         this.colorIndex = Math.floor(Math.random() * this.colors.length);
-        this.characterOpacity = this.y / canvasHeight;
+        //this.characterOpacity = this.y / canvasHeight;
         let index = Math.floor(Math.random() * this.characters.length);
         this.activeCharacter = this.characters.charAt(index);
         this.canvasWidth = canvasWidth;
@@ -62,7 +62,7 @@ export class Character {
     draw() {
         this.ctx.textAlign = 'center';
         //else ctx.fillStyle = this.getColor();
-        if (this.pushed) this.ctx.fillStyle = 'rgba(0,255,255,0.5)';//'rgb(45, 252, 216, 0.25)'; //'rgb(255,255,255,0.15)'; //'rgb(250, 39, 89)';
+        if (this.pushed) this.ctx.fillStyle = 'rgba(0,255,255,0.99)';//'rgb(45, 252, 216, 0.25)'; //'rgb(255,255,255,0.15)'; //'rgb(250, 39, 89)';
         else this.ctx.fillStyle = this.charGradient;
         this.ctx.font = this.fontSize + 'px monospace';
         this. ctx.fillText(this.activeCharacter, this.x, this.y);
@@ -73,7 +73,7 @@ export class Character {
         // move (not colliding) character
         this.y += this.speed;
         this.speed += this.acceleration;
-        this.characterOpacity = (this.y * 0.7 / this.canvasHeight) + 0.1;
+        // this.characterOpacity = (this.y * 0.7 / this.canvasHeight) + 0.1;
         // check if character is at bottom
         if (this.y > this.canvasHeight) {
             this.y = -this.fontSize + 3;
@@ -135,9 +135,9 @@ export class Character {
         if (this.canvasHeight > this.canvasWidth) length = this.canvasWidth;
         else length = this.canvasHeight;
         this.charGradient = this.ctx.createRadialGradient(this.canvasWidth / 2, this.canvasHeight / 2, 150, this.canvasWidth / 2, this.canvasHeight / 2, length*0.8); // (x1,y1,radius1,x2,y2,radius2) // inner circle (x,y,radius 1 && outer circle (x,y,radius 22)) --> gradient will be drawn between these two circles
-        this.charGradient.addColorStop(0, 'rgba(0,255,255, 0.2)'); // (offset[0,1], color) , offset 0 == start, offset 1 == end
-        this.charGradient.addColorStop(0.8, 'rgba(255,255,255, 0.08)');
-        this.charGradient.addColorStop(0.89, 'rgba(255,0,255, 0.09)');
+        this.charGradient.addColorStop(0, 'rgba(0,255,255, 0.5)'); // (offset[0,1], color) , offset 0 == start, offset 1 == end
+        this.charGradient.addColorStop(0.5, 'rgba(255,255,255, 0.5)');
+        this.charGradient.addColorStop(0.8, 'rgba(255,0,255, 0.5)');
     }
 
 }
