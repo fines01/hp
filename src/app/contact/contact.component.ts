@@ -30,8 +30,8 @@ export class ContactComponent implements OnInit {
         email: new FormControl('', [Validators.required, Validators.email]),
         message: new FormControl('', [Validators.required])
       }
-    )
-  }
+      )
+    }
 
   onSubmit(formData: any){ // this.formData.value
     // TODO: Use EventEmitter with form value?

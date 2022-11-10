@@ -7,7 +7,7 @@
 
   <div class="" appObserveIntersection #formEl="intersection" [threshold]="1" [rootMargin]="'200px 0px -100px 0px'"></div>
 
-  <form action="" method="" [formGroup]="form" (ngSubmit)="onSubmit(form.value)" [@slideUp]="formEl._intersecting ? 'in' : 'out'">
+  <form action="" method="" [formGroup]="form" (ngSubmit)="onSubmit(form.value)" [@slideUp]="formEl._intersecting || form.touched ? 'in' : 'out'">
 
     <div class="">
       <label for="name">Name</label><br>
@@ -28,7 +28,7 @@
 
     <div class="">
       <label for="message">Message</label><br>
-      <textarea placeholder="Enter your message" id="message" [formControl]="message"
+      <textarea #msgInput placeholder="Enter your message" id="message" [formControl]="message"
         [class.faulty-entry]="message.invalid  && (message.dirty || message.touched)" class="form-control"></textarea>
       <!-- <span class="hint-message">300 Characters of 300 still left</span> -->
       <span *ngIf="message.invalid  && (message.dirty || message.touched)" class="error-msg message-error">Please enter
