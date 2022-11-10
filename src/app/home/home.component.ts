@@ -40,9 +40,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize')
   init(){
+    this.calculateDocumentHeight();
     this.cancelAnimation();
     this.setCanvasSize();
-    if(this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context); // option A.: floating 6 connecting particles
+    if(this.context) this.animation = new FloatEffect(this.canvasWidth, this.canvasHeight, this.context); // option A.: floating & connecting particles
     //if(this.context) this.animation = new RainEffect(this.canvasWidth, this.canvasHeight, this.context); // option B.: character rain
   }
 
@@ -64,6 +65,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.animation.checkAnimationFrameTime(0);
       this.animation.paused = false;
     } 
+  }
+
+  /** calculates actual inner height of the browser window. 
+   * This fixes issue with vh on mobile devices (like the browser toolbar height, which is not taken into account in vh) */
+  calculateDocumentHeight(){
+    let documentHeight = window.innerHeight;
+    document.documentElement.style.setProperty('view-height', documentHeight + 'px');
   }
 
   

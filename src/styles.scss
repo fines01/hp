@@ -9,81 +9,26 @@
     --col-red: rgb(250, 39, 89);
     --col-red-40: rgb(199, 5, 50);
     --col-teal: rgb(45, 252, 216); //2dfcd8 //58% -primary
-    // --col-teal-90: #cdfef6;//secondary (97)
-    // --col-teal-95: #e6fffa; // secondary (97)
-    // --col-teal-70: #68fde4;// action 73%
-
-    // --col-teal-40: #03c9a8; //40%;
-    // --col-teal-35: #03b093; // 35% // --> hover
-    // --col-teal-30: #02977e;
-
-    // --col-cyan-80: #99ffff;
-    // --col-cyan: #00ffff;
-    // --col-cyan-40: #00cccc;
-    // //--col-cyan-35: #00b3b3;
-    // --col-cyan-30: #009999;
-    // --col-cyan-25: #008080;
-
     --col-blue-10: rgb(9, 22, 42);
-    //--col-blue-15: #1f222e;// #0d213f;
-    // 
-    // --col-blue-bg: #1f222e;
-    // --col-blue-cards: #292d3d;
-
-    // // --col-blue-11: rgb(10, 25, 47);
-  
-    // --col-blue-80: #aec4ea;
-    // --col-blue-85: #c3d3ef;
-
     --col-darkblue-05: rgba(0,0,18,0.5); // 0,0,9
     --col-blue-10-07: rgb(9, 22, 42, 0.7);
-    --col-blue-10-05: rgb(9, 22, 42, 0.5);
-
-    // --col-teal-a: rgb(5, 194, 201); //05c2c9 (40%)
-    // --col-teal-b: rgb(1, 161, 167); //01a1a7 (33%)
-    
-    --col-dark: rgb(26, 26, 26); // #1a1a1a
-
+    --col-blue-10-05: rgb(9, 22, 42, 0.5);    
+    // --col-dark: rgb(26, 26, 26); // #1a1a1a
     --col-red-05: rgba(250, 39, 89, 0.5);
     --col-teal-05: rgba(45, 252, 216, 0.5);
     --col-grey-05: rgba(91, 89, 99, 0.5);
     --col-red-07: rgba(250, 39, 89, 0.7); // faulty-entry 
-    // --col-black-06: rgba(40, 40, 40, 0.6);
-    // --col-black-05: rgba(40, 40, 40, 0.5);
     --col-red-02: rgba(250, 39, 89, 0.2);
     --col-teal-02: rgb(16, 68, 77);// rgba(45, 252, 216, 0.2);
     --col-grey-02: rgba(91, 89, 99, 0.2);
-
     --col-grey-035: rgb(38, 45, 62); // rgba(91, 89, 99, 0.35);
-
-
-    //--col-dark2: rgb(27, 36, 47);
-    //--col-grey: rgb(91, 89, 99); // paragraph text, light bg
-    //--col-black: rgb(40, 40, 40);
-
-    //--col-indigo-secondary: rgb(175, 154, 190); // rename
     
     --distX: 48px; // seitenabstände
     --transition: all 125ms linear;
-    
-    // minimal color scheme
-    // --col-bg-light: rgb(229, 229, 229); // 90% grau
-    // --col-blue-primary: rgb(18, 107, 251); //53%
-    // --col-blue-hover: #0349B9; // 37%
-    // --col-blue-secondary: rgb(238, 244, 255); //97%
-    // --col-blue-action: rgb(123, 185, 250); //73%
-    // --col-grey: rgb(91, 89, 99);
-    // --col-black: rgb(40, 40, 40);
-
-    //--col-white: rgb(245, 243, 243);
+    // fix mobile vh issues in home section
+    --view-height: 100vh;
 
 }
-
-/* karla-regular - latin */
-// @font-face { // same err as above
-//   font-family: 'Karla';
-//   src: url('/assets/fonts/karla-v23-latin/karla-v23-latin-regular.ttf'); // format('truetype');
-// }
 
 html, body { 
     height: 100%;
@@ -95,9 +40,7 @@ html, body {
 body { 
   margin: 0; 
   // font-family: Roboto, "Helvetica Neue", sans-serif; 
-  font-family: Karla, sans-serif; // dl Karla, Gilroy-Medium & Gilroy-Bold
-  //color: var(--col-black);
-  // background-color: var(--col-bg-light);
+  font-family: Karla, sans-serif;
   color: white;
   background-color: var(--col-blue-10);
   overflow-x: hidden;
@@ -171,7 +114,6 @@ img {
 }
 
 h2 {
-  // font-size: 2rem;
   margin: 0;
 }
 
@@ -207,7 +149,6 @@ h2 {
   opacity: 0.6;
   pointer-events: none;
   cursor: not-allowed;
-  // position: relative; // gn
 }
 
 a:has(.btn-disabled){
@@ -224,8 +165,6 @@ a.disabled, .disabled-link {
   border-bottom: 2px solid rgba(255,255,255,0.8);
   color: rgba(255,255,255,0.8) !important;
 }
-
-// menu 
 
 .mobile-menu {
   position: fixed;
@@ -252,11 +191,9 @@ a.disabled, .disabled-link {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    // padding: 0px 16px;
     margin-bottom:16px;
     text-transform: uppercase;
     font-weight: 700;
-    //text-align: right;
 
     &:last-child {
       margin-bottom: 0px;
@@ -273,10 +210,9 @@ a.disabled, .disabled-link {
   }
 }
 
-.slide-down {
-  animation: slideDown 5s linear; // change animation-duratoion later
-  ;
-}
+// .slide-down {
+//   animation: slideDown 5s linear;
+// }
 
 /* *** Scrollbar *** */
 
