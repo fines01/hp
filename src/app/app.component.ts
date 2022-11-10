@@ -1,5 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router} from '@angular/router';
+import { NavigationEnd, Router, Scroll} from '@angular/router';
 import { Subscription } from 'rxjs';
 import { slideDownAnimation, slideInAnimation} from './animations';
 
@@ -17,13 +18,21 @@ export class AppComponent implements OnInit, OnDestroy {
   showMobileMenu = false;
   fragment!: any; //string
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+    //viewportScroller.setOffset([0,30]);
+  }
 
   ngOnInit(): void {
-    this.routerSubscription = this.router.events.subscribe( (events: any) => {
-      if (events instanceof NavigationEnd) {
-        this.currentRoute = events.url
+    this.routerSubscription = this.router.events.subscribe( (e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.currentRoute = e.url
         this.closeMenu();
+      }
+      if (e instanceof Scroll && e.anchor) {
+        // anchor navigation (fixes wrong scroll position when navigating from another url)
+        setTimeout(() => {
+          if (typeof e.anchor == 'string') this.viewportScroller.scrollToAnchor(e.anchor);
+        });
       };
     });
   }

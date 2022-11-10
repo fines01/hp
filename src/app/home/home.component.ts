@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
   ngOnInit(): void {
     this.calculateDocumentHeight();
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }
-
+  
   ngAfterViewInit(): void {
     this.context = this.canvas.nativeElement.getContext('2d');
     this.init()
@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   onScroll() {
     if (window.scrollY >= window.innerHeight * 0.1) this.cancelAnimation(); // but maybe still show first frame (else sometimes empty)
     else this.startAnimation();
+    this.calculateDocumentHeight();
   }
 
   cancelAnimation() {
@@ -71,7 +72,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   /** calculates actual inner height of the browser window. 
    * This fixes issue with vh on mobile devices (like the browser toolbar height, which is not taken into account in vh) */
   calculateDocumentHeight(){
-    let documentHeight = window.innerHeight;
+    let documentHeight = document.documentElement.clientHeight;//window.innerHeight;
     document.documentElement.style.setProperty('view-height', documentHeight + 'px');
   }
 

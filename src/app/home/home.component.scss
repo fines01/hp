@@ -16,6 +16,8 @@
   position: relative;
   width: 100%;
   height: var(--view-height); // 100vh --> issues on mobile devices
+  max-height: fill-available;
+  max-height: -webkit-fill-available;
   position: relative;
   box-sizing: border-box;
 }
