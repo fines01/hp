@@ -12,9 +12,7 @@ export const slideDownAnimation = [ // menu slide-down
       opacity: 0,
       transform: 'translateY(-300px)',
     })), //color: 'white'
-    transition('open <=> closed', [
-      animate('225ms linear'),
-    ]),
+    transition('open <=> closed', [animate('525ms ease-out')]),
   ])
 ]
 

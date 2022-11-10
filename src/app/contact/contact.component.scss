@@ -71,11 +71,9 @@ input {
 
   @media screen and (max-width: $breakpoint-xs) {
     //bottom: 8px;
-  }
-
-  @media screen and (max-width: 303px){
     display: none;
   }
+
 }
 
 .faulty-entry {

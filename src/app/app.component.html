@@ -1,7 +1,6 @@
 <!-- Toolbar (Desktop) -->
 <!-- <mat-toolbar class="menu" [class.menu-border]="showDivider || currentRoute === '/about-me'"> -->
-<mat-toolbar class="menu"
-  [ngClass]="{'menu-border': showDivider, 'border-fade-out': !showDivider, 'menu-shadow': !showMobileMenu }">
+<mat-toolbar class="menu" [ngClass]="{'menu-border': showDivider, 'border-fade-out': !showDivider, 'menu-shadow': !showMobileMenu }">
   <!-- || (currentRoute === '/about-me' && !showMobilemenu) -->
   <span class="logo-wrapper" matTooltip="Home" matTooltipPosition="before">
     <a href="#home" (click)="closeMenu()">
@@ -10,8 +9,8 @@
   </span>
   <span class="menu-spacer"></span>
   <a class="menu-link link-desktop" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a class="menu-link link-desktop" href="#portfolio">Portfolio</a>
-  <a class="menu-link link-desktop" href="#contact">Contact</a>
+  <a class="menu-link link-desktop" href="/#portfolio">Portfolio</a>
+  <a class="menu-link link-desktop" href="/#contact">Contact</a>
   <!-- open mobile menu, only show in  mobile view-->
   <!-- <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon"> -->
   <!-- <mat-icon class="mobile-menu-icon">menu</mat-icon> -->
@@ -31,8 +30,8 @@
 </mat-toolbar>
 <div [@slideDown]="showMobileMenu ? 'open' : 'closed'" class="mobile-menu">
   <a class="menu-link" (click)="closeMenu()" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a class="menu-link" (click)="closeMenu()" href="#portfolio">Portfolio</a>
-  <a class="menu-link" (click)="closeMenu()" href="#contact">Contact</a>
+  <a class="menu-link" (click)="closeMenu()" href="/#portfolio">Portfolio</a>
+  <a class="menu-link" (click)="closeMenu()" href="/#contact">Contact</a>
 </div>
 <!-- END Toolbar -->
 

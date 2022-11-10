@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor() { }
   
   ngOnInit(): void {
+    this.calculateDocumentHeight();
     window.scrollTo(0, 0);
   }
 
