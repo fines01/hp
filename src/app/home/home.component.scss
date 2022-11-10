@@ -14,12 +14,12 @@
   background-repeat: no-repeat;
   background-position: 50% 33%;
   position: relative;
+  box-sizing: border-box;
+  position: relative;
   width: 100%;
   height: var(--view-height); // 100vh --> issues on mobile devices
   max-height: fill-available;
   max-height: -webkit-fill-available;
-  position: relative;
-  box-sizing: border-box;
 }
 
 .frame-bottom {

@@ -83,8 +83,11 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 150%;
+  width: 60px;
   height: 100%;
+  box-sizing: border-box;
+  transform: translateX(25%);
+  
 
   &:hover{
     opacity: 0.8;

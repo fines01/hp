@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routerSubscription = this.router.events.subscribe( (e: any) => {
       if (e instanceof NavigationEnd) {
-        this.currentRoute = e.url
+        this.currentRoute = e.url;
         this.closeMenu();
       }
       if (e instanceof Scroll && e.anchor) {
