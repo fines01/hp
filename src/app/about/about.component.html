@@ -34,9 +34,9 @@
         [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/passfoto.jpg" alt="picture">
       </div>
       <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
-        [threshold]="0.6">
-        I'm a <span class="col-highlight">front-end developer</span> and hobby kickboxer
-        with experience in developing applications with JavaScript and Angular.
+        [threshold]="0.6" [innerHtml]="about.intro">
+        <!-- I'm a <span class="col-highlight">front-end developer</span> and hobby kickboxer
+        with experience in developing applications with JavaScript and Angular. -->
       </p>
     </div>
 
