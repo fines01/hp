@@ -1,7 +1,7 @@
 <section id="portfolio" #portfolio>
 
   <div class="filter-row">
-    <h2 appObserveIntersection #pfHeaderEl="intersection" [@slideIn]="pfHeaderEl._intersecting ? 'in' : 'out'">Portfolio</h2>
+    <h2 appObserveIntersection #pfHeaderEl="intersection" [@slideIn]="pfHeaderEl._intersecting ? 'in' : 'out'" class="hl-underline">Portfolio</h2>
     <div class="" appObserveIntersection #filterBtnsEl="intersection" [threshold]="1" [rootMargin]="'200px 0px -100px 0px'"></div>
     <div class="filter-buttons" [@slideUp]="filterBtnsEl._intersecting ? 'in' : 'out'">
       <button (click)="filterProjects()" [class.selected]="filter === undefined">All</button>

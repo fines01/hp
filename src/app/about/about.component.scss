@@ -9,18 +9,18 @@
   gap: 2rem;
 }
 
-h2 {
+#about h2 {
   font-weight: 500;
   //font-size: 2rem;
   display: inline-block;
   padding-bottom: 16px;
   text-transform: uppercase;
-  border-bottom: 4px solid white;
+  // border-bottom: 4px solid white;
   margin-bottom: 0;
   margin-top: 0px;
 }
 
-h3 {
+#about h3 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 8px;
@@ -28,14 +28,14 @@ h3 {
   //    border-bottom: 1px solid var(--col-teal-05);
 }
 
-p {
+#about p {
   text-align: center;
   // color: white;
   // color: var(--col-grey); // lighter
   // color: rgba(0, 0, 0, 0.65); // darker 3
   line-height: 1.5;
   // font-size: 1rem;
-  margin: 0;
+  // margin: 0;
   // font-weight: 600;
 
   @media screen and (max-width: $breakpoint-md) {
@@ -193,6 +193,7 @@ p {
 
   p {
     width: 45%;
+    margin: 0;
   }
 
   @media screen and (max-width: $breakpoint-lg) {
