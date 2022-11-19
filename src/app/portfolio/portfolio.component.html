@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="" 
+    <div class="project-description-wrapper" 
     appObserveIntersection #descriptionEl="intersection" [@slideIn]="i%2 != 0 && descriptionEl._intersecting ? 'in' : 'out'" [@slideInReverse]="i%2 == 0 && descriptionEl._intersecting ? 'in' : 'out'"
     [threshold]="0.5" [rootMargin]="'500px 0px 0px 0px'">
         <h2>{{ project.name }}</h2>

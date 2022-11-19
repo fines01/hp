@@ -3,31 +3,16 @@
 #portfolio {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  // gap: 60px;
   
-  .portfolio-row {
-    padding: 3rem var(--distX);
-  }
-}
-
-// .filter-row, 
-.portfolio-row {
-  // background-color: var(--col-grey-035); // darker 2
-  background-color: var(--col-bg-light); // lighter 1
-  background-color: var(--col-blue-15);
-  background-color: var(--col-grey-035);
-  background-color: rgba(0, 0, 0, 0.2);
-  background-color:rgba(255,255,255,0.06);
 }
 
 .filter-row {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // padding: 32px var(--distX) 60px var(--distX);
-  padding: 60px var(--distX);
+  margin: 60px var(--distX);
   position: relative;
-
 }
 
 h2 {
@@ -65,15 +50,10 @@ h2 {
       // &:nth-child(2) {
       //   margin: 0;
       // }
-
       // font-size: 1.2rem;
     }
 
     &:hover:not(.selected) {
-      // background-color: var(--col-teal-02);
-      // background-color: var(--col-teal-05);
-      // border-color: var(--col-teal-05);
-      // color: var(--col-blue-10);
       border-color: var(--col-red);
       color: var(--col-red);
     }
@@ -111,18 +91,34 @@ h2 {
     }
   }
 
-  // @media screen and (max-width: $breakpoint-xs) {
-  //   button {
-  //     font-size: 1rem;
-  //   }
-  // }
+}
+
+.portfolio-row::after{
+  content:'';
+  position: absolute;
+  z-index: -1;
+  width:100%; height:100%;
+  background: var(--col-darkblue-05);
+  background: rgba(0,0,18,0.3);
+  box-shadow: 0 0 10px 3px rgba(0,0,18,0.3);
+  border-radius: 4px;
+  //border: 1px solid rgba(255,255,255, 0.3);
+
+  @media screen and (max-width: $breakpoint-smmd) {
+    display: none;
+  }
 }
 
 .portfolio-row {
-//   padding: var(--distX);
+  margin: 0px var(--distX) 60px var(--distX);
+  background: var(--col-darkblue-05);
+  // background-color:rgba(255,255,255,0.06);
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
 
   @media screen and (min-width: calc($breakpoint-smmd + 1px)) {
     &:nth-child(2n+1) {
@@ -134,9 +130,10 @@ h2 {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    width: 100%;
-    padding-left:0;
-    padding-right:0;
+    // width: 100%;
+    // padding-left:0;
+    // padding-right:0;
+    padding: 32px;
 
     // &:nth-child(2n+1) {
     //   flex-direction: column-reverse;
@@ -147,6 +144,10 @@ h2 {
       // height: 50%;
     }
 
+    .buttons {
+      margin-top: 8px;
+    }
+
     div {
       width: 100% !important;
     }
@@ -155,14 +156,14 @@ h2 {
   }
 
   .project-img-wrapper {
-    cursor: pointer; // !!!
+    // cursor: pointer;
     width: 45%;
     position: relative;
     //display: flex;
     justify-content: center;
     align-items: center;
     transition: var(--transition);
-    background-color: rgba(0, 20, 20, 0.5);
+    // background-color: rgba(0, 20, 20, 0.5);
     // border: 1px solid var(--col-red);
     border-radius: 4px;
     
@@ -181,6 +182,7 @@ h2 {
       border-radius: 4px;
       transition: var(--transition);
       padding: 8px;
+      background: black;
     }
 
 
@@ -218,6 +220,7 @@ h2 {
   }
 
   .project-tag {
+    // font-family: 'Roboto Mono', monospace;
     color: var(--col-teal);
     font-size: 0.8rem;
     font-weight: 600;
@@ -237,10 +240,11 @@ h2 {
 
   div {
     width: 45%;
-    padding: 0 !important;
+    //padding: 0 !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 
     h2 {
       width: 100%;
@@ -250,6 +254,13 @@ h2 {
       margin: 0;
       padding: 0;
       text-transform: capitalize;
+    }
+
+    h2::after{
+      content:'';
+      width: 30px;
+      height:2px;
+      color:red;
     }
 
     p {
@@ -276,7 +287,7 @@ h2 {
       // justify-content: center; 
       justify-content: space-between;
       align-items: flex-end;
-
+      
       a:nth-child(2n):not(.btn-disabled) {
         background-color: var(--col-teal-02);
         // color: var(--col-blue-10);
@@ -312,6 +323,15 @@ h2 {
 
     }
   }
+}
+
+.project-description-wrapper {
+  width: 45%;
+  // background-color: var(--col-darkblue-05);
+  border-radius: 4px;
+  box-sizing: border-box;
+  // padding: 16px !important;
+
 }
 
 @keyframes slideUp {
