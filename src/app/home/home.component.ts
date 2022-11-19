@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', [])
   onScroll() {
-    if (window.scrollY >= window.innerHeight * 0.1) this.cancelAnimation(); // but maybe still show first frame (else sometimes empty)
+    if (window.scrollY >= window.innerHeight * 0.1) this.cancelAnimation(); //
     else this.startAnimation();
     this.calculateDocumentHeight();
   }

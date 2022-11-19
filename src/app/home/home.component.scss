@@ -4,12 +4,10 @@
   // background: radial-gradient(#330057, var(--col-black), #000000);
   background: radial-gradient(#330057, var(--col-black)); // for rain-effect
   background: url('https://picsum.photos/600/600?grayscale');
-  // background: url('/assets/img/bg-img/giovanni-corte-n9SLYuyyZhQ-unsplash.jpg');
-  background: url('../../assets/img/bg-img/marcelo-quinan-R3pUGn5YiTg-unsplash.jpg');
-  background: url('../../assets/img/bg-img/kevin-ku-w7ZyuGYNpRQ-unsplash (1).jpg');
-  background: url('../../assets/img/bg-img/benjamin-voros-phIFdC6lA4E-unsplash.jpg');
-  background: url('../../assets/img/bg-img/marc-linnemann-wDx3q0yb7fk-unsplash.jpg');
+  // background: url('../../assets/img/bg-img/kevin-ku-w7ZyuGYNpRQ-unsplash (1).jpg');
+  // background: url('../../assets/img/bg-img/marc-linnemann-wDx3q0yb7fk-unsplash.jpg');
   background: url('../../assets/img/bg-img/alejandro-escamilla-N7XodRrbzS0-unsplash-nologo.jpg');
+  // background: url('../../assets/img/bg-img/alejandro-escamilla-N7XodRrbzS0-unsplash-nologo-2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 33%;
@@ -75,23 +73,90 @@
   box-sizing: border-box;
 }
 
+.hl-container {
+  top: calc((50% + (var(--menu-height) * 0.5)) - 58.5px); // 58.5: frame-bottom /2 
+  transform: translate(0, -50%);
+  width: 100%;
+  box-sizing: border-box;
+  // border: 1px solid lime;
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-headline {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  color: var(--col-teal-05);
+  // -webkit-writing-mode: vertical-rl;
+  // writing-mode: vertical-rl;
+  // transform: rotate(180deg);
+  // border-left: 1px solid var(--col-teal);
+  // position: absolute;
+  top: 0;
+}
+
+.pre-headline::after{
+  content:'INES';
+  text-align: right;
+  width:200%;
+  height:1px;
+  // margin-left: 40%;
+  display: block;
+  position: relative;
+  // bottom: -8px;
+  background-color: var(--col-teal-05);
+}
+
+.hl-name {
+  margin-top: 24px;
+}
+
+.hl-subtitle{
+  font-size:2rem; // res 1.5
+  margin-top: 16px;
+  span {
+    position: relative;
+    left: 100%; // res 110%
+    // color: var(--col-red) !important; // TODO rm other span col 8or make more specific)
+    z-index:2;
+  }
+}
+
+.hl-subtitle::before{
+  content: 'FRONTEND';
+  text-transform: uppercase;
+  position: absolute;
+  bottom: -8px;
+  // display:block;
+  // bottom: 16px;
+  width: 100%;
+  text-shadow: -1px -1px 6px rgba(255,255,255);
+  font-size: 3rem; // res 2.5
+  opacity: 0.5;
+  font-weight: 800;
+  margin-right: 8px;
+  
+}
+
 .header {
+  transform: translate(-50%,0); // wg absoluten, rel pos hl aus kasten hinaus /ca + 100%
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.5;
   z-index: 1;
   color: white;
-  position: absolute;
-  top: calc((50% + (var(--menu-height) * 0.5)) - 58.5px); // 58.5: frame-bottom /2 
-  transform: translate(0, -50%);
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+  position: relative;
+  // text-align: center;
 
   span {
-    color: var(--col-teal-a);
     color: var(--col-red);
+    color: var(--col-teal);
     font-weight: 700;
   }
 

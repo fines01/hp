@@ -41,15 +41,15 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.routerSubscription) this.routerSubscription.unsubscribe();  
   }
 
-  @HostListener('window:scroll', [])
-  onScroll(target?: any) {
-    if (window.scrollY >= window.innerHeight - 60 - 117 && !this.showMobileMenu || (this.currentRoute === '/about-me' && !this.showMobileMenu)) this.showDivider = true; // 117: css var 'canvas-btm-height', 4: divider-height
-    else this.showDivider = false;
-  }
+  // @HostListener('window:scroll', [])
+  // onScroll(target?: any) {
+  //   if (window.scrollY >= window.innerHeight - 60 - 117 && !this.showMobileMenu || (this.currentRoute === '/about-me' && !this.showMobileMenu)) this.showDivider = true; // 117: css var 'canvas-btm-height', 4: divider-height
+  //   else this.showDivider = false;
+  // }
 
   toggleMenu() {
     this.showMobileMenu = !this.showMobileMenu;
-    this.onScroll();
+    //this.onScroll();
   }
 
   closeMenu() {
