@@ -31,7 +31,7 @@
     <div class="introduction">
       <div class="img-wrapper">
         <img class="picture" appObserveIntersection #picture="intersection"
-        [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/passfoto.jpg" alt="picture">
+        [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/undraw_handcrafts_woman.svg" alt="picture">
       </div>
       <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
         [threshold]="0.6" [innerHtml]="about.intro">

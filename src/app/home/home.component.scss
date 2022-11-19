@@ -35,17 +35,54 @@
   left: 0;
   right: 0;
 
+  .link::after{
+    content:'\1F873';
+    font-size: 24px;
+    position:absolute;
+    opacity:0;
+    top: 5px;
+    right: 12px;
+    transition: var(--transition);
+  }
+
+
   .link {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    font-size: 1.3rem;
-    border-bottom: 4px solid white;
+    font-size: 1rem; // 1.3rem
     font-weight: 500;
-    padding-bottom: 16px;
+    padding-bottom: 8px; //16px
     color: white;
     box-sizing: border-box;
     transition: var(--transition);
+    
+    //new design??
+    border: 1px solid transparent;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
+    padding: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+
+    display:inline block;
+    position:relative;
+    
+    &:hover{
+      border: 1px solid var(--col-teal);
+      border: 1px solid white;
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      padding-right:35px;
+      padding-bottom:9px;
+
+      &::after{
+        opacity: 1;
+        // right:0;
+      }
+
+    }
 
     @media screen and (max-width: $breakpoint-sm) {
       font-size: 1.2rem;
