@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { slideInAnimation, slideUpAnimation } from '../animations';
 import { ContactService } from '../contact.service';
 import { DialogContactResponseComponent } from '../dialog-contact-response/dialog-contact-response.component';
+import { NavigationService } from '../services/navigation.service';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ContactComponent implements OnInit {
     private formBuilder: FormBuilder,
     private contact: ContactService,
     private dialog: MatDialog,
+    private navService: NavigationService,
     ) { }
 
   ngOnInit(): void {
@@ -81,6 +83,10 @@ export class ContactComponent implements OnInit {
 
   onCancelInput(){
     this.form.reset();
+  }
+
+  onIntersection(event: any){
+    if (event) this.navService.visibleNavSection = 'contact';
   }
 
 }

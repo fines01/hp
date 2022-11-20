@@ -1,4 +1,4 @@
-<section id="portfolio" #portfolio>
+<section id="portfolio" #portfolio appObserveIntersection (isIntersecting)="onIntersection($event)" [rootMargin]="'0px'" [threshold]="0.1">
 
   <div class="filter-row">
     <div class="shadow-hl"></div>
