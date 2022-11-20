@@ -1,4 +1,4 @@
-<section id="home">
+<section id="home" appObserveIntersection (isIntersecting)="onIntersection($event)" [rootMargin]="'0px'" [threshold]="0.5">
   <div class="frame" id="frame" #frame>
     <div class="hl-container">
       <div class="header">

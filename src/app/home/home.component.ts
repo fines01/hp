@@ -3,6 +3,7 @@ import { FloatEffect } from 'src/models/float-effect';
 import { RainEffect } from 'src/models/rain-effect.class';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   canvasWidth!: number;
   canvasHeight!: number;
   
-  constructor() { }
+  constructor(private navService: NavigationService) { }
   
   ngOnInit(): void {
     this.calculateDocumentHeight();
@@ -76,6 +77,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     document.documentElement.style.setProperty('view-height', documentHeight + 'px');
   }
 
-  
+  onIntersection(event:any){
+    if (event) this.navService.visibleNavSection = 'home';
+  }
+
 
 }

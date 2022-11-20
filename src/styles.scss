@@ -43,8 +43,6 @@ html, body {
 body { 
   margin: 0; 
   padding:0;
-  // font-family: Roboto, "Helvetica Neue", sans-serif; 
-  font-family: Karla, sans-serif;
   font-family: Poppins, sans-serif;
   color: white;
   background-color: var(--col-blue-10);
@@ -122,7 +120,7 @@ h2 {
 }
 
 .hl-underline {
-  border-bottom: 4px solid white;
+  border-bottom: 2px solid white;
 }
 
 .mb-32 {
@@ -178,7 +176,7 @@ a.disabled, .disabled-link {
   top: var(--menu-height);
   left: 0;
   right: 0;
-  height: 100px;
+  height: 112px;
   //width: 100vw;
   padding: 16px var(--distX);
   display: flex;

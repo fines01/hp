@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, 
 import { slideInAnimation, slideInReverseAnimation, slideUpAnimation } from '../animations';
 import { projects } from 'src/assets/data/projects';
 import { Project } from '../interfaces/project';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -18,7 +19,7 @@ export class PortfolioComponent implements OnInit {
 
   //@ViewChild('portfolio') sectionRef!: ElementRef;
 
-  constructor() { }
+  constructor(private navService: NavigationService) { }
 
   ngOnInit(): void {
     this.filteredProjects = projects;
@@ -39,6 +40,12 @@ export class PortfolioComponent implements OnInit {
 
   hideOverlay() {
     this.showImgOverlay = false;
+  }
+
+  onIntersection(event: any){
+    // console.log(isVisible);
+    // if (isVisible) 
+    if (event) this.navService.visibleNavSection = 'portfolio';
   }
 
 }

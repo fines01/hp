@@ -1,6 +1,6 @@
-<section id="contact">
+<section id="contact" appObserveIntersection (isIntersecting)="onIntersection($event)" [rootMargin]="'0px'" [threshold]="0.5">
   <h2 appObserveIntersection #headlineEl="intersection" [@slideIn]="headlineEl._intersecting ? 'in' : 'out'"
-    [threshold]="0.8">Contact me.</h2>
+    [threshold]="0.8" class="contact-hl">Contact me.</h2>
   <p appObserveIntersection #paragraphEl="intersection" [@slideIn]="paragraphEl._intersecting ? 'in' : 'out'"
     [threshold]="0.8">Get in touch via the form below, or by emailing <a href="mailto:ines.fritsch@gmail.com"
       class="mailto-link">ines.fritsch@gmail.com</a></p>

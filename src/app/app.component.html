@@ -9,8 +9,8 @@
   </span>
   <span class="menu-spacer"></span>
   <a class="menu-link link-desktop" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a class="menu-link link-desktop" [routerLink]="''" fragment="portfolio">Portfolio</a>
-  <a class="menu-link link-desktop" [routerLink]="''" fragment="contact">Contact</a>
+  <a class="menu-link link-desktop" [routerLink]="''" fragment="portfolio" [class.active-link]="sectionInView('portfolio')">Portfolio</a>
+  <a class="menu-link link-desktop" [routerLink]="''" fragment="contact" [class.active-link]="sectionInView('contact')">Contact</a>
   <!-- open mobile menu, only show in  mobile view-->
   <!-- <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon"> -->
   <!-- <mat-icon class="mobile-menu-icon">menu</mat-icon> -->
@@ -30,8 +30,8 @@
 </mat-toolbar>
 <div [@slideDown]="showMobileMenu ? 'open' : 'closed'" class="mobile-menu">
   <a class="menu-link" (click)="closeMenu()" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
-  <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="portfolio">Portfolio</a>
-  <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="contact">Contact</a>
+  <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="portfolio" [class.active-link]="sectionInView('portfolio')">Portfolio</a>
+  <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="contact" [class.active-link]="sectionInView('contact')">Contact</a>
 </div>
 <!-- END Toolbar -->
 

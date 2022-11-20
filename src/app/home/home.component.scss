@@ -6,7 +6,7 @@
   background: url('https://picsum.photos/600/600?grayscale');
   // background: url('../../assets/img/bg-img/kevin-ku-w7ZyuGYNpRQ-unsplash (1).jpg');
   // background: url('../../assets/img/bg-img/marc-linnemann-wDx3q0yb7fk-unsplash.jpg');
-  background: url('../../assets/img/bg-img/alejandro-escamilla-N7XodRrbzS0-unsplash-nologo.jpg');
+  background: url('../../assets/img/bg-img/bg-laptop.webp');
   // background: url('../../assets/img/bg-img/alejandro-escamilla-N7XodRrbzS0-unsplash-nologo-2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,17 +35,63 @@
   left: 0;
   right: 0;
 
+  .link::after{
+    content:'\1F873';
+    font-size: 1.2rem;
+    position:absolute;
+    opacity: 0;
+    transform: rotate(-90deg);
+    top: 0;
+    bottom: 0;
+    right: 8px; //link padding
+    transition: var(--transition);
+
+    margin: 8px 0; //link padding 8px
+    padding-top: 0.35rem;
+    display: flex;
+    align-items:center;
+
+  }
+
+
   .link {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    font-size: 1.3rem;
-    border-bottom: 4px solid white;
+    font-size: 1rem; // 1.3rem
     font-weight: 500;
-    padding-bottom: 16px;
+    padding-bottom: 8px; //16px
     color: white;
     box-sizing: border-box;
     transition: var(--transition);
+    
+    //new design??
+    border: 1px solid transparent;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
+    padding: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+
+    display:inline block;
+    position:relative;
+    
+    &:hover{
+      border: 1px solid var(--col-teal);
+      border: 1px solid white;
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      padding-right: calc(16px + 1rem);
+      padding-bottom:9px;
+
+      &::after{
+        opacity: 1;
+        // right:0;
+        transform: rotate(0);// translateY(50%);
+      }
+
+    }
 
     @media screen and (max-width: $breakpoint-sm) {
       font-size: 1.2rem;
@@ -63,6 +109,10 @@
 
 }
 
+.color-highlight {
+  color: var(--col-red);
+}
+
 #canvas {
   position: absolute;
   top: 0;
@@ -71,6 +121,7 @@
   height: 100%;
   padding-top: var(--menu-height);
   box-sizing: border-box;
+  // z-index:3;
 }
 
 .hl-container {
@@ -158,11 +209,6 @@
     color: var(--col-red);
     color: var(--col-teal);
     font-weight: 700;
-  }
-
-  .color-highlight {
-    color: var(--col-teal);
-    // color: var(--col-cyan-40);
   }
 
   @media screen and (max-width: $breakpoint-sm) {
