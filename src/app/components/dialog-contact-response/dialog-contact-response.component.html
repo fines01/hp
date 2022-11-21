@@ -1,5 +1,5 @@
 <div class="message-wrapper" [ngClass]="{'success-dialog': status === 'success', 'error-dialog': status === 'error'}">
-    <h3 class="title">{{ status }}</h3>
+    <h3 class="title">{{ title }}</h3>
     <!-- <p>from: {{ formData.name }}, {{ formData.email }}</p> -->
     <p [innerHTML]="message"></p>
 </div>

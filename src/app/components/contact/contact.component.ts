@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { slideInAnimation, slideUpAnimation } from '../animations';
-import { ContactService } from '../contact.service';
+import { slideInAnimation, slideUpAnimation } from '../../animations';
+import { ContactService } from '../../services/contact.service';
 import { DialogContactResponseComponent } from '../dialog-contact-response/dialog-contact-response.component';
-import { NavigationService } from '../services/navigation.service';
+import { NavigationService } from '../../services/navigation.service';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contact: ContactService,
+    private contactService: ContactService,
     private dialog: MatDialog,
     private navService: NavigationService,
     ) { }
@@ -41,7 +41,7 @@ export class ContactComponent implements OnInit {
   }
   
   sendMessage(formData: any) {
-    this.contact.postMessage(formData).subscribe(
+    this.contactService.postMessage(formData).subscribe(
       {
         next: (response) => this.handleSuccess(formData),
         error: (error) => this.handleError(error, formData),

@@ -3,7 +3,7 @@ import { FloatEffect } from 'src/models/float-effect';
 import { RainEffect } from 'src/models/rain-effect.class';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NavigationService } from '../services/navigation.service';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-home',

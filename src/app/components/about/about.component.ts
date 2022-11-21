@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { skills } from 'src/assets/data/skills';
-import { slideInAnimation, slideInBarAnimation, slideInReverseAnimation, turnCardsAnimation } from '../animations';
-import { Skill } from '../interfaces/skill';
+import { slideInAnimation, slideInBarAnimation, slideInReverseAnimation, turnCardsAnimation } from '../../animations';
+import { Skill } from '../../interfaces/skill';
 import { about } from 'src/assets/data/about';
 
 @Component({

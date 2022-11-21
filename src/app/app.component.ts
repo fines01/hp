@@ -19,20 +19,23 @@ export class AppComponent implements OnInit, OnDestroy {
   showMobileMenu = false;
   fragment!: any; //string
 
-  constructor(private router: Router, private viewportScroller: ViewportScroller, private navService: NavigationService) { }
+  constructor(private router: Router, private viewportScroller: ViewportScroller, private navService: NavigationService) { 
+    // viewportScroller.setOffset([0,30]);
+  }
 
   ngOnInit(): void {
     this.routerSubscription = this.router.events.subscribe( (e: any) => {
       if (e instanceof NavigationEnd) {
         this.currentRoute = e.url;
-        if (this.currentRoute === '/about-me') this.navService.visibleNavSection = '';
+        //if (this.currentRoute === '/about-me' || this.currentRoute == '/data-protection' || this.currentRoute == '/imprint') this.navService.visibleNavSection = '';
+        if (this.currentRoute.substring(0,2) !== '/#') this.navService.visibleNavSection = '';
         this.closeMenu();
       }
       if (e instanceof Scroll && e.anchor) {
         // anchor navigation (fixes wrong scroll position when navigating from another url)
         setTimeout(() => {
           if (typeof e.anchor == 'string') this.viewportScroller.scrollToAnchor(e.anchor);
-        });
+        },125);
       };
     });
   }

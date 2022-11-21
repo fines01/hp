@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { slideInAnimation, slideInReverseAnimation, slideUpAnimation } from '../animations';
+import { slideInAnimation, slideInReverseAnimation, slideUpAnimation } from '../../animations';
 import { projects } from 'src/assets/data/projects';
-import { Project } from '../interfaces/project';
-import { NavigationService } from '../services/navigation.service';
+import { Project } from '../../interfaces/project';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-portfolio',

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -14,19 +14,20 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatInputModule} from '@angular/material/input';
 
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
-import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainComponent } from './components/main/main.component';
 import { ReactiveFormsModule } from '@angular/forms';  
 import { HttpClientModule } from '@angular/common/http';
-import { ContactService } from './contact.service';
-import { DialogContactResponseComponent } from './dialog-contact-response/dialog-contact-response.component';
+import { ContactService } from './services/contact.service';
+import { DialogContactResponseComponent } from './components/dialog-contact-response/dialog-contact-response.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ObserveIntersectionDirective } from './directives/observe-intersection.directive';
-import { ImprintComponent } from './imprint/imprint.component';
-import { DataProtectionComponent } from './data-protection/data-protection.component';
+import { ImprintComponent } from './components/imprint/imprint.component';
+import { DataProtectionComponent } from './components/data-protection/data-protection.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
     ObserveIntersectionDirective,
     ImprintComponent,
     DataProtectionComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

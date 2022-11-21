@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { slideUpToplinkAnimation } from '../animations';
+import { slideUpToplinkAnimation } from '../../animations';
 import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
 import { Subject, Subscription, takeUntil } from 'rxjs';
 
