@@ -86,12 +86,12 @@
       margin-right: 0.5%;
     }
 
-    @media screen and (max-width: 402px) {
-      // &:nth-child(2) {
-      //   margin: 0;
-      // }
-      // font-size: 1.2rem;
+    @media screen and (max-width: 412px) {
+      font-size: 0.9rem;
     }
+    // @media screen and (max-width: 402px){
+    //   font-size: 1.1rem;
+    // }
 
     &:hover:not(.selected) {
       border-color: var(--col-red);
@@ -307,7 +307,7 @@
     h2 {
       width: 100%;
       text-align: center;
-      font-weight: 700;
+      font-weight: 500;
       font-size:1.2rem;
       border: none;
       margin: 0;

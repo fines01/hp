@@ -119,33 +119,29 @@ h2 {
   margin: 0;
 }
 
-.hl-underline {
-  border-bottom: 2px solid white;
-}
+// .mb-32 {
+//   margin-bottom: 32px;
+// }
 
-.mb-32 {
-  margin-bottom: 32px;
-}
+// .mt-32 {
+//   margin-top: 32px;
+// }
 
-.mt-32 {
-  margin-top: 32px;
-}
+// .mt-16 {
+//   margin-top: 16px;
+// }
 
-.mt-16 {
-  margin-top: 16px;
-}
+// .align-center {
+//   text-align: center;
+// }
 
-.align-center {
-  text-align: center;
-}
+// .c-pointer{
+//   cursor: pointer;
+// }
 
-.c-pointer{
-  cursor: pointer;
-}
-
-.width-100 {
-  width: 100%;
-}
+// .width-100 {
+//   width: 100%;
+// }
 
 .btn-disabled {
   background-color: var(--col-grey-02) !important;
@@ -242,14 +238,14 @@ a.disabled, .disabled-link {
   background: var(--col-teal-05);
 }
 
-@keyframes slideDown {
-  50% {
-    transform: translateX(+50%);
-  }
-  100% {
-    transform: translateX(+100%);
-  }
-}
+// @keyframes slideDown {
+//   50% {
+//     transform: translateX(+50%);
+//   }
+//   100% {
+//     transform: translateX(+100%);
+//   }
+// }
 
 @media screen and (max-width: $breakpoint-xs) {
   :root {
