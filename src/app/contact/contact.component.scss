@@ -63,13 +63,13 @@ input {
   bottom: 16px;
   left: 0;
 
-  @media screen and (max-width: 371px){
+  @media screen and (max-width: 400px){
     //position: relative;
-    bottom: 20px;
+    // bottom: 20px;
     font-size: 11px;
   }
 
-  @media screen and (max-width: $breakpoint-xs) {
+  @media screen and (max-width: 380px) {
     //bottom: 8px;
     display: none;
   }

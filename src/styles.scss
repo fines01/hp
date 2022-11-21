@@ -1,5 +1,5 @@
 @import './src/breakpoints.scss';
-@import './src/fonts.scss'; // GET http://localhost:4200/assets/fonts/... net::ERR_ABORTED 404 (Not Found) in Console
+@import './src/fonts.scss'; 
 
 :root {
     --menu-height: 60px;

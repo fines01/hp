@@ -143,11 +143,6 @@
   margin-bottom: 16px;
   font-size: 0.8rem;
   color: var(--col-teal-05);
-  // -webkit-writing-mode: vertical-rl;
-  // writing-mode: vertical-rl;
-  // transform: rotate(180deg);
-  // border-left: 1px solid var(--col-teal);
-  // position: absolute;
   top: 0;
 }
 
@@ -161,6 +156,10 @@
   position: relative;
   // bottom: -8px;
   background-color: var(--col-teal-05);
+
+  @media screen and (max-width: 440px){
+    width: 163%;
+  }
 }
 
 .hl-name {
@@ -175,6 +174,16 @@
     left: 100%; // res 110%
     // color: var(--col-red) !important; // TODO rm other span col 8or make more specific)
     z-index:2;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    font-size: 1.7rem;
+  }
+
+  @media screen and (max-width:440px){
+    span{
+      left: 63%;
+    }
   }
 }
 
@@ -191,6 +200,14 @@
   opacity: 0.5;
   font-weight: 800;
   margin-right: 8px;
+
+  @media screen and (max-width: $breakpoint-s){
+    bottom: -7px;
+  }
+  
+  @media screen and (max-width: 440px){
+    font-size: 2.8rem;
+  }
   
 }
 
@@ -216,6 +233,10 @@
   }
   @media screen and (max-width: $breakpoint-xs) {
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 440px){
+    transform: translate(-31.5%,0); // ab max 440px: ges breite 163%
   }
 
 }
