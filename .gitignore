@@ -38,6 +38,7 @@ testem.log
 /typings
 
 /src/assets/data
+/src/assets/img/passfoto.jpg
 .env
 .vscode/
 

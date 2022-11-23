@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { slideUpToplinkAnimation } from '../../animations';
 import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
 import { Subject, Subscription, takeUntil } from 'rxjs';
+import { socialLinks } from 'src/assets/data/social-links';
 
 @Component({
   selector: 'app-footer',
@@ -11,6 +12,7 @@ import { Subject, Subscription, takeUntil } from 'rxjs';
 })
 export class FooterComponent implements OnInit, OnDestroy {
 
+  links = socialLinks;
   linkBaseTransformPosition = 'translate(-50%, -100%) scale(1)';
   mobileQuery: string = '(max-width: 575px)';//MediaQueryList; $breakpoint-sm = 575px;
   breakPointSubscription!: Subscription;

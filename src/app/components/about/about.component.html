@@ -18,7 +18,7 @@
         [threshold]="0.2" [rootMargin]="'200px 0px 0px 0px'" [@turnCard]="el._intersecting ? 'in' : 'out'" >
         <div *ngFor="let skill of skills" class="skill-card">
           <div class="skill-icon"><img src="{{ skill.img }}" alt=""></div>
-          {{ skill.name }}
+          <span class="skill-name">{{ skill.name }}</span>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="introduction">
       <div class="img-wrapper">
         <img class="picture" appObserveIntersection #picture="intersection"
-        [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/undraw_handcrafts_woman.svg" alt="picture">
+        [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/undraw_handcrafts_woman.svg" alt="my picture">
       </div>
       <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
         [threshold]="0.6" [innerHtml]="about.intro">
@@ -51,19 +51,19 @@
       </div>
       <p appObserveIntersection #aboutParagraph1="intersection"
         [@slideInReverse]="aboutParagraph1._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'">
-        {{ about.p1 }}
+        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="about.p1">
+        <!-- {{ about.p1 }} -->
       </p>
       <p appObserveIntersection #aboutParagraph2="intersection"
         [@slideIn]="aboutParagraph2._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'">
-        {{ about.p2 }}
+        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="about.p2">
+        <!-- {{ about.p2 }} -->
 
       </p>
       <p appObserveIntersection #aboutParagraph3="intersection"
         [@slideInReverse]="aboutParagraph3._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'">
-        {{ about.p3 }}
+        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="about.p3">
+        <!-- {{ about.p3 }} -->
       </p>
       <div class="quotation-line" appObserveIntersection #quotationEnd="intersection"
         [@slideIn]="quotationEnd._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'">
