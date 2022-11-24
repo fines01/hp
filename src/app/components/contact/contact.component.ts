@@ -68,7 +68,6 @@ export class ContactComponent implements OnInit {
   }
 
   handleSuccess(formData: any) {
-    console.log(formData);
     //location.href = 'https://mailthis.to/confirm'; // in case i want to use the mailthis api
     this.showResponseDialog('success', formData);
     this.form.reset();
