@@ -8,7 +8,6 @@ import { DataProtectionComponent } from './components/data-protection/data-prote
 
 const routes: Routes = [
   {path: '', component: MainComponent},
-  {path: 'about-me', component: AboutComponent},
   {path: 'imprint', component: ImprintComponent},
   {path: 'data-protection', component: DataProtectionComponent},
 

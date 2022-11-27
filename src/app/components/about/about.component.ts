@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { skills } from 'src/assets/data/skills';
 import { slideInAnimation, slideInBarAnimation, slideInReverseAnimation, turnCardsAnimation } from '../../animations';
 import { Skill } from '../../interfaces/skill';
+import { skills } from 'src/assets/data/skills';
 import { about } from 'src/assets/data/about';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-about',
@@ -14,14 +15,20 @@ import { about } from 'src/assets/data/about';
 export class AboutComponent implements OnInit {
 
   skills!: Skill[];
-  about!: any;
+  aboutHtml!: any;
 
-  constructor() { }
+  constructor( private navService: NavigationService) { }
 
   ngOnInit(): void {
     this.skills = skills;
-    this.about = about;
-    window.scrollTo(0, 0);
+    this.aboutHtml = about;
+    //window.scrollTo(0, 0);
+    console.log(this.aboutHtml)
   }
+
+  onIntersection(event: any){
+    if (event) this.navService.visibleNavSection = 'about';
+  }
+
 
 }

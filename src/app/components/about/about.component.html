@@ -1,4 +1,4 @@
-<section id="about">
+<section id="about" #about appObserveIntersection (isIntersecting)="onIntersection($event)" [rootMargin]="'0px'" [threshold]="0.1">
 
   <div class="row hl-row">
     <div class="about-shadow-hl">
@@ -36,7 +36,7 @@
         [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/undraw_handcrafts_woman.svg" alt="my picture">
       </div>
       <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
-        [threshold]="0.6" [innerHtml]="about.intro">
+        [threshold]="0.6" [innerHTML]="aboutHtml.intro">
         <!-- I'm a <span class="col-highlight">front-end developer</span> and hobby kickboxer
         with experience in developing applications with JavaScript and Angular. -->
       </p>
@@ -51,18 +51,18 @@
       </div>
       <p appObserveIntersection #aboutParagraph1="intersection"
         [@slideInReverse]="aboutParagraph1._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="about.p1">
+        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="aboutHtml.p1">
         <!-- {{ about.p1 }} -->
       </p>
       <p appObserveIntersection #aboutParagraph2="intersection"
         [@slideIn]="aboutParagraph2._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="about.p2">
+        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="aboutHtml.p2">
         <!-- {{ about.p2 }} -->
 
       </p>
       <p appObserveIntersection #aboutParagraph3="intersection"
         [@slideInReverse]="aboutParagraph3._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="about.p3">
+        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="aboutHtml.p3">
         <!-- {{ about.p3 }} -->
       </p>
       <div class="quotation-line" appObserveIntersection #quotationEnd="intersection"

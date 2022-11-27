@@ -8,8 +8,8 @@
     </a>
   </span>
   <span class="menu-spacer"></span>
-  <a class="menu-link link-desktop" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
   <a class="menu-link link-desktop" [routerLink]="''" fragment="portfolio" [class.active-link]="sectionInView('portfolio')">Portfolio</a>
+  <a class="menu-link link-desktop" [routerLink]="''" fragment="about" [class.active-link]="sectionInView('about')">About</a>
   <a class="menu-link link-desktop" [routerLink]="''" fragment="contact" [class.active-link]="sectionInView('contact')">Contact</a>
   <!-- open mobile menu, only show in  mobile view-->
   <!-- <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="button with menu icon"> -->
