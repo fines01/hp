@@ -1,4 +1,5 @@
-<section id="about" #about appObserveIntersection (isIntersecting)="onIntersection($event)" [rootMargin]="'0px'" [threshold]="0.1">
+<section id="about" #about appObserveIntersection (isIntersecting)="onIntersection($event)" [rootMargin]="'0px'"
+  [threshold]="0.1">
 
   <div class="row hl-row">
     <div class="about-shadow-hl">
@@ -6,21 +7,29 @@
     <h2 class="about-section-hl">About</h2>
   </div>
 
-  
+
   <h3 appObserveIntersection #skillsHl="intersection" [@slideIn]="skillsHl._intersecting ? 'in' : 'out'"
-    [threshold]="0.8">Skills</h3>
+    [threshold]="0.8">Skillset</h3>
   <div class="about-main">
 
     <div class="skills" appObserveIntersection #skillDiv="intersection">
       <!-- [@slideInReverse]="skillDiv._intersecting ? 'in' : 'out'" [threshold]="0.6"> -->
       <!-- OPTION A.: Skill - Cards -->
-      <div class="cards-container" appObserveIntersection #el="intersection"
-        [threshold]="0.2" [rootMargin]="'200px 0px 0px 0px'" [@turnCard]="el._intersecting ? 'in' : 'out'" >
+      <div class="cards-container" appObserveIntersection #el="intersection" [threshold]="0.2"
+        [rootMargin]="'200px 0px 0px 0px'" [@turnCard]="el._intersecting ? 'in' : 'out'">
+
         <div *ngFor="let skill of skills" class="skill-card">
+
           <div class="skill-icon"><img src="{{ skill.img }}" alt=""></div>
           <span class="skill-name">{{ skill.name }}</span>
+
         </div>
+
+
+
+
       </div>
+
     </div>
 
   </div>
@@ -33,7 +42,8 @@
     <div class="introduction">
       <div class="img-wrapper">
         <img class="picture" appObserveIntersection #picture="intersection"
-        [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4" src="assets/img/undraw_handcrafts_woman.svg" alt="my picture">
+          [@slideIn]="picture._intersecting ? 'in' : 'out'" [threshold]="0.4"
+          src="assets/img/undraw_handcrafts_woman.svg" alt="my picture">
       </div>
       <p class="intro-short" appObserveIntersection #p="intersection" [@slideInReverse]="p._intersecting ? 'in' : 'out'"
         [threshold]="0.6" [innerHTML]="aboutHtml.intro">
@@ -55,8 +65,8 @@
         <!-- {{ about.p1 }} -->
       </p>
       <p appObserveIntersection #aboutParagraph2="intersection"
-        [@slideIn]="aboutParagraph2._intersecting ? 'in' : 'out'" [threshold]="0.5"
-        [rootMargin]="'200px 0px 0px 0px'" [innerHTML]="aboutHtml.p2">
+        [@slideIn]="aboutParagraph2._intersecting ? 'in' : 'out'" [threshold]="0.5" [rootMargin]="'200px 0px 0px 0px'"
+        [innerHTML]="aboutHtml.p2">
         <!-- {{ about.p2 }} -->
 
       </p>

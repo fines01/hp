@@ -3,6 +3,7 @@
 #portfolio {
   display: flex;
   flex-direction: column;
+  padding-bottom: 1rem;
   // gap: 60px;
 }
 
@@ -92,6 +93,11 @@
     // @media screen and (max-width: 402px){
     //   font-size: 1.1rem;
     // }
+
+    // big screens:
+    @media screen and (min-width: $breakpoint-xl){
+      height: 2rem;
+    }
 
     &:hover:not(.selected) {
       border-color: var(--col-red);
@@ -363,6 +369,11 @@
 
         @media screen and (max-width: $breakpoint-sm) {
           height: 55px;
+        }
+
+        // big screens
+        @media screen and (min-width: $breakpoint-xl){
+          height: 2.5rem;
         }
 
       }
