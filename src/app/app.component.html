@@ -29,8 +29,8 @@
   <!-- </button> -->
 </mat-toolbar>
 <div [@slideDown]="showMobileMenu ? 'open' : 'closed'" class="mobile-menu">
-  <a class="menu-link" (click)="closeMenu()" [routerLink]="['/about-me']" routerLinkActive="active-link">About</a>
   <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="portfolio" [class.active-link]="sectionInView('portfolio')">Portfolio</a>
+  <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="about" [class.active-link]="sectionInView('about')">About</a>
   <a class="menu-link" (click)="closeMenu()" [routerLink]="''" fragment="contact" [class.active-link]="sectionInView('contact')">Contact</a>
 </div>
 <!-- END Toolbar -->
