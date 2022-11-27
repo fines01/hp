@@ -22,8 +22,6 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.skills = skills;
     this.aboutHtml = about;
-    //window.scrollTo(0, 0);
-    console.log(this.aboutHtml)
   }
 
   onIntersection(event: any){
